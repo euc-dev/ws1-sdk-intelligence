@@ -7,8 +7,6 @@ hide:
   - toc
 ---
 
-# Workspace ONE Intelligence SDK
-
 Workspace ONE Intelligence SDK enables developers to capture real-time event data from key user flows in your app: screen load time, network events, crash reports, and more. Track key metrics, improve your app release-over-release, and focus on issues that matter to your users.
 
 ## Documentation and Reference
