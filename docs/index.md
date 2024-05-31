@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Workspace ONE Intelligence SDK
-permalink: /sdks/ws1/ws1-sdk-intelligence/
+#permalink: /sdks/ws1/ws1-sdk-intelligence/
 hide:
   #- navigation
   - toc
@@ -13,7 +13,7 @@ Workspace ONE Intelligence SDK enables developers to capture real-time event dat
 | Name | Size |
 | --- | --- |
 | Development Guides |  |
-| WS1 Intelligence SDK - Guide | [](https://developer.omnissa.com/ws1-intel-dev-centre/hosting/) |
+| WS1 Intelligence SDK - Guide | [this needs to be migrated](https://developer.omnissa.com/ws1-intel-dev-centre/hosting/) |
 | Reference Guides |  |
 | [Android Intelligence SDK Network Insights Clients User Guide](guides/Android-Intelligence-SDK-Network-20240213.pdf) | 8.5 KB |
 | Release Notes |  |
