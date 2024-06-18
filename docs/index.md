@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Workspace ONE Intelligence SDK
-#permalink: /sdks/ws1/ws1-sdk-intelligence/
 hide:
   #- navigation
   - toc
