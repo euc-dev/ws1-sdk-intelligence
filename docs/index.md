@@ -8,6 +8,18 @@ hide:
 
 Workspace ONE Intelligence SDK enables developers to capture real-time event data from key user flows in your app: screen load time, network events, crash reports, and more. Track key metrics, improve your app release-over-release, and focus on issues that matter to your users.
 
+## Downloads
+
+### Agreement
+Before downloading, installing or using the Omnissa Workspace ONE SDK you must:
+
+- Review the Omnissa Workspace ONE Software Development Kit License Agreement. By downloading, installing, or using the Omnissa Workspace ONE SDK you agree to these license terms. If you disagree with any of the terms, then do not use the software.
+- Review the VMware Privacy Notice and the Workspace ONE UEM Privacy Disclosure.
+
+### Latest Software
+
+The Workspace ONE SDK for iOS is distributed through the {{ config.repo_url }} repository. Follow the instructions in the guides below to integrate the latest software.
+
 ## Documentation and Reference
 | Name | Size |
 | --- | --- |
