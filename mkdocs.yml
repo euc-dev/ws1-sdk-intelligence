@@ -163,11 +163,13 @@ markdown_extensions:
 # Navigation
 nav:
   - index.md
-  - Workspace ONE Intelligence SDK for Android: ./Android/index.md
+  - Workspace ONE Intelligence SDK for Android: 
+    - ./Android/index.md
     - Installing the Android SDK: ./Android/android-install.md
     - Network Insights: ./Android/android-apm.md
     - Sending UEM Attributes To Intelligence SDK: ./Android/android-integrate-ws1sdk.md
-  - Workspace ONE Intelligence SDK for iOS: ./Apple/index.md
+  - Workspace ONE Intelligence SDK for iOS: 
+    - ./Apple/index.md
     - Installing Workspace ONE Intelligence SDK for iOS: ./Apple/install-ios.md
     - Network Insights: ./Apple/ios-apm.md
     - Sending UEM Attributes To Intelligence SDK: ./Apple/ios-integrate-ws1sdk.md
