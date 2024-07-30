@@ -163,6 +163,7 @@ markdown_extensions:
 # Navigation
 nav:
   - index.md
+  - SDK Core Capabilities: /dev-centre/ws1/core-capabilities/
   - Workspace ONE Intelligence SDK for Android: 
     - ./Android/index.md
     - Installing the Android SDK: ./Android/android-install.md
