@@ -141,4 +141,3 @@ Crittercism.leaveUserflowSpecificBreadcrumb(final String userflowName, final Str
 - Android Devices Below SDK version level 23 instrumenting WebViews will not be able to report HTTP errors in their Network Insights,  this is due to the following APIs not being supported previous to Android Marshmallow (23):
   - `onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)`
   - `onReceivedError(WebView, WebResourceRequest, WebResourceError)`
-

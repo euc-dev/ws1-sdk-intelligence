@@ -43,10 +43,10 @@ none
 ### New Features
 
 - A fix supports the instrumentation and use of the newer `WKNavigationDelegate` method introduced by Apple in iOS 13.  The app can supply the new version of decidePolicyForNavigationAction, the old version, or can supply neither. 
-  - Apple Documentation: https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview
+  - Apple Documentation: [https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview](https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview)
 - SDK imports have to be renamed from `WS1Intelligence` to `WS1IntelligenceSDK`
 - **dsym upload shell script has been updated to parse the latest service account json file. Please re-create and re-download the service account json file to support the dsym upload/parsing scripts. Instructions to generate the service account json is here - [link](https://vdc-download.vmware.com/vmwb-repository/dcr-public/04e807cf-2de4-4994-8bed-cab29dd53f15/6eaca9ec-7f67-415f-87da-dfcc1e00bb56/build/html/ios/ios_install.html#generate-credentials-file-from-workspace-one-intelligence-platform)**
-- WS1IntelligenceSDK enable API takes in a WS1 config object outside of the AppID. This config object should be used to enable DEX and inject all entitlements that an app supports as shown below - 
+- WS1IntelligenceSDK enable API takes in a WS1 config object outside of the AppID. This config object should be used to enable DEX and inject all entitlements that an app supports as shown below:
 
 ```JAVA
 let config = WS1Config.default()
@@ -74,9 +74,9 @@ WS1Intelligence.enable(withAppID: "App ID", config: config)
 - Introduced more modern external distribution options:
   - XCFramework
   - Swift Package Manager
-- Apps integrating the SDK should now also set an instance of type `WS1UEMDataDelegate`. (**WS1UEMDataDelegate must be set before enabling IntelSDK**). This is to publish the following UEM specific attributes **serialNumber, deviceUDID, username** to the Intel backend. Integration code is shown below - 
+- Apps integrating the SDK should now also set an instance of type `WS1UEMDataDelegate`. (**WS1UEMDataDelegate must be set before enabling IntelSDK**). This is to publish the following UEM specific attributes **serialNumber, deviceUDID, username** to the Intel backend. Integration code is shown below:
+  - WS1UEMDataDelegate
 
-- WS1UEMDataDelegate
 ```JAVA
 @objc public protocol WS1UEMDataDelegate: AnyObject {
     var serialNumber: String? { get }
@@ -128,9 +128,9 @@ WS1Intelligence.enable(withAppID: "App ID", config: config)
 
 - Fixed a bug that could crash the app if the user reset the device's clock to an earlier time than the last use of the app.
 - Fixed a bug that caused a crash if a URL specified by the app was nil.
-- improved the way the "App Start" userflow is automatically generated.  This should give more reliable times in the reports.
+- improved the way the "App Start" userflow is automatically generated. This should give more reliable times in the reports.
 - Resolved an issue when instrumenting WKWebView if loaded from storyboard.
 
 ### Known Issues
 
-- This version currently does not support Apple Privacy [manifest](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests) policy
+- This version currently does not support Apple Privacy [manifest](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests) policy.
