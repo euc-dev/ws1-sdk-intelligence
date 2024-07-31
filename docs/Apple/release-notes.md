@@ -6,9 +6,10 @@ hide:
   - toc
 ---
 
-Updated on 31/21/2024
+Updated on 07/31/2024
 
-What's in the Release Notes¶
+## What's in the Release Notes¶
+
 Workspace ONE SDK for iOS Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. The Workspace ONE SDK for iOS is a set of tools that incorporates Workspace ONE UEM functionality into custom-built, iOS applications.
 
 ## Workspace ONE SDK 24.3.0 for iOS Release - March 2024
