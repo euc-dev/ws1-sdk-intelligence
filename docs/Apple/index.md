@@ -14,10 +14,7 @@ The Apple SDKs may be downloaded [here](../index.md#sdk-downloads).
 
 ## Release Notes
 
-| Name | Size |
-| --- | --- |
-| [WS1 Intelligence SDK for iOS 24.1.0 Release Notes](../guides/WS1-Intelligence-SDK-for-iOS-24.1.0-Release-Notes.pdf) | 9.4 KB |
-| [WS1 Intelligence SDK for iOS 24.3.0 Release Notes](../guides/WS1-Intelligence-SDK-for-iOS-24.3.0-Release-Notes.pdf) | 3.0 KB |
+Release Notes can be viewed [here](release-notes.md).
 
 ## Application Requirements
 

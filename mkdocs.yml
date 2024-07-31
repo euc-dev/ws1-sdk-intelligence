@@ -175,6 +175,7 @@ nav:
       - CrittercismCallback: ./Android/crittercism-callback.md
       - CrittercismConfig: ./Android/crittercism-config.md
       - NetworkInstrumentation: ./Android/network-instrumentation.md
+    - Release Notes: ./Android/release-notes.md
   - Workspace ONE Intelligence SDK for iOS: 
     - ./Apple/index.md
     - Installing Workspace ONE Intelligence SDK for iOS: ./Apple/install-ios.md
@@ -189,3 +190,4 @@ nav:
       - CRFilter: ./Apple/crfilter.md
       - WS1Filter: ./Apple/ws1filter.md
       - WS1Intelligence: ./Apple/ws1intelligence.md
+    - Release Notes: ./Apple/release-notes.md

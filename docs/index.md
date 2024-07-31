@@ -10,7 +10,7 @@ Workspace ONE Intelligence SDK enables developers to capture real-time event dat
 
 ## SDK Downloads
 
-This SDK can be installed via Swift Package Manager (see: Installation Guide: Installing Workspace ONE Intelligence SDK for iOS ) or by downloading [WS1IntelligenceSDKDSYMUpload.zip](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases/download/24.3.0/WS1IntelligenceSDKDSYMUpload.zip) and [setting up automatic dSYM uploads]().
+This SDK can be installed via Swift Package Manager (see: Installation Guide: Installing Workspace ONE Intelligence SDK for iOS ) or by downloading [WS1IntelligenceSDKDSYMUpload.zip](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases/download/24.3.0/WS1IntelligenceSDKDSYMUpload.zip) and setting up automatic dSYM uploads.
 
 ### Download Checksums
 

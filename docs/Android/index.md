@@ -14,11 +14,7 @@ The Apple SDKs may be downloaded [here](../index.md#sdk-downloads).
 
 ## Release Notes
 
-| Name | Size |
-| --- | --- |
-| [WS1 Intelligence SDK for Android 24.1.0 Release Notes](../guides/WS1-Intelligence-SDK-for-Android-24.1.0-Release-Notes.pdf) | 12.19 KB |
-| [24.3.0 Android Release Notes](../guides/WS1-Intelligence-SDK-for-Android-24.3.0-Release-Notes.pdf) | 3.82 KB |
-
+Release Notes can be viewed [here](release-notes.md).
 
 ## Requirements
 
