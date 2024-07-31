@@ -108,8 +108,8 @@ none
 ### Known Issues
 
 - Android Devices Below SDK version level 23 instrumenting WebViews will not be able to report HTTP errors in their Network Insights,  this is due to the following APIs not being supported previous to Android Marshmallow (23):
-  - onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)
-  - onReceivedError(WebView, WebResourceRequest, WebResourceError)
+  - `onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)`
+  - `onReceivedError(WebView, WebResourceRequest, WebResourceError)`
 
 ## Workspace ONE SDK 24.3.0 for Android - March 2024
 
@@ -139,6 +139,6 @@ Crittercism.leaveUserflowSpecificBreadcrumb(final String userflowName, final Str
 ### Known Issues
 
 - Android Devices Below SDK version level 23 instrumenting WebViews will not be able to report HTTP errors in their Network Insights,  this is due to the following APIs not being supported previous to Android Marshmallow (23):
-  - onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)
-  - onReceivedError(WebView, WebResourceRequest, WebResourceError)
+  - `onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)`
+  - `onReceivedError(WebView, WebResourceRequest, WebResourceError)`
 
