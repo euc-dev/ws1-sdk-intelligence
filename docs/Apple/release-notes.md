@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-Updated August 12, 2024
+Updated August 15, 2024
 
 ## What's in the Release Notes¶
 
@@ -25,16 +25,17 @@ These release notes describe the new features and enhancements in each release o
 
 ### New Features
 
-The following APIs are now deprecated - 
+The following APIs are now deprecated:
 
-.. code-block:: swift
+```objective-c
 
    + (void)setOptOutStatus:(BOOL)status __deprecated_msg("Use setOptInStatusForType:type:status instead");
    + (BOOL)getOptOutStatus __deprecated_msg("Use getOptInStatusForType:type instead");
+```
 
 Users are now able to individually opt in for Application or DEX telemetry data collection.
 
-```Swift
+```objective-c
 
    typedef NS_ENUM(NSInteger, WS1TelemetryType) {
        WS1TelemetryTypeApplication = 0,
@@ -63,8 +64,6 @@ Users are now able to individually opt in for Application or DEX telemetry data 
       Interacting with the API’s without enabling DEX will not have an impact on feature enablement.   
    - DEX is disabled by default.
       So if the custom settings do not exist or if it is disabled, please out out of DEX using the above API.
-
-.. Note to Writer: it is important to have no blank lines after the first bullet list item.  Sphinx will make the font sizes change in strange ways. We used trial and error to make it all look reasonable.
 
 - Location Data
    - IntelligenceSDK can now request the location_longitude and location_latitude attributes for the device. This is true only if DEX is enabled.
@@ -128,7 +127,8 @@ ____
 - A fix supports the instrumentation and use of the newer `WKNavigationDelegate` method introduced by Apple in iOS 13.  The app can supply the new version of decidePolicyForNavigationAction, the old version, or can supply neither. 
   - Apple Documentation: [https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview](https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview)
 - SDK imports have to be renamed from `WS1Intelligence` to `WS1IntelligenceSDK`
-- **dsym upload shell script has been updated to parse the latest service account json file. Please re-create and re-download the service account json file to support the dsym upload/parsing scripts. Instructions to generate the service account json is here - [link](https://vdc-download.vmware.com/vmwb-repository/dcr-public/04e807cf-2de4-4994-8bed-cab29dd53f15/6eaca9ec-7f67-415f-87da-dfcc1e00bb56/build/html/ios/ios_install.html#generate-credentials-file-from-workspace-one-intelligence-platform)**
+- **dsym upload shell script has been updated to parse the latest service account json file. Please re-create and re-download the service account json file to support the dsym upload/parsing scripts. Instructions to generate the service account json is here - 
+[link](install-ios.md#generate-credentials-file-from-workspace-one-intelligence-platform)
 - WS1IntelligenceSDK enable API takes in a WS1 config object outside of the AppID. This config object should be used to enable DEX and inject all entitlements that an app supports as shown below:
 
 ```Swift

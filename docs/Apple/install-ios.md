@@ -13,16 +13,20 @@ hide:
 Add the Workspace ONE Intelligence SDK Swift Package Manager (SPM) package from this URL:
     https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios.git
 
-![](./add_ws1intelligencesdk_spm.png)
+![Image of Xcode's Swift Package Manager screen while adding 'Workspace ONE Intelligence SDK for iOS'](./add_ws1intelligencesdk_spm.png)
 
 ## Basic Setup
 
 Obtain your app ID from Workspace ONE Intelligence platform.
 
-### Import the Workspace ONE Intelligence SDK header.
+### 1. Import the Workspace ONE Intelligence SDK header.
+
+!!!Note
+    SDK imports must now be from the “WS1IntelligenceSDK” module rather than the “WS1Intelligence” module.
 
 For Objective-C apps, import the Workspace ONE Intelligence SDK header in your application delegate’s implementation file. 
-```C
+
+```objective-c
 #import <WS1IntelligenceSDK/WS1Intelligence.h>
 ```
 
@@ -32,10 +36,7 @@ For Swift applications, place this import in your bridging-header.h file.
 import WS1IntelligenceSDK
 ```
 
-!!!Note
-    SDK imports must be from the “WS1IntelligenceSDK” module rather than the “WS1Intelligence” module.
-
-### Enable Workspace ONE Intelligence SDK.
+### 2. Enable Workspace ONE Intelligence SDK.
 
 Call `enableWithAppID` in your AppDelegate’s `application:didFinishLaunchingWithOptions:` method.
 
@@ -62,8 +63,8 @@ Register your app at the Workspace ONE Intelligence portal to get an App ID to b
 !!!Note
     Changes to the Intelligence system credentials files require developers to update to version 24.1.0 or later of dsym_upload.sh. If you have older versions of credentials files, you should regenerate them with the [instructions in this page](#generate-credentials-files). You will only need to regenerate each credentials file once.
 
-!!Warning
-    Please note that cURL (a dependency for the script) has a known issue which may cause a failure inside the script while uploading large dSYM files. The version of cURL that ships with the latest OSX builds has been confirmed to exhibit this issue (7.64.1). If you experience problems during the upload phase of the script, try to upgrade to a newer version. Version 7.69.1 has been confirmed to resolved the issue.
+!!!Warning
+    Please note that cURL (a dependency for the script) has a known issue which may cause a failure inside the script while uploading large dSYM files. The version of cURL that ships with the latest OSX builds has been confirmed to exhibit this issue (7.64.1). If you experience problems during the upload phase of the script, try to upgrade to a newer version. Version 7.69.1 has been confirmed to resolve the issue.
 
 - Download [WS1IntelligenceSDKDSYMUpload.zip](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases/download/24.3.0/WS1IntelligenceSDKDSYMUpload.zip) and expand the zip file.
 - Place the 2 files in an appropriate place in your project.
@@ -73,7 +74,7 @@ Register your app at the Workspace ONE Intelligence portal to get an App ID to b
 
 - Copy and paste the script code below into the Run Script phase, then update the path components to the directory you chose.
 
-```Swift
+```bash
 APP_ID="<YOUR_APP_ID>"
 CREDENTIALS_FILE="${SRCROOT}/<PATH_TO_CREDENTIALS_FILE>"
 source "${SRCROOT}/<PATH_TO_SCRIPT>/dsym_upload.sh"
@@ -81,7 +82,7 @@ source "${SRCROOT}/<PATH_TO_SCRIPT>/dsym_upload.sh"
 
 You will need to add the included xcfilelist file in the ‘Input File Lists’ section.
 
-```Swift
+```bash
 $(SRCROOT)/<PATH_TO_SCRIPT>/dsym_upload.xcfilelist
 ```
 
@@ -95,11 +96,11 @@ DWARF dSYM file generation can be toggled in the build options for the target. I
 
 ## Generate Credentials File from Workspace ONE Intelligence Platform
 
-- Log into the Workspace ONE Intelligence Platform and click the Service Accounts menu.
+- Log into the Workspace ONE Intelligence Platform and click the "Service Accounts" menu.
 
 ![](ws1-service-accounts-button.png)
 
-- At the top of the page, click the Add button to add a new account.
+- At the top of the page, click the "Add" button to add a new account.
 
 ![](ws1-service-accounts-add-button.png)
 
@@ -107,7 +108,7 @@ DWARF dSYM file generation can be toggled in the build options for the target. I
 
 ![](ws1-service-accounts-add-namefield-button.png)
 
-- Click GENERATE CLIENT SECRET button.
+- Click "GENERATE CLIENT SECRET" button.
 
 ![](ws1-service-accounts-add-generate-button.png)
 
@@ -147,7 +148,7 @@ Workspace ONE Intelligence SDK should be initialized before Crashlytics
 
 Objective-C
 
-```C
+```objective-c
 [WS1Intelligence enableWithAppID:@"YOUR APP ID GOES HERE"];
 
 // Initialize Crashlytics

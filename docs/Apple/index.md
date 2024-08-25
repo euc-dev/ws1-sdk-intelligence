@@ -26,7 +26,7 @@ Release Notes can be viewed [here](release-notes.md).
 
 - [Installation and Setup](install-ios.md)
 - [Setup Automatic dSYM Uploads](install-ios.md#setup-automatic-dsym-uploads)
-- [How to Customize App Version Reported to Workspace ONE Intelligence?](ios-custom-version.md)
+- [How to Customize App Version Reported to Workspace ONE Intelligence](ios-custom-version.md)
 - [SDK Data Sheet](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileIntelligenceSDK.html)
 
 ## SDK References
@@ -54,6 +54,7 @@ Some features are available as soon as you integrate Workspace ONE Intelligence 
 - [Logging Network Request](ws1intelligence.md#logging-network-request)
 - [Monitoring Web Views](ws1config.md#monitoring-web-views)
 - [Enabling DEX](ws1config.md#dex-configuration)
+- [Opting into DEX](ios-dex-opt-in.md#opting-into-dex)
 
 ### Other Features
 
@@ -63,3 +64,4 @@ Some features are available as soon as you integrate Workspace ONE Intelligence 
 - [Send Data On Wifi Only](ws1config.md#send-data-on-wifi-only)
 - [Workspace ONE Intelligence SDK Device UUID](ws1intelligence.md#workspace-one-intelligence-sdk-device-uuid)
 - [Sending UEM Attributes To Intelligence SDK](ios-integrate-ws1sdk.md)
+- [Location In Intelligence SDK DEX Feature](ios-dex-location.md)

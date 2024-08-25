@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-Apps integrating the SDK should now also set an instance of type WS1UEMDataDelegate. (WS1UEMDataDelegate must be set before enabling IntelSDK). This is to publish the following UEM specific attributes serialNumber, deviceUDID, username to the Intel backend. Integration code is shown below -
+Apps integrating the SDK should now also set an instance of type `WS1UEMDataDelegate`. (`WS1UEMDataDelegate` must be set before enabling WS1IntelligenceSDK). This is to publish the following UEM specific attributes serialNumber, deviceUDID, username to the Intel backend. Integration code is shown below -
 
 ### WS1UEMDataDelegate
 
@@ -20,7 +20,7 @@ Apps integrating the SDK should now also set an instance of type WS1UEMDataDeleg
 
 ### Sample Implementation
 
-```Swift
+```objective-c
 #import "WS1UEMAttributeKeys.h"
 #import "WS1Intelligence.h"
 
