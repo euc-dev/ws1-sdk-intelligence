@@ -10,12 +10,12 @@ hide:
 
 ### enable
 
-Initializes Workspace ONE Intelligence SDK. This method will use the app ID string value specified in the application’s info.plist file with the key ‘WS1IntelligenceAppID’
+Initializes Workspace ONE Intelligence SDK. This method will use the app ID string value specified in the application’s 'info.plist' file with the key ‘WS1IntelligenceAppID’
 
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)enable
 ```
 
@@ -26,12 +26,12 @@ class func enable()
 
 ### enableWithConfig:
 
-Initializes Workspace ONE Intelligence SDK with a config. This method will use the app ID string value specified in the application’s info.plist file with the key ‘WS1IntelligenceAppID’ After this call completes, changes to the config object will have no affect on the behavior of Workspace ONE Intelligence SDK.
+Initializes Workspace ONE Intelligence SDK with a config. This method will use the app ID string value specified in the application’s 'info.plist' file with the key ‘WS1IntelligenceAppID’ After this call completes, changes to the config object will have no affect on the behavior of Workspace ONE Intelligence SDK.
 
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)enableWithConfig:(WS1Config *)config
 ```
 
@@ -53,7 +53,7 @@ Initializes Workspace ONE Intelligence SDK with the given App ID (found on the W
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)enableWithAppID:(NSString *)appId
 class func enable(withAppID: appID)
 ```
@@ -71,7 +71,7 @@ Initializes Workspace ONE Intelligence SDK with the given App ID (found on the W
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)enableWithAppID:(NSString *)appId config:(WS1Config *)config
 ```
 
@@ -101,7 +101,7 @@ Breadcrumbs are limited to 140 characters.
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)leaveBreadcrumb:(NSString *)breadcrumb
 ```
 
@@ -123,7 +123,7 @@ By default, breadcrumbs are flushed to disk immediately when written. This is by
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)setAsyncBreadcrumbMode:(BOOL)writeAsync
 ```
 
@@ -151,7 +151,7 @@ Logging errors may also be used for tracking NSError errors returned by Apple me
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)logError:(NSError *)error;
 ```
 
@@ -175,7 +175,7 @@ Logging errors may also be used for tracking NSError errors returned by Apple me
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)logError:(NSError *)error stacktrace:(NSArray *)stacktrace;
 ```
 
@@ -202,7 +202,7 @@ Handled exceptions are grouped by stacktrace, much like crash reports. Handled e
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)logHandledException:(NSException *)exception
 ```
 
@@ -232,7 +232,7 @@ Adds an additional filter for network instrumentation.
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)addFilter:(WS1Filter *)filter
 ```
 
@@ -254,7 +254,7 @@ Logging endpoints is a way of manually logging Network Insights data for custom 
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)logNetworkRequest:(NSString *)method
                       url:(NSURL *)url
                   latency:(NSTimeInterval)latency
@@ -301,7 +301,7 @@ Logging endpoints is a way of manually logging Network Insights data for custom 
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)logNetworkRequest:(NSString *)method
                 urlString:(NSString *)urlString
                   latency:(NSTimeInterval)latency
@@ -343,7 +343,7 @@ Inform Workspace ONE Intelligence SDK of the device’s most recent location for
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)updateLocationToLatitude:(double)location longitude:(double)longitude
 ```
 
@@ -370,7 +370,7 @@ This interface sets a relationship between a provided username string and the de
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)setUsername:(NSString *)username
 ```
 
@@ -406,7 +406,7 @@ User flows with the same name are aggregated together in the portal by Workspace
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)beginUserFlow:(NSString *)name
 ```
 
@@ -442,7 +442,7 @@ User flows with the same name are aggregated together in the portal by Workspace
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)beginUserFlow:(NSString *)name
               timeout:(NSTimeInterval)timeout
 ```
@@ -473,7 +473,7 @@ Cancel a user flow as if it never existed. The user flow will not be reported.
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)cancelUserFlow:(NSString *)name
 ```
 
@@ -496,7 +496,7 @@ End an already begun user flow successfully.
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)endUserFlow:(NSString *)name
 ```
 
@@ -519,7 +519,7 @@ End an already begun user flow as a failure.
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)failUserFlow:(NSString *)name
 ```
 
@@ -544,7 +544,7 @@ You can listen to `WS1NotificationDidCrashOnLastLoad` to get more app crash info
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)didCrashOnLastLoad
 ```
 
@@ -561,18 +561,113 @@ See also:
 - [WS1NotificationDidCrashOnLastLoad](constants.md#last-crash-notification)
 - [Last Crash UserInfo Keys](constants.md#last-crash-userinfo-keys)
 
-## Opt Out Status
+## Opt In Status
 
-Workspace ONE Intelligence SDK provides an opt-out setting that disables all reporting to Workspace ONE Intelligence. This allows developers to implement code that asks end users whether they want to opt out of Workspace ONE Intelligence. For an introduction, see [Opt Out of Workspace ONE Intelligence](https://developer.omnissa.com/ws1-intel-dev-centre/hosting/overview/overview.html#opt-out).
+Workspace ONE Intelligence SDK provides an opt-in settings API that can 
+enable or disable reporting for the Workspace ONE Intelligence features and 
+can enable or disable reporting for the DEX feature. 
+Each feature can be controlled individually. 
+Note that each feature can have different default settings.
 
-### getOptOutStatus
+This allows developers to implement code that allows end users to decide 
+which reporting features they want to enable for Workspace ONE Intelligence.
+
+For an introduction, see [Opt Out of Workspace ONE Intelligence](https://developer.omnissa.com/ws1-intel-dev-centre/hosting/overview/overview.html#opt-out).
+
+### getOptInStatusForType
+
+Returns the current Opt-In status for the specified telemetry instrumentation type.
+
+**Declaration**
+
+Objective-C
+```objective-c
+typedef NS_ENUM(NSInteger, WS1TelemetryType) {
+	 WS1TelemetryTypeApplication = 0,
+	 WS1TelemetryTypeDEX,
+};
+
+/*! 
+ * @param type Application or DEX
+ */
++ (BOOL)getOptInStatusForType:(WS1TelemetryType)type;
+```
+
+Swift
+
+```Swift
+class func getOptInStatus(for: WS1TelemetryType) -> Bool
+```
+
+**Parameters**
+
+|   |   |
+| --- | --- |
+| type   | WS1TelemetryType enum entry, `Application` or `DEX`          |
+|        |    - ``Application``: for  Workspace ONE Intelligence Opt In |
+|        |    - ``DEX``: for Digital Employee Experience Opt In         |
+
+
+**Returns**
+
+Return `YES` (true) if the specified telemetry instrumentation type is opted in. 
+
+
+### setOptInStatusForType:andStatus:
+
+If you wish to offer your users the ability to opt in or out of Workspace ONE
+Intelligence data reporting, you can provide a user interface, then set the OptInStatus for them.
+If OptInStatus is set to false, there will be no information/requests sent from
+that user's app and any pending crash reports will be purged.
+
+Typically, a developer would connect this API call to a checkbox in a
+settings menu.
+
+Likewise, you can set this from another configuration source, such as MDM settings.
+
+**Declaration**
+
+Objective-C
+```objective-c
+/*! Sets the Opt-In status for telemetry instrumentations, currently the two
+* options are Application or DEX. Setting a telemetry instrumentation Opt-In to YES enables the
+* collection of telemetry data.
+* The default for Application is YES
+* The default for DEX is NO
+* @param type `Application` or `DEX`
+* @param status new Opt-In status
+*/
++ (void)setOptInStatusForType:(WS1TelemetryType)type andStatus:(BOOL)status;
+```
+
+Swift
+
+```Swift
+class func setOptInStatusFor(type: WS1TelemetryType, andStatus: Bool)
+```
+
+**Parameters**
+
+|   |   |
+| --- | --- |
+| type   | WS1TelemetryType enum entry, `Application` or `DEX` |
+| status | set to YES to enable Workspace ONE Intelligence SDK |
+
+
+
+
+### getOptOutStatus (deprecated)
+
+!!!Note 
+
+	`getOptOutStatus` is deprecated. Use this API above instead: [getOptInStatusForType:](ws1intelligence.md#getOptInStatusForType)
 
 Retrieve current opt out status.
 
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (BOOL)getOptOutStatus
 ```
 
@@ -584,7 +679,11 @@ class func getOptOutStatus -> Bool
 
 Return YES if the user has opted out of reporting Workspace ONE Intelligence data.
 
-### setOptOutStatus:
+### setOptOutStatus:  (deprecated)
+
+!!!Note 
+
+	setOptOutStatus: is deprecated. Use this API above instead: [setOptInStatusForType](ios-dex-opt-in.md#setOptInStatusForType:andStatus:)
 
 If you wish to offer your users the ability to opt out of Workspace ONE Intelligence data reporting, you can set the OptOutStatus to YES. If you do so, there will be no information/requests sent from that user’s app and any pending crash reports will be purged.
 
@@ -593,7 +692,7 @@ Typically, a developer would connect this API call to a checkbox in a settings m
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)setOptOutStatus:(BOOL)status
 ```
 
@@ -616,7 +715,7 @@ class func setOptOutStatus(status: Bool)
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (WS1IntelligenceLoggingLevel)loggingLevel
 ```
 
@@ -637,7 +736,7 @@ See [WS1IntelligenceLoggingLevel](constants.md#ws1intelligencelogginglevel) to s
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (void)setLoggingLevel:(WS1IntelligenceLoggingLevel)loggingLevel
 ```
 
@@ -659,14 +758,14 @@ class func setLoggingLevel(loggingLevel: WS1IntelligenceLoggingLevel)
 
 Get the unique identifier for this device generated by Workspace ONE Intelligence SDK. This is NOT the device’s UDID.
 
-If called before enabling the SDK, this will return an empty string. All Workspace ONE Intelligence enabled apps on a device will share the UUID created by the first installed Workspace ONE Intelligence enabled app.
+If called before enabling the SDK, this will return an empty string. 
 
-If all Workspace ONE Intelligence enabled applications are removed from a device, a new UUID will be generated when the next one is installed.
+If a Workspace ONE Intelligence SDK enabled app is removed from a device, a new UUID will be generated when the next app is installed.
 
 **Declaration**
 
 Objective-C
-```C
+```objective-c
 + (NSString *)getUserUUID
 ```
 
