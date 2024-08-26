@@ -8,7 +8,7 @@ hide:
 
 This object is used to specify various configuration options for Workspace ONE Intelligence SDK.
 
-Once this object is setup, you can pass it to WS1Intelligence.initialize. After Workspace ONE Intelligence SDK is initialized, changes to this object will have no affect.
+Once this object is setup, you can pass it to `+[WS1Intelligence enableWithConfig:]` or `WS1Intelligence.enable(with:)`. After Workspace ONE Intelligence SDK is enabled, changes to this object will have no effect.
 
 ## Creating a Config
 
@@ -207,7 +207,11 @@ Swift
 open var entitlements: [WS1Entitlement]
 ```
 
-### enableDEX ***Property***
+### enableDEX ***Property*** (deprecated)
+
+!!!Note 
+
+	enableDEX is deprecated. Use this API instead: [setOptInStatusForType](ios-dex-opt-in.md#opting-into-dex)
 
 Bool property to enable / disable Digital Employee Experience data. This can be set to true / false only before starting the SDK. Setting this value after starting the SDK is a void operation.
 

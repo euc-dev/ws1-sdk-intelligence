@@ -6,13 +6,92 @@ hide:
   - toc
 ---
 
-Updated on 07/31/2024
+Updated August 15, 2024
 
 ## What's in the Release Notes¶
 
-Workspace ONE SDK for iOS Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. The Workspace ONE SDK for iOS is a set of tools that incorporates Workspace ONE UEM functionality into custom-built, iOS applications.
+These release notes describe the new features and enhancements in each release of Workspace ONE IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Workspace ONE IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Workspace ONE Intelligence backend. 
 
-## Workspace ONE SDK 24.3.0 for iOS Release - March 2024
+
+
+
+## Workspace ONE IntelligenceSDK for iOS 24.6.0 Release - August 2024
+
+### Minimum Requirements
+
+- iOS 15.0 device or iPadOS 15.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+The following APIs are now deprecated:
+
+```objective-c
+
+   + (void)setOptOutStatus:(BOOL)status __deprecated_msg("Use setOptInStatusForType:type:status instead");
+   + (BOOL)getOptOutStatus __deprecated_msg("Use getOptInStatusForType:type instead");
+```
+
+Users are now able to individually opt in for Application or DEX telemetry data collection.
+
+```objective-c
+
+   typedef NS_ENUM(NSInteger, WS1TelemetryType) {
+       WS1TelemetryTypeApplication = 0,
+       WS1TelemetryTypeDEX,
+   };
+   
+   /*! Sets the Opt-In status for telemetry instrumentations, currently the two
+    * options are Application or DEX. Setting a telemetry instrumentation Opt-In to YES enables the
+    * collection of telemetry data.
+    * The default for Application is YES
+    * The default for DEX is NO
+    * @param type Application or DEX
+    * @param status new Opt-In status
+    */
+   + (void)setOptInStatusForType:(WS1TelemetryType)type andStatus:(BOOL)status;
+   
+   /*! Returns the current Opt-In status for telemetry instrumentation type
+    * @param type Application or DEX
+    */
+   + (BOOL)getOptInStatusForType:(WS1TelemetryType)type;
+```
+
+- Important Notes when using the above API’s
+   - Always enable IntelSDK first 
+      i.e. start IntelSDK first before interacting with the APIs. 
+      Interacting with the API’s without enabling DEX will not have an impact on feature enablement.   
+   - DEX is disabled by default.
+      So if the custom settings do not exist or if it is disabled, please out out of DEX using the above API.
+
+- Location Data
+   - IntelligenceSDK can now request the location_longitude and location_latitude attributes for the device. This is true only if DEX is enabled.
+   - The app must have the resources or entitlements needed to request location permission from the user, and the user must grant permission to use the device location. To prevent changing app behavior, IntelSDK will not trigger the request for location permission. 
+   
+   - Apple Privacy Information
+      - The IntelligenceSDK’s privacy manifest has been updated to show it collects precise location information.
+      - App developers will need to include this location declaration in App Store submissions.
+      
+   - Limitations
+      - DEX native code will request a location update from iOS once every 5 minutes, when permissions allow.  Each location result is cached for a maximum of 5 minutes. 
+      - Background location
+         - DEX stops requesting locations when the app is put into the background. 
+         - DEX starts requesting locations again when the app returns to the foreground. 
+         - DEX does not interact location updates portion of the background mode capability detailed in Handling location updates in the background 
+
+
+### Resolved Issues
+
+none
+
+### Known Issues
+
+none
+
+____
+
+## Workspace ONE IntelligenceSDK for iOS 24.3.0 Release - April 2024
 
 ### Minimum Requirements
 
@@ -33,7 +112,9 @@ Workspace ONE SDK for iOS Release Notes describe the new features and enhancemen
 
 none
 
-## Workspace ONE SDK 24.1.0 for iOS Release - January 2024
+____
+
+## Workspace ONE IntelligenceSDK for iOS 24.1.0 Release - March 2024
 
 ### Minimum Requirements
 
@@ -46,10 +127,11 @@ none
 - A fix supports the instrumentation and use of the newer `WKNavigationDelegate` method introduced by Apple in iOS 13.  The app can supply the new version of decidePolicyForNavigationAction, the old version, or can supply neither. 
   - Apple Documentation: [https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview](https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview)
 - SDK imports have to be renamed from `WS1Intelligence` to `WS1IntelligenceSDK`
-- **dsym upload shell script has been updated to parse the latest service account json file. Please re-create and re-download the service account json file to support the dsym upload/parsing scripts. Instructions to generate the service account json is here - [link](https://vdc-download.vmware.com/vmwb-repository/dcr-public/04e807cf-2de4-4994-8bed-cab29dd53f15/6eaca9ec-7f67-415f-87da-dfcc1e00bb56/build/html/ios/ios_install.html#generate-credentials-file-from-workspace-one-intelligence-platform)**
+- **dsym upload shell script has been updated to parse the latest service account json file. Please re-create and re-download the service account json file to support the dsym upload/parsing scripts. Instructions to generate the service account json is here - 
+[link](install-ios.md#generate-credentials-file-from-workspace-one-intelligence-platform)
 - WS1IntelligenceSDK enable API takes in a WS1 config object outside of the AppID. This config object should be used to enable DEX and inject all entitlements that an app supports as shown below:
 
-```JAVA
+```Swift
 let config = WS1Config.default()
 config.enableMachExceptionHandling = true
 // enable DEX for DEX capabilities
