@@ -10,8 +10,6 @@ hide:
 
 This guide assumes you have an Workspace ONE Intelligence account set up with a valid app ID.
 
-The Apple SDKs may be downloaded [here](../index.md#sdk-downloads).
-
 ## Release Notes
 
 Release Notes can be viewed [here](release-notes.md).

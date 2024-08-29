@@ -10,8 +10,6 @@ hide:
 
 This topic describes how to use Workspace ONE Intelligence with Android apps. This guide assumes you have an Workspace ONE Intelligence account set up with a valid app ID.
 
-The Apple SDKs may be downloaded [here](../index.md#sdk-downloads).
-
 ## Release Notes
 
 Release Notes can be viewed [here](release-notes.md).
@@ -31,13 +29,14 @@ Release Notes can be viewed [here](release-notes.md).
 
 ## SDK References
 
-Import com.crittercism.app package to use the Workspace ONE Intelligence SDK.
+Import `com.crittercism.app` package to use the Workspace ONE Intelligence SDK.
 
 - [Crittercism](crittercism.md)
 - [CrittercismConfig](crittercism-config.md)
 - [CrittercismCallback](crittercism-callback.md)
 - [CrashData](crash-data.md)
 - [NetworkInstrumentation](network-instrumentation.md)
+- [Telemetry Feature Integration](dex-telemetry-integration.md)
 
 ## Features
 
