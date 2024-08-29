@@ -6,12 +6,70 @@ hide:
   - toc
 ---
 
-Updated on 31/21/2024
+Updated on 8/9/2024
 
-What's in the Release Notes¶
-Workspace ONE SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. The Workspace ONE SDK for Android is a set of tools that incorporates Workspace ONE UEM functionality into custom-built, for Android applications.
+What's in the Release Notes
 
-## Workspace ONE SDK 24.6.0 for Android - July 2024
+Workspace ONE Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Workspace ONE Intelligence SDK 24.6.1 for Android - August 9, 2024
+
+### Minimum Requirements
+
+- Android 5.0 or later
+- API Level 21 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.2.2 or later
+
+### New Features
+
+- SDK Integration through Local Repository
+
+The IntelligenceSDK and it’s dependencies will now be hosted in a Maven folder structure 
+found in the Release section of our public Github Page: https://github.com/euc-releases/ws1-intelligencesdk-sdk-android
+
+After downloading and unzipping the following repository folder, you can now reference and pull the
+IntelligenceSDK using the following structure:
+
+```groovy
+   
+   // App level Build.Gradle Configuration (Groovy)
+   
+   repositories {
+       maven {
+           url uri("/PATH/TO/FOLDER/ws1-intelligence-sdk-repository")
+       }
+       mavenCentral()
+       google()
+   }
+   
+   android {
+      packagingOptions {
+           pickFirst '**/libc++_shared.so'
+           pickFirst '**/libcrypto.1.0.2.so'
+           pickFirst '**/libssl.1.0.2.so'
+       }
+   }
+   
+   def ws1IntelSdkVersion = "24.6.1"
+   
+   dependencies {
+       // Declare a dependency on the Intelligence SDK
+       implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+   }
+```
+
+### Resolved Issues
+
+- Protobuf Dependency upgraded from older `protobuf-java` implementation to `protobuf-javalite`.
+   - This allows for greater compatibility within projects that import other dependencies that rely on Protobuf, such as Google’s Firestore.
+
+### Known Issues
+
+none
+
+
+## Workspace ONE Intelligence SDK 24.6.0 for Android - July 2024
 
 ### Minimum Requirements
 
@@ -87,7 +145,7 @@ none
 
 none
 
-## Workspace ONE SDK 24.3.1 for Android - March 2024
+## Workspace ONE Intelligence SDK 24.3.1 for Android - March 2024
 
 ### Minimum Requirements
 
@@ -111,7 +169,7 @@ none
   - `onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)`
   - `onReceivedError(WebView, WebResourceRequest, WebResourceError)`
 
-## Workspace ONE SDK 24.3.0 for Android - March 2024
+## Workspace ONE Intelligence SDK 24.3.0 for Android - March 2024
 
 ### Minimum Requirements
 

@@ -8,7 +8,7 @@ hide:
 
 Updated August 15, 2024
 
-## What's in the Release Notes¶
+## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Workspace ONE IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Workspace ONE IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Workspace ONE Intelligence backend. 
 

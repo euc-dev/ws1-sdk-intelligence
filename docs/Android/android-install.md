@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-## Standard Integration¶
+## Standard Integration
 
 To integrate the Android Intelligence SDK into your application, you will need to pull the SDK artifacts from our Github Maven repository. This is a public repository, however currently Github credentials are still required to be provided.
 
@@ -45,6 +45,45 @@ dependencies {
 
 !!!Note
     For more information on using Github Maven Gradle Registry, please visit: [Working with the Gradle registry - GitHub Docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry)
+
+
+## SDK Integration through Local Repository
+
+The IntelligenceSDK and it’s dependencies will now be hosted in a Maven folder structure 
+found in the Release section of our public Github Page: https://github.com/euc-releases/ws1-intelligencesdk-sdk-android
+
+After downloading and unzipping the following repository folder, you can now reference and pull the
+IntelligenceSDK using the following structure:
+
+```groovy
+   
+   // App level Build.Gradle Configuration (Groovy)
+   
+   repositories {
+       maven {
+           url uri("/PATH/TO/FOLDER/ws1-intelligence-sdk-repository")
+       }
+       mavenCentral()
+       google()
+   }
+   
+   android {
+      packagingOptions {
+           pickFirst '**/libc++_shared.so'
+           pickFirst '**/libcrypto.1.0.2.so'
+           pickFirst '**/libssl.1.0.2.so'
+       }
+   }
+   
+   def ws1IntelSdkVersion = "24.6.1"
+   
+   dependencies {
+       // Declare a dependency on the Intelligence SDK
+       implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+   }
+```
+
+
 
 ## Integration Alongside Workspace ONE SDK
 

@@ -6,9 +6,9 @@ hide:
   - toc
 ---
 
-A new Public API added to provide UEM attributes to the IntelligenceSDK’s DEX feature:
+A new Public API has been added to provide UEM attributes to the IntelligenceSDK’s DEX feature:
 
-- This API takes an information provider interface which allows users to create getter methods for each available data attribute: UEM Device UDID, UEM Serial Number, UEM Username.
+- This API takes an information provider interface which allows users to create getter methods for each available data attribute: **UEM Device UDID**, **UEM Serial Number**, **UEM Username**.
 
 Android UEMInfo Interface
 ```JAVA
@@ -16,14 +16,17 @@ Android UEMInfo Interface
 * Interface for providing UEM Information to our DEX
 */
 interface UemInfo {
+
 /**
  * Returns the UEM Device UDID as a String
  */
 fun getUemDeviceUDID(): String?
+
 /**
  * Returns the UEM Serial Number as a String
  */
 fun getUemSerialNumber(): String?
+
 /**
  * Returns the UEM Username as a String
  */

@@ -20,7 +20,7 @@ Initialize Workspace ONE Intelligence SDK. After calling this method, crashes an
 public static synchronized void initialize (Context context, String appID)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -37,7 +37,7 @@ Initialize Workspace ONE Intelligence SDK. After calling this method, crashes an
 public static synchronized void initialize (Context context, String appID, CrittercismConfig config)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -84,7 +84,7 @@ Workspace ONE Intelligence SDK will automatically insert a breadcrumb marked ses
 public static void leaveBreadcrumb (String breadcrumb)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -104,7 +104,7 @@ Breadcrumbs are limited to 140 characters, and only the most recent 100 are kept
 public static void leaveUserflowSpecificBreadcrumb(@NonNull final String userflowName, @NonNull final String text)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -135,7 +135,7 @@ We limit logging handled exceptions to once per minute. If you’ve logged an ex
 public static void logHandledException (Throwable t)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -176,7 +176,7 @@ public static void logNetworkRequest(String method,
                                      Exception error)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -267,7 +267,7 @@ If the app uses this method to provide a recent location to the SDK, then Networ
 
 You have the option of updating location information with data given by android.location.LocationManager.NETWORK_PROVIDER or android.location.LocationManager.GPS_PROVIDER. This allows more accurate data to be sent to the server.
 
-As explained in the Android Developer Guide, in order to receive location updates from the network or GPS provider, your AndroidManifest.xml` file must include either the ``ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permissions.
+As explained in the Android Developer Guide, in order to receive location updates from the network or GPS provider, your `AndroidManifest.xml` file must include either the `ACCESS_COARSE_LOCATION` or `ACCESS_FINE_LOCATION` permissions.
 
 **Declaration**
 
@@ -275,9 +275,10 @@ As explained in the Android Developer Guide, in order to receive location update
 public static void updateLocation (Location curLocation)
 ```
 
-location
+**Parameters**
 
-Location of the user / device
+| --- | --- |
+| location | Location of the user / device |
 
 Introduced in Android SDK 4.2.0
 
@@ -518,7 +519,16 @@ This capability was introduced in Android SDK 5.3.0
 
 ## Opt In Status
 
-Workspace ONE Intelligence SDK provides an opt-out setting that disables all reporting to Workspace ONE Intelligence. This allows developers to implement code that asks end users whether they want to opt out of Workspace ONE Intelligence. For an introduction, see Opt Out of Workspace ONE Intelligence.
+Workspace ONE Intelligence SDK provides an opt-in settings API that can 
+enable or disable reporting for the Workspace ONE Intelligence features and 
+can enable or disable reporting for the DEX feature. 
+Each feature can be controlled individually. 
+Note that each feature can have different default settings.
+
+This allows developers to implement code that allows end users to decide 
+which reporting features they want to enable for Workspace ONE Intelligence.
+
+For an introduction, see Opt Out of Workspace ONE Intelligence.
 
 ### getOptInStatus (telemetryType)
 
