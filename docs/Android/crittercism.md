@@ -628,3 +628,23 @@ public enum LoggingLevel {
 See also:
 
 - [Setting Log Verbosity of Workspace ONE Intelligence SDK]()
+
+## setPrivacyConfiguration(privacyConfig, telemetryFeature)
+This API can be used to control reporting of certain Telemetry Feature Data such as attributes, events, or entire data collections through a Privacy Configuration map.
+
+Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
+
+**Declaration**
+```JAVA
+public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @NonNull TelemetryFeature feature)
+```
+
+**Parameters**
+
+|               |   |
+|---------------| --- |
+| privacyConfig | Privacy Config Map containing the necessary key value pairs for parsing the privacy config. |
+| feature       | The Feature classification of the Telemetry data to be exported, eg. DEX, ZeroTrust. |
+
+See also:
+- [Telemetry Privacy Configuration](privacy-config.md)
