@@ -81,7 +81,7 @@ An example of the NDK crash info appears as such:
     - `SIGSEGV` - 11 
       - The signal is generated when a process tries to access a memory location not allocated to it.
     - `SIGSYS` - 31 
-      - This signal is sent to process when an invalid argument is passed to a system call
+      - This signal is sent to process when an invalid argument is passed to a system call.
 
 - `signal_error_number`
   - `Number` - error number defined in the file <errno.h>. 

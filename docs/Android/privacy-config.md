@@ -96,73 +96,81 @@ To have all Telemetry Feature data enabled, no configuration payload needs to be
 
 However, if a payload needs to be specified it can be structured in the following way:
 ```JSON
-“DEXData”: {
-"Version": 1.0,
-// No category data blocks as defaulted to enabled
+{
+  "DEXData": {
+    "Version": 1.0
+    // No category data blocks as defaulted to enabled
+  }
 }
 ```
 
 #### Disable Data Categories
-To disable an entire category of data event, set the “DisableAll" attribute to true  in the JSON payload for the specific Data category to disable.
+To disable an entire category of data event, set the "DisableAll" attribute to true  in the JSON payload for the specific Data category to disable.
 
 Settings this attribute to false will continue to enable the data category.
 
 ```JSON
-“DEXData”: {
-"Version": 1.0,
-// Optional block as default is enabled.
-“BatteryData”: {
-"DisableAll": false
-},
-// Device Data has been entirely disabled
-“DeviceData”: {
-"DisableAll": true
-},
-// Network Data has been entirely disabled
-“NetworkData”: {
-"DisableAll": true
-}
+{
+  "DEXData": {
+    "Version": 1.0,
+    // Optional block as default is enabled.
+    "BatteryData": {
+      "DisableAll": false
+    },
+    // Device Data has been entirely disabled
+    "DeviceData": {
+      "DisableAll": true
+    },
+    // Network Data has been entirely disabled
+    "NetworkData": {
+      "DisableAll": true
+    }
+  }
 }
 ```
-**Note:** Setting “DisableAll" to true will override any disabling of Attributes or Events for that category, as the entire category will be disabled.
+**Note:** Setting "DisableAll" to true will override any disabling of Attributes or Events for that category, as the entire category will be disabled.
 
 #### Disable Specific Attributes
-To disable specific attributes from being reported, please list them by Attribute name in their Specified Data Category under the JSON array element: “AttributesToDisable”.
+To disable specific attributes from being reported, please list them by Attribute name in their Specified Data Category under the JSON array element: "AttributesToDisable"
 
 An empty list will not disable any attributes for the data category.
 
 ```JSON
-“DEXData”: {
-"Version": 1.0,
-“BatteryData”: {
-"AttributesToDisable": ["plugged_type"]
-},
-“DeviceData”: {
-"AttributesToDisable": ["location_latitude", "location_longitude"]
-},
-“NetworkData”: {
-"AttributesToDisable": []
-}
+{
+  "DEXData": {
+    "Version": 1.0,
+    "BatteryData": {
+      "AttributesToDisable": ["plugged_type"]
+    },
+    "DeviceData": {
+      "AttributesToDisable": ["location_latitude", "location_longitude"]
+    },
+    "NetworkData": {
+      "AttributesToDisable": []
+    }
+  } 
 }
 ```
 
 #### Disable Specific Events
-To disable specific events from being reported, please list them by Event name in their Specified Data Category under the JSON array element: “EventsToDisable”.
+To disable specific events from being reported, please list them by Event name in their Specified Data Category under the JSON array element: "EventsToDisable"
 
 An empty list will not disable any events for the data category.
 
 ```JSON
-“DEXData”: {
-"Version": 1.0,
-“BatteryData”: {
-"EventsToDisable": ["charging_state_change"]
-},
-“DeviceData”: {
-"EventsToDisable": []
-},
-“NetworkData”: {
-"EventsToDisable": ["network_change"]
-}
+{
+  "DEXData": {
+    "Version": 1.0,
+    "BatteryData": {
+      "EventsToDisable": ["charging_state_change"]
+    },
+    "DeviceData": {
+      "EventsToDisable": []
+    },
+    "NetworkData": {
+      "EventsToDisable": ["network_change"]
+    }
+  } 
 }
 ```
 
@@ -170,20 +178,22 @@ An empty list will not disable any events for the data category.
 This is an example combination of both Disabling Attributes and Disabling Events which can be read about in more detail above.
 
 ```JSON
-“DEXData”: {
-"Version": 1.0,
-“BatteryData”: {
-"AttributesToDisable": ["plugged_type"],
-"EventsToDisable": ["charging_state_change"]
-},
-“DeviceData”: {
-"AttributesToDisable": ["location_latitude", "location_longitude"],
-"EventsToDisable": []
-},
-“NetworkData”: {
-"AttributesToDisable": [],
-"EventsToDisable": ["network_change"]
-}
+{
+  "DEXData": {
+    "Version": 1.0,
+    "BatteryData": {
+      "AttributesToDisable": ["plugged_type"],
+      "EventsToDisable": ["charging_state_change"]
+    },
+    "DeviceData": {
+      "AttributesToDisable": ["location_latitude", "location_longitude"],
+      "EventsToDisable": []
+    },
+    "NetworkData": {
+      "AttributesToDisable": [],
+      "EventsToDisable": ["network_change"]
+    }
+  } 
 }
 ```
 
