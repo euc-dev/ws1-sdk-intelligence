@@ -21,7 +21,6 @@ This reason will be structured as a JSON block, containing dump information arou
 An example of the NDK crash info appears as such:
 ### “MyException” Custom C++ Exception Example:
 ```JSON
-// JSON NDK Crash Information
 {
   "name": "11MyException",
   "exception_message": "This is a really important crash message!",
@@ -41,7 +40,6 @@ An example of the NDK crash info appears as such:
 
 ### SEGFAULT Example:
 ```JSON
-// JSON NDK Crash Information
 {
   "name":"SIGSEGV",
   "exception_message":"",

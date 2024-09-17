@@ -50,7 +50,7 @@ For more on this API, visit: [setPrivacyConfiguration](crittercism.md/#setprivac
  *                      the privacyConfig parameter.
  * @param feature       The Feature classification of the data to be exported, eg. DEX, ZeroTrust.
  */
-public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @NonNull TelemetryFeature feature)
+public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @NonNull TelemetryFeature feature);
 ```
 
 ### Privacy Configuration Attributes
@@ -99,7 +99,6 @@ However, if a payload needs to be specified it can be structured in the followin
 {
   "DEXData": {
     "Version": 1.0
-    // No category data blocks as defaulted to enabled
   }
 }
 ```
@@ -113,21 +112,20 @@ Settings this attribute to false will continue to enable the data category.
 {
   "DEXData": {
     "Version": 1.0,
-    // Optional block as default is enabled.
     "BatteryData": {
       "DisableAll": false
     },
-    // Device Data has been entirely disabled
     "DeviceData": {
       "DisableAll": true
     },
-    // Network Data has been entirely disabled
     "NetworkData": {
       "DisableAll": true
     }
   }
 }
 ```
+In the above example, we have disabled both `device` and `network` data categories entirely.
+
 **Note:** Setting "DisableAll" to true will override any disabling of Attributes or Events for that category, as the entire category will be disabled.
 
 #### Disable Specific Attributes
