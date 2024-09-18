@@ -12,6 +12,76 @@ What's in the Release Notes
 
 Workspace ONE Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
 
+## Workspace ONE Intelligence SDK 24.8.0 for Android - September 16, 2024
+
+### Minimum Requirements
+
+- Android 5.0 or later (Android 7.0+ recommended)
+- API Level 21 or later (API Level 24+ recommended)
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.2.2 or later
+
+### New Features
+
+- CrittercismConfig Configuration APIs around blocking the reporting of specified URL patterns when sending Network Events have been updated:
+```JAVA
+CrittercismConfig:
+public void setURLBlacklistPatterns(java.util.List) -> public void setURLDenylistPatterns(java.util.List);
+public java.util.List getURLBlacklistPatterns() -> public java.util.List getURLDenylistPatterns();
+```
+
+- Android NDK Crash Events have been re-worked. Native and NDK crashes originating from C/C++ code will now be reported to the Intelligence Console if enabled through the CrittercismConfig:
+  - NOTE: Default enablement value for NDK Crash events: False
+```JAVA
+    CrittercismConfig:
+    public void setNdkCrashEnabled(boolean);
+    public boolean isNdkCrashEnabled();
+```
+
+- New SDK API, `setPrivacyConfiguration`, has been introduced which helps inject privacy configuration to control transmission of certain TelemetrySDK attributes.
+```JAVA
+/**
+ * Asynchronously set the privacy configuration for a specific TelemetrySDK Feature.
+ * IntelligenceSDK is agnostic to the configuration delivery mechanism as long as the payload conforms to
+ * the required format.
+ * Example of a privacy configuration:
+ * 	"DEXData": {
+ * 		"Version": 1.0,
+ * 		"BatteryData": {
+ * 			"DisableAll": false,
+ * 			"AttributesToDisable": ["plugged_type", "battery_charging_rate"],
+ * 			"EventsToDisable": []
+ * 		},
+ * 		"DeviceData": {
+ * 			"DisableAll": false,
+ * 			"AttributesToDisable": ["location_latitude", "location_longitude"],
+ *          "EventsToDisable": []
+ * 		},
+ * 		"NetworkData": {
+ * 			"DisableAll": false,
+ * 			"AttributesToDisable": ["jitter", "latency"],
+ * 			"EventsToDisable": []
+ * 		}
+ * 	}
+ *
+ * @param privacyConfig Map containing the necessary key value pairs for parsing the privacy config. If the privacy
+ *                      config is fetched via WS1 UEM SDK, then it is in the JSON format. Apps / SDK's are expected
+ *                      to fetch the value for key "DEXData" and convert it into a map. If the property "DEXData"
+ *                      and its value does not exist, apps are still required to call this API with a null value for
+ *                      the privacyConfig parameter.
+ * @param feature       The Feature classification of the data to be exported, eg. DEX, ZeroTrust.
+ */
+public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @NonNull TelemetryFeature feature);
+```
+
+- New “DEX” Telemetry Feature Event: Network State Change. 
+  - Event name: `network_change`
+  - This event is triggered when there is a switch in network SSID, cellular type, ethernet, or a disconnection. Disconnections are reported if 5 seconds have surpassed and a reconnection of the same network type has not occurred.
+
+### Known Issues
+- Instrumented `URLConnection` Classes network request elapsed time inaccurate.
+
+
 ## Workspace ONE Intelligence SDK 24.6.1 for Android - August 9, 2024
 
 ### Minimum Requirements

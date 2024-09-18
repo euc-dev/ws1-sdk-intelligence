@@ -53,7 +53,7 @@ Create a copy of the input CrittercismConfig.
 public CrittercismConfig ((CrittercismConfig configToCopy)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -63,35 +63,35 @@ Returns a new instance of CrittercismConfig with the same values as configToCopy
 
 ## Network Insights Configuration
 
-### getURLBlacklistPatterns ()
+### getURLDenylistPatterns ()
 
-Retrieve a list of blacklisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the returned list will not be sent to Workspace ONE Intelligence. Patterns are case sensitive and may be any length.
+Retrieve a list of denylisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the returned list will not be sent to Workspace ONE Intelligence. Patterns are case sensitive and may be any length.
 
 **Declaration**
 
 ```Java
-public List<String> getURLBlacklistPatterns ()
+public List<String> getURLDenylistPatterns ()
 ```
 
-Returns a copy of blacklisted URLs for which Network Insights data will not be reported to Workspace ONE Intelligence.
+Returns a copy of denylisted URLs for which Network Insights data will not be reported to Workspace ONE Intelligence.
 
-### setURLBlacklistPatterns (patterns)
+### setURLDenylistPatterns (patterns)
 
-Set a list of blacklisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the supplied list will not be sent to Workspace ONE Intelligence. Patterns are case sensitive and may be any length.
+Set a list of denylisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the supplied list will not be sent to Workspace ONE Intelligence. Patterns are case sensitive and may be any length.
 
 For example, you may provide URLs that may contain sensitive information. Note that by default all query parameters are removed before being sent to Workspace ONE Intelligence.
 
 **Declaration**
 
 ```Java
-public void setURLBlacklistPatterns (List<String> patterns)
+public void setURLDenylistPatterns (List<String> patterns)
 ```
 
-**Paramters**
+**Parameters**
 
-|   |   |
-| --- | --- |
-| patterns | List of URL patterns to blacklist |
+|   |                                  |
+| --- |----------------------------------|
+| patterns | List of URL patterns to denylist |
 
 ### getPreserveQueryStringPatterns ()
 
@@ -107,7 +107,7 @@ Returns a copy of the list of URL string patterns for which the query strings wi
 
 ### setPreserveQueryStringPatterns (patterns)
 
-Set a list of URL patterns for which the query strings will be preserved when Network Insights data is sent to Workspace ONE Intelligence. URLs that are not in this list will have their query strings removed before Network Insights data is sent to Workspace ONE Intelligence. If a URL in this list is also blacklisted, then the blacklist takes priority and network data will not be sent to Workspace ONE Intelligence for that URL.
+Set a list of URL patterns for which the query strings will be preserved when Network Insights data is sent to Workspace ONE Intelligence. URLs that are not in this list will have their query strings removed before Network Insights data is sent to Workspace ONE Intelligence. If a URL in this list is also denylisted, then the denylist takes priority and network data will not be sent to Workspace ONE Intelligence for that URL.
 
 Patterns are case sensitive and may be any length. A zero length string will result in all query strings being included in Network Insights data sent to Workspace ONE Intelligence.
 
@@ -117,7 +117,7 @@ Patterns are case sensitive and may be any length. A zero length string will res
 public void setPreserveQueryStringPatterns (List<String> patterns)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -149,7 +149,7 @@ By default, Workspace ONE Intelligence SDK uses the android:versionName from the
 public final void setCustomVersionName (String customVersionName)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -177,7 +177,7 @@ Tells Workspace ONE Intelligence SDK whether or not to concatenate the app versi
 public final void setVersionCodeToBeIncludedInVersionString (boolean shouldIncludeVersionCode)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -213,7 +213,7 @@ The delay app load feature is most often used to delay counting an app load unti
 public final void setDelaySendingAppLoad (boolean delaySendingAppLoad)
 ```
 
-**Paramters**
+**Parameters**
 
 |   |   |
 | --- | --- |
@@ -272,34 +272,75 @@ In the Caching mode, the Intelligence SDK will cache events until the applicatio
 
 When Caching mode disabled, events will not wait for authentication and will instead send events to the current state endpoint. This means that if Caching mode disabled, and events are recorded while the SDK is trying to authenticate, they will be sent to the unauthenticated endpoint immediately. This can result in data not showing up on the in App Owner / Tenant Region Intelligence Consoles if not used correctly.
 
-Default value is True.
+Default value is `true`.
 
-public final void setCachingModeEnabled(boolean cachingModeEnabled)
+`public final void setCachingModeEnabled(boolean cachingModeEnabled)`
 Examples
 
 Caching Mode example in Java
-Methods: boolean isCachingModeEnabled(), void setCachingModeEnabled(final boolean enabled)
-
+```JAVA
 CrittercismConfig config = new CrittercismConfig();
 config.setCachingModeEnabled(false);
+```
+
 Caching Mode example in Kotlin
+```Kotlin
 val config = CrittercismConfig()
 config.isCachingModeEnabled = true
+```
 
 ### isCachingModeEnabled ()
 
 Returns a boolean to determine if caching mode is set.
 
-public final boolean isCachingModeEnabled()
+`public final boolean isCachingModeEnabled()`
 Examples
 
-Caching Mode example in Java
-Methods: boolean isCachingModeEnabled(), void setCachingModeEnabled(final boolean enabled)
-
+Caching Mode example in Java:
+```JAVA
 CrittercismConfig config = new CrittercismConfig();
 config.setCachingModeEnabled(false);
 boolean cachingModeEnabled = config.isCachingModeEnabled();
+```
 Caching Mode example in Kotlin
+```Kotlin
 val config = CrittercismConfig()
 config.isCachingModeEnabled = true
 val cachingModeEnabled = config.isCachingModeEnabled
+```
+
+## NDK Crash Enabled
+NDK Crash Intelligence events will be reported to the Intelligence Console on the subsequent app load, after configuration and authentication if needed, following the crash
+when enabled through the `CrittercismConfig`.
+For more information on NDK Crash Events, refer to section: [NDK Crash](ndk-crash.md)
+
+### isNdkCrashEnabled()
+**Declaration**
+
+Java
+```JAVA
+public boolean isNdkCrashEnabled()
+```
+
+Kotlin:
+```Kotlin
+fun isNdkCrashEnabled(): Boolean
+```
+
+Returns `Boolean` value representing if NDK / Native Crash Event reporting has been enabled.
+
+### setNdkCrashEnabled(enabled)
+**Declaration**
+
+Java
+```JAVA
+public void setNdkCrashEnabled(boolean enabled)
+```
+
+Kotlin:
+```Kotlin
+fun isNdkCrashEnabled = enabled: Boolean
+```
+
+Set `Boolean` value to enable NDK / Native Crash Event reporting in the Intelligence SDK. The default value of this
+enablement flag is `false`.
