@@ -8,10 +8,13 @@ hide:
 
 Workspace ONE Intelligence SDK enables developers to capture real-time event data from key user flows in your app: screen load time, network events, crash reports, and more. Track key metrics, improve your app release-over-release, and focus on issues that matter to your users.
 
-## SDK Downloads
+## Downloads
 
-Instructions for installing Workspace ONE Intelligence SDK can be found in the Developer Guides for the appropriate platform below. 
+Omnissa provides each Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [Omnissa SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
 
+For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
+
+The SDK is provided as either a [Android Package](https://github.com/orgs/euc-releases/packages?repo_name=ws1-intelligencesdk-sdk-android), [Android Release](https://github.com/euc-releases/ws1-intelligencesdk-sdk-android/releases), [iOS Package](https://github.com/orgs/euc-releases/packages?repo_name=ws1-intelligencesdk-sdk-ios), [iOS Release](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases). Please download the software from the appropriate location.
 
 ## Developer Guides
 
