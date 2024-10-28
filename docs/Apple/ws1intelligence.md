@@ -802,6 +802,8 @@ class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1Telem
 
 **Parameters**
 
+|   |   |
+| --- | --- |
 | privacyConfig | dictionary containing the necessary key value pairs for the privacy config. |
 | for           | The Telemetry type to be configured for privacy, eg. DEX, ZeroTrust. |
 
