@@ -807,4 +807,4 @@ class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1Telem
 
 See also:
 - [Telemetry Privacy Configuration](ios-privacy-config.md)
-- [](ios-enable-telemetry-features-in-intelsdk.md)
+- [Enabling Telemetry Features in IntelligenceSDK for iOS](ios-enable-telemetry-features-in-intelsdk.md)
