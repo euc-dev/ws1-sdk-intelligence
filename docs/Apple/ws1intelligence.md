@@ -774,3 +774,34 @@ Swift
 ```Swift
 class func getUserUUID -> String
 ```
+
+
+## Privacy Configuration of Workspace ONE Intelligence SDK
+
+### setPrivacyConfiguration(privacyConfig, telemetryFeature)
+
+This API helps inject privacy configuration to control transmission of certain TelemetrySDK attributes.
+
+This API can be used to control reporting of certain Telemetry Feature Data such as attributes, events, or entire data collections through a Privacy Configuration map.
+
+Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
+
+**Declaration**
+```Objective-c
++ (void)setPrivacyConfiguration:(nullable NSDictionary<NSString *, id> *)privacyConfig forType:(WS1TelemetryType)type;
+```
+
+```Swift
+class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1TelemetryType)
+```
+
+**Parameters**
+
+|               |   |
+|---------------| --- |
+| privacyConfig | dictionary containing the necessary key value pairs for the privacy config. |
+| for           | The Telemetry type to be configured for privacy, eg. DEX, ZeroTrust. |
+
+See also:
+- [Telemetry Privacy Configuration](ios-privacy-config.md)
+- ios-enable-telemetry-features-in-intelsdk.md
