@@ -32,19 +32,19 @@ These release notes describe the new features and enhancements in each release o
 /// -> This configuration is ideally part of WS1 SDK's custom settings profile payload. However, IntelligenceSDK is agnostic to the configuration delivery mechanism as long
 ///   as the payload conforms to the required format.
 /// -> A sample privacy config is like below -
-/// “DEXData”: {
+/// "DEXData": {
 ///        "Version": 1.0,
-///        “BatteryData”: {
+///        "BatteryData": {
 ///            "DisableAll": true,
 ///            "AttributesToDisable": ["plugged_type", "battery_charging_rate"],
 ///            "EventsToDisable": []
 ///        },
-///        “DeviceData”: {
+///        "DeviceData": {
 ///            "DisableAll": true,
 ///            "AttributesToDisable": ["location_latitude", "location_longitude"],
 ///            "EventsToDisable": []
 ///        },
-///        “NetworkData”: {
+///        "NetworkData": {
 ///            "DisableAll": true,
 ///            "AttributesToDisable": ["jitter", "latency"],
 ///            "EventsToDisable": []
@@ -71,7 +71,7 @@ These release notes describe the new features and enhancements in each release o
 
         - Ideally IntelligenceSDK should be initialized early on in the app lifecycle process. If IntelSDK is initialized later, then it is the app’s responsibility to ensure privacy config is injected post initialization. 
 
-        - Apps would have to read the value for the key - “DEXData“, convert it into a dictionary and pass that dictionary as the parameter to the above API. The second parameter for the above API in this case is WS1TelemetryTypeDEX since this privacy config is related to the DEX feature.
+        - Apps would have to read the value for the key - "DEXData", convert it into a dictionary and pass that dictionary as the parameter to the above API. The second parameter for the above API in this case is WS1TelemetryTypeDEX since this privacy config is related to the DEX feature.
         
         - For more information on this API, please visit *TODO-FILL-URL*
         

@@ -28,7 +28,7 @@ All productivity apps that have integrated with the WorkspaceONE UEM SDK can ena
 
 ```json
 { 
-    “PolicyAllowCrashReporting”: true
+    "PolicyAllowCrashReporting": true
 }
 ```
 
@@ -38,8 +38,8 @@ To enable DEX, a new key value pair named CaptureDEXData needs to be used as sho
 
 ```JSON
 {
-    “PolicyAllowCrashReporting”: true,
-    “CaptureDEXData”: true
+    "PolicyAllowCrashReporting": true,
+    "CaptureDEXData": true
 }
 ```
 

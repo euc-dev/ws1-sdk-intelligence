@@ -24,19 +24,19 @@ For more on this API, visit: [setPrivacyConfiguration](ws1intelligence.md/#setpr
 /// -> This configuration is ideally part of WS1 SDK's custom settings profile payload. However, IntelligenceSDK is agnostic to the configuration delivery mechanism as long
 ///   as the payload conforms to the required format.
 /// -> A sample privacy config is like below -
-/// “DEXData”: {
+/// "DEXData": {
 ///        "Version": 1.0,
-///        “BatteryData”: {
+///        "BatteryData": {
 ///            "DisableAll": true,
 ///            "AttributesToDisable": ["plugged_type", "battery_charging_rate"],
 ///            "EventsToDisable": []
 ///        },
-///        “DeviceData”: {
+///        "DeviceData": {
 ///            "DisableAll": true,
 ///            "AttributesToDisable": ["location_latitude", "location_longitude"],
 ///            "EventsToDisable": []
 ///        },
-///        “NetworkData”: {
+///        "NetworkData": {
 ///            "DisableAll": true,
 ///            "AttributesToDisable": ["jitter", "latency"],
 ///            "EventsToDisable": []
