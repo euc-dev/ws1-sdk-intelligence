@@ -26,7 +26,7 @@ Enabling DEX is a two step process -
 
 All productivity apps that have integrated with the WorkspaceONE UEM SDK can enable / disable DEX via custom SDK settings payload. Most of the apps if not all would already be using the following K-V pair in the custom SDK settings payload to enable / disable IntelligenceSDK - 
 
-```JSON
+```json
 { 
     “PolicyAllowCrashReporting”: true
 }
@@ -67,6 +67,7 @@ API’s on IntelligenceSDK can be called to toggle the DEX feature. DEX is disab
  * @param status new Opt-In status
  */
 + (void)setOptInStatusForType:(WS1TelemetryType)type andStatus:(BOOL)status;
+
 /*! Returns the current Opt-In status for telemetry instrumentation type
  *  -> if `AllAdvancedTelemetry` is chosen, then this function returns true only if both
  *   `DEX` and `ZeroTrust` are enabled.
@@ -119,8 +120,8 @@ BOOL areAllAdvancedTelemetryFeaturesOptedIn = [WS1Intelligence getOptInStatusFor
 
 Important Notes when using the above API’s
 
-- ** Always enable IntelSDK first i.e. start IntelSDK first before interacting with the API’s. Interacting with the API’s without enabling DEX will not have an impact on feature enablement. **
-- ** Advanced Telemetry Features (DEX / ZeroTrust) is disabled by default. So if the custom settings do not exist or if it is disabled, please opt out of DEX using the above API. **
+- **Always enable IntelSDK first i.e. start IntelSDK first before interacting with the API’s. Interacting with the API’s without enabling DEX will not have an impact on feature enablement.**
+- **Advanced Telemetry Features (DEX / ZeroTrust) is disabled by default. So if the custom settings do not exist or if it is disabled, please opt out of DEX using the above API.**
 - When user opts-out of analytics from the privacy screen, its is application’s responsibility to opt-out of enabled advanced telemetry features as well.
     - Individual features cannot be opted out at this moment. Disabling one Advanced Telemetry feature (DEX / ZeroTrust) would turn off all other opted-in features. This is only applicable if more than one advanced telemetry feature is enabled by the application. 
  

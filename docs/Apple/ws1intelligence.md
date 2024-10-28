@@ -787,9 +787,14 @@ This API can be used to control reporting of certain Telemetry Feature Data such
 Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
 
 **Declaration**
+
+Objective-C
+
 ```Objective-c
 + (void)setPrivacyConfiguration:(nullable NSDictionary<NSString *, id> *)privacyConfig forType:(WS1TelemetryType)type;
 ```
+
+Swift
 
 ```Swift
 class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1TelemetryType)
@@ -797,11 +802,9 @@ class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1Telem
 
 **Parameters**
 
-|               |   |
-|---------------| --- |
 | privacyConfig | dictionary containing the necessary key value pairs for the privacy config. |
 | for           | The Telemetry type to be configured for privacy, eg. DEX, ZeroTrust. |
 
 See also:
 - [Telemetry Privacy Configuration](ios-privacy-config.md)
-- ios-enable-telemetry-features-in-intelsdk.md
+- [](ios-enable-telemetry-features-in-intelsdk.md)
