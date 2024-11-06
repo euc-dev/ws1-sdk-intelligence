@@ -644,7 +644,7 @@ public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @N
 |               |   |
 |---------------| --- |
 | privacyConfig | Privacy Config Map containing the necessary key value pairs for parsing the privacy config. |
-| feature       | The Feature classification of the Telemetry data to be exported, eg. DEX, ZeroTrust. |
+| feature       | The Feature classification of the Telemetry data to be configured, eg. DEX, ZeroTrust. |
 
 See also:
 - [Telemetry Privacy Configuration](privacy-config.md)

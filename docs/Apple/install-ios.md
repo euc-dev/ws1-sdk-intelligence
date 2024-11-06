@@ -61,6 +61,9 @@ Register your app at the Workspace ONE Intelligence portal to get an App ID to b
 ### Setup Automatic dSYM Uploads.
 
 !!!Note
+    `dSYM upload` is typically required for only beta builds or release builds which will be sent to testers or users. It is usually not required for local builds for development. The dSYM upload script can be disabled for development builds and run for beta / release builds.
+
+!!!Note
     Changes to the Intelligence system credentials files require developers to update to version 24.1.0 or later of dsym_upload.sh. If you have older versions of credentials files, you should regenerate them with the [instructions in this page](#generate-credentials-files). You will only need to regenerate each credentials file once.
 
 !!!Warning

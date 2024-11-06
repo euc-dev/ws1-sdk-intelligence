@@ -6,13 +6,103 @@ hide:
   - toc
 ---
 
-Updated August 15, 2024
+Updated October 28, 2024
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Workspace ONE IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Workspace ONE IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Workspace ONE Intelligence backend. 
 
 
+
+## Workspace ONE IntelligenceSDK for iOS 24.8.0 Release - October 2024
+
+### Minimum Requirements
+
+- iOS 15.0 device or iPadOS 15.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+- Latency and Jitter information for Network DEX is now supported. No changes are required to gather this information.  If desired, the gathering can be turned off with the Privacy Configuration feature.
+- A new public API named - setPrivacyConfiguration has been introduced which helps inject privacy configuration to control transmission of certain TelemetrySDK attributes. API and its documentation is like below - 
+
+```objective-c
+/// Function to help set privacy configuration for a particular telemetry type.
+/// -> This configuration is ideally part of WS1 SDK's custom settings profile payload. However, IntelligenceSDK is agnostic to the configuration delivery mechanism as long
+///   as the payload conforms to the required format.
+/// -> A sample privacy config is like below -
+/// "DEXData": {
+///        "Version": 1.0,
+///        "BatteryData": {
+///            "DisableAll": true,
+///            "AttributesToDisable": ["plugged_type", "battery_charging_rate"],
+///            "EventsToDisable": []
+///        },
+///        "DeviceData": {
+///            "DisableAll": true,
+///            "AttributesToDisable": ["location_latitude", "location_longitude"],
+///            "EventsToDisable": []
+///        },
+///        "NetworkData": {
+///            "DisableAll": true,
+///            "AttributesToDisable": ["jitter", "latency"],
+///            "EventsToDisable": []
+///        }
+///    }
+///
+///
+/// NOTE -
+/// * This config is only supported for the DEX telemetry type currently. The privacy config could help  disable certain attributes / events from being reported.
+///
+/// - Parameters:
+///   - privacyConfig: - A dictionary containing the necessary key value pairs for parsing the privacy config. If the privacy config is
+///                     fetched via WS1 UEM SDK, then it is in the JSON format. Apps / SDK's are expected to fetch the value for key "DEXData"
+///                     and convert it into a dictionary.
+///                   - If the property "DEXData" and its value does not exist, apps are still required to call this API with nil value
+///                     for the privacyConfig parameter.
+///   - type: Feature for which the privacy configuration needs to be applied. Currently only DEX is supported. Other telemetry type's are ignored.
++ (void)setPrivacyConfiguration:(nullable NSDictionary<NSString *, id> *)privacyConfig forType:(WS1TelemetryType)type;
+```
+
+    - NOTES for this API -
+
+        - This API should be called only after IntelligenceSDK initialization. 
+
+        - Ideally IntelligenceSDK should be initialized early on in the app lifecycle process. If IntelSDK is initialized later, then it is the app’s responsibility to ensure privacy config is injected post initialization. 
+
+        - Apps would have to read the value for the key - "DEXData", convert it into a dictionary and pass that dictionary as the parameter to the above API. The second parameter for the above API in this case is WS1TelemetryTypeDEX since this privacy config is related to the DEX feature.
+        
+        - For more information on this API, please visit *TODO-FILL-URL*
+        
+- New API introduced to export data collected through our Telemetry Features!
+Users are now able to export data collected from the Telemetry Features they have Opted-Into. Use the following API to get Feature, Event, and Export formatted specific data in an Asynchronous fashion! 
+
+```objective-c
+/// Function to asynchronously export telemetry data for enabled features. The only supported features for exporting data are - DEX and ZeroTrust
+/// -> A telemetry feature must be enabled before data can be queried else the exported data could be stale or nil.
+/// -> See `setOptInStatusForType` API for enabling / disabling features.
+/// -> If `telemetryType` is passed as `WS1TelemetryTypeAll` then all enabled telemetry data (`DEX` or `ZeroTrust` or both) is exported.
+///
+/// - Parameters:
+///   - telemetryType: The telemetry feature data to be exported if available. One of  `DEX` or `ZeroTrust`. `Application` is `not` supported.
+///                    Pass `WS1TelemetryTypeAll` to export all telemetry enabled feature data i.e. `DEX` / `ZeroTrust`.
+///   - dataFormatType: The format of the data to be exported. Currently, the only supported type is JSON.
+///   - dataCategoryType: Category of the data to be exported. It can be one of `AttributeData`, `EventData` or `AllData`
+///   - completionHandler: completion handler which is called with the relevant data.
++ (void)exportTelemetryFeatureData:(WS1TelemetryType)telemetryType
+                          ofFormat:(WS1TelemetryExportDataFormatType)dataFormatType
+                      withCategory:(WS1TelemetryExportDataCategoryType)dataCategoryType
+                     andCompletion:(void (^)(NSString* data))completionHandler;
+```
+
+### Resolved Issues
+
+- An issue that was causing a failure when rendering webpages (especially SAP SuccessFactors) has been fixed. If monitoring WKWebView was disabled, please enable it again.
+
+### Known Issues
+
+none
 
 
 ## Workspace ONE IntelligenceSDK for iOS 24.6.0 Release - August 2024

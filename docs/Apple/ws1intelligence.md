@@ -6,6 +6,8 @@ hide:
   - toc
 ---
 
+[TOC] 
+
 ## Initialization
 
 ### enable
@@ -64,7 +66,7 @@ class func enable(withAppID: appID)
 | --- | --- |
 | appId | Your iOS appId |
 
-## enableWithAppID:config:
+### enableWithAppID:config:
 
 Initializes Workspace ONE Intelligence SDK with the given App ID (found on the Workspace ONE Intelligence web portal). After this call completes, changes to the config object will have no affect on the behavior of Workspace ONE Intelligence SDK.
 
@@ -774,3 +776,72 @@ Swift
 ```Swift
 class func getUserUUID -> String
 ```
+
+
+## Privacy Configuration of Workspace ONE Intelligence SDK
+
+### setPrivacyConfiguration(privacyConfig, telemetryFeature)
+
+This API helps inject privacy configuration to control transmission of certain TelemetrySDK attributes.
+
+This API can be used to control reporting of certain Telemetry Feature Data such as attributes, events, or entire data collections through a Privacy Configuration map.
+
+Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
+
+**Declaration**
+
+Objective-C
+
+```Objective-c
++ (void)setPrivacyConfiguration:(nullable NSDictionary<NSString *, id> *)privacyConfig forType:(WS1TelemetryType)type;
+```
+
+Swift
+
+```Swift
+class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1TelemetryType)
+```
+
+**Parameters**
+
+|   |   |
+| --- | --- |
+| privacyConfig | dictionary containing the necessary key value pairs for the privacy config. |
+| for           | The Telemetry type to be configured for privacy, eg. DEX, ZeroTrust. |
+
+See also:
+- [Telemetry Privacy Configuration](ios-privacy-config.md)
+- [Enabling Telemetry Features in IntelligenceSDK for iOS](ios-enable-telemetry-features-in-intelsdk.md)
+
+
+## Exporting Telemetry Data
+
+Data collected by the Telemetry Features which are Opted-In can now be exported in asynchronous fashion.
+
+### exportTelemetryFeatureData(WS1TelemetryType, of: WS1TelemetryExportDataFormatType, with: WS1TelemetryExportDataCategoryType, andCompletion: (String) -> Void)
+
+**Declaration**
+
+Objective-C
+
+```Objective-c
++ (void)exportTelemetryFeatureData:(WS1TelemetryType)telemetryType
+                          ofFormat:(WS1TelemetryExportDataFormatType)dataFormatType
+                      withCategory:(WS1TelemetryExportDataCategoryType)dataCategoryType
+                     andCompletion:(void (^)(NSString* data))completionHandler;
+```
+
+Swift
+
+```Swift
+    public class func exportTelemetryFeatureData(dataFormatType: WS1TelemetryType, of: WS1TelemetryExportDataFormatType, with: WS1TelemetryExportDataCategoryType, completion: @escaping (String?) -> Void)
+```
+
+**Parameters**
+
+|   |   |
+| --- | --- |
+| telemetryType     | WS1TelemetryType enum entry, `Application` or `DEX` |
+| dataFormatType    | Format of exported data. JSON is currently the only option. |
+| dataCategoryType  | Which category of Telemetry data to export. eg, attributeData, eventData, or allData | 
+| completionHandler | Handler to asynchronously receive the exported data |
