@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Workspace ONE Intelligence SDK for Android
+title: Omnissa Intelligence SDK for Android
 hide:
   #- navigation
   - toc
@@ -8,7 +8,7 @@ hide:
 
 ## Introduction
 
-This topic describes how to use Workspace ONE Intelligence with Android apps. This guide assumes you have an Workspace ONE Intelligence account set up with a valid app ID.
+This topic describes how to use Omnissa Intelligence with Android apps. This guide assumes you have an Omnissa Intelligence account set up with a valid app ID.
 
 ## Release Notes
 
@@ -24,12 +24,12 @@ Release Notes can be viewed [here](release-notes.md).
 
 ## Guide
 
-- [How to install and setup the Workspace ONE Intelligence SDK?](android-install.md)
+- [How to install and setup the Omnissa Intelligence SDK?](android-install.md)
 - [SDK Data Sheet](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileIntelligenceSDK.html)
 
 ## SDK References
 
-Import `com.crittercism.app` package to use the Workspace ONE Intelligence SDK.
+Import `com.crittercism.app` package to use the Omnissa Intelligence SDK.
 
 - [Crittercism](crittercism.md)
 - [CrittercismConfig](crittercism-config.md)
@@ -42,7 +42,7 @@ Import `com.crittercism.app` package to use the Workspace ONE Intelligence SDK.
 
 ### Out-of-the-box Features
 
-Some features are available as soon as you integrate Workspace ONE Intelligence SDK into your app.
+Some features are available as soon as you integrate Omnissa Intelligence SDK into your app.
 
 - [Network Insights](android-apm.md)
 - [Android Intelligence SDK Network Insights Clients User Guide](https://developer.omnissa.com/ws1-intel-dev-centre/hosting/android/android_net_insights_user_guide.html)
@@ -63,6 +63,6 @@ Some features are available as soon as you integrate Workspace ONE Intelligence 
 - [Delay Sending App Load Data](crittercism.md#delay-sending-app-load-data)
 - [Opt In Status](crittercism.md#opt-in-status)
 - [Include System Log Data (Logcat)](crittercism-config.md#include-system-log-data-logcat)
-- [Setting Log Verbosity of Workspace ONE Intelligence SDK](crittercism.md#setting-log-verbosity-of-workspace-one-intelligence-sdk)
+- [Setting Log Verbosity of Omnissa Intelligence SDK](crittercism.md#setting-log-verbosity-of-workspace-one-intelligence-sdk)
 - [Send Data On Wifi Only](crittercism-config.md#send-data-on-wifi-only)
 - [Sending UEM Attributes To Intelligence SDK](android-integrate-ws1sdk.md)

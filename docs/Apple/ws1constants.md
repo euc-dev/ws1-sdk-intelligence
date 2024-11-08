@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Workspace ONE Intelligence SDK Constants
+title: Omnissa Intelligence SDK Constants
 hide:
   #- navigation
   - toc
@@ -71,9 +71,9 @@ The [WS1NotificationDidCrashOnLastLoad](#ws1notificationdidcrashonlastload) user
 
 ## WS1IntelligenceLoggingLevel
 
-By default, Workspace ONE Intelligence SDK prints a few messages (via NSLog) to the device log that may be useful to verify that Workspace ONE Intelligence SDK is initialized and properly working. If you don’t want to see Workspace ONE Intelligence log messages, you can tune the amount of logging that is displayed.
+By default, Omnissa Intelligence SDK prints a few messages (via NSLog) to the device log that may be useful to verify that Omnissa Intelligence SDK is initialized and properly working. If you don’t want to see Omnissa Intelligence log messages, you can tune the amount of logging that is displayed.
 
-See Setting Log Verbosity Of Workspace ONE Intelligence SDK of how to tweak the logging level
+See Setting Log Verbosity Of Omnissa Intelligence SDK of how to tweak the logging level
 
 ### WS1IntelligenceLoggingLevel
 
@@ -105,12 +105,12 @@ enum WS1IntelligenceLoggingLevel : Int {
 
 |   |   |
 | --- | --- |
-| WS1IntelligenceLoggingLevelSilent | Turns off all Workspace ONE Intelligence SDK log messages |
+| WS1IntelligenceLoggingLevelSilent | Turns off all Omnissa Intelligence SDK log messages |
 | WS1IntelligenceLoggingLevelError | Only print errors. An error is an unexpected event that will result not capturing important data |
-| WS1IntelligenceLoggingLevelWarning | ***(Default)*** Only print warnings. Currently warning messages are printed when calling Workspace ONE Intelligence SDK methods before initializing Workspace ONE Intelligence |
+| WS1IntelligenceLoggingLevelWarning | ***(Default)*** Only print warnings. Currently warning messages are printed when calling Omnissa Intelligence SDK methods before initializing Omnissa Intelligence |
 | WS1IntelligenceLoggingLevelInfo | The most verbose level of logging |
-| WS1IntelligenceLoggingLevelDebug | Print internal logging in Workspace ONE Intelligence SDK. Please use this logging level and attach your log in your email to our support |
+| WS1IntelligenceLoggingLevelDebug | Print internal logging in Omnissa Intelligence SDK. Please use this logging level and attach your log in your email to our support |
 
 See also:
 
-- [Setting Log Verbosity Of Workspace ONE Intelligence SDK](ws1intelligence.md#setting-log-verbosity-of-workspace-one-intelligence-sdk)
+- [Setting Log Verbosity Of Omnissa Intelligence SDK](ws1intelligence.md#setting-log-verbosity-of-workspace-one-intelligence-sdk)

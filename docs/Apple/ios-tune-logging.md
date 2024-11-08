@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tune Workspace ONE Intelligence SDK for iOS Logging 
+title: Tune Omnissa Intelligence SDK for iOS Logging 
 hide:
   #- navigation
   - toc
@@ -10,7 +10,7 @@ hide:
 
 ### enable
 
-Initializes Workspace ONE Intelligence SDK. This method will use the app ID string value specified in the application’s info.plist file with the key ‘WS1IntelligenceAppID’
+Initializes Omnissa Intelligence SDK. This method will use the app ID string value specified in the application’s info.plist file with the key ‘WS1IntelligenceAppID’
 
 **Declaration**
 
@@ -26,7 +26,7 @@ class func enable()
 
 ### enableWithConfig:
 
-Initializes Workspace ONE Intelligence SDK with a config. This method will use the app ID string value specified in the application’s info.plist file with the key ‘WS1IntelligenceAppID’ After this call completes, changes to the config object will have no affect on the behavior of Workspace ONE Intelligence SDK.
+Initializes Omnissa Intelligence SDK with a config. This method will use the app ID string value specified in the application’s info.plist file with the key ‘WS1IntelligenceAppID’ After this call completes, changes to the config object will have no affect on the behavior of Omnissa Intelligence SDK.
 
 **Declaration**
 
@@ -48,7 +48,7 @@ class func enable(withConfig: config)
 
 ### enableWithAppID:
 
-Initializes Workspace ONE Intelligence SDK with the given App ID (found on the Workspace ONE Intelligence web portal).
+Initializes Omnissa Intelligence SDK with the given App ID (found on the Omnissa Intelligence web portal).
 
 **Declaration**
 
@@ -66,7 +66,7 @@ class func enable(withAppID: appID)
 
 ### enableWithAppID:config:
 
-Initializes Workspace ONE Intelligence SDK with the given App ID (found on the Workspace ONE Intelligence web portal). After this call completes, changes to the config object will have no affect on the behavior of Workspace ONE Intelligence SDK.
+Initializes Omnissa Intelligence SDK with the given App ID (found on the Omnissa Intelligence web portal). After this call completes, changes to the config object will have no affect on the behavior of Omnissa Intelligence SDK.
 
 **Declaration**
 
@@ -146,7 +146,7 @@ See also [Introduction to Breadcrumbs](../../dev-centre/ws1-intel/core-capabilit
 
 Logging errors is a way of reporting NSError errors your app has received. If the method is passed an NSError, the stack trace of the thread that is logging the error will be displayed on the Crittercism web portal.
 
-Logging errors may also be used for tracking NSError errors returned by Apple methods and 3rd party library errors. Errors are grouped by stacktrace, much like crash reports. Errors may be viewed in the “Handled Exceptions” area of the Workspace ONE Intelligence portal.
+Logging errors may also be used for tracking NSError errors returned by Apple methods and 3rd party library errors. Errors are grouped by stacktrace, much like crash reports. Errors may be viewed in the “Handled Exceptions” area of the Omnissa Intelligence portal.
 
 **Declaration**
 
@@ -170,7 +170,7 @@ class func logError(error: Error)
 
 Logging errors is a way of reporting NSError errors your app has received. If the method is passed an NSError, the stack trace of the thread that is logging the error will be displayed on the Crittercism web portal.
 
-Logging errors may also be used for tracking NSError errors returned by Apple methods and 3rd party library errors. Errors are grouped by stacktrace, much like crash reports. Errors may be viewed in the “Handled Exceptions” area of the Workspace ONE Intelligence portal.
+Logging errors may also be used for tracking NSError errors returned by Apple methods and 3rd party library errors. Errors are grouped by stacktrace, much like crash reports. Errors may be viewed in the “Handled Exceptions” area of the Omnissa Intelligence portal.
 
 **Declaration**
 
@@ -197,7 +197,7 @@ This capability was introduced in SDK v5.9.1
 
 Handled exceptions may be used for tracking exceptions caught in a try/catch statement, 3rd party library exceptions, and monitoring areas in the code that may currently be using assertions. Handled exceptions can also be used to track error events such as low memory warnings. For an introduction, see [Handled Exceptions](../../dev-centre/ws1-intel/core-capabilities.md#handled-exceptions).
 
-Handled exceptions are grouped by stacktrace, much like crash reports. Handled exceptions may be viewed in the “Handled Exceptions” area of the Workspace ONE Intelligence portal.
+Handled exceptions are grouped by stacktrace, much like crash reports. Handled exceptions may be viewed in the “Handled Exceptions” area of the Omnissa Intelligence portal.
 
 **Declaration**
 
@@ -221,7 +221,7 @@ see [Introduction to Handled Exceptions](../../dev-centre/ws1-intel/core-capabil
 
 ## Logging Network Request
 
-Network Insights data for `NSURLSession` and `NSURLConnection` is automatically captured and reported to Workspace ONE Intelligence simply by initializing the SDK. See [Network Insights](../../dev-centre/ws1-intel/core-capabilities.md#network-insights-overview).
+Network Insights data for `NSURLSession` and `NSURLConnection` is automatically captured and reported to Omnissa Intelligence simply by initializing the SDK. See [Network Insights](../../dev-centre/ws1-intel/core-capabilities.md#network-insights-overview).
 
 If you want to log network requests manually or customize what data gets reported, use these methods.
 
@@ -249,7 +249,7 @@ class func add(filter: WS1Filter)
 
 ### logNetworkRequest:url:latency:bytesRead:bytesSent:responseCode:error:
 
-Logging endpoints is a way of manually logging Network Insights data for custom network libraries which fall outside Workspace ONE Intelligence’s monitoring of NSURLConnection and NSURLSession method calls.
+Logging endpoints is a way of manually logging Network Insights data for custom network libraries which fall outside Omnissa Intelligence’s monitoring of NSURLConnection and NSURLSession method calls.
 
 **Declaration**
 
@@ -295,7 +295,7 @@ Returns YES if the request was properly logged. Returns NO otherwise.
 
 #### logNetworkRequest:urlString:latency:bytesRead:bytesSent:responseCode:error:
 
-Logging endpoints is a way of manually logging Network Insights data for custom network libraries which fall outside Workspace ONE Intelligence’s monitoring of NSURLConnection and NSURLSession method calls.
+Logging endpoints is a way of manually logging Network Insights data for custom network libraries which fall outside Omnissa Intelligence’s monitoring of NSURLConnection and NSURLSession method calls.
 
 **Declaration**
 
@@ -337,7 +337,7 @@ Returns YES if the request was properly logged. Returns NO otherwise.
 
 ### updateLocationToLatitude:longitude:
 
-Inform Workspace ONE Intelligence SDK of the device’s most recent location for use with event reporting.
+Inform Omnissa Intelligence SDK of the device’s most recent location for use with event reporting.
 
 **Declaration**
 
@@ -394,13 +394,13 @@ For an introduction, see [User Flows Monitoring](ws1intelligence.md#logging-user
 
 Inititializes and begins a user flow
 
-User flows allow developers to track key interactions or user flows in their app such as login, account registration, and in app purchase. The Workspace ONE Intelligence SDK will automatically track application load time as a user flow. You can specify additional user flows by adding code to your application.
+User flows allow developers to track key interactions or user flows in their app such as login, account registration, and in app purchase. The Omnissa Intelligence SDK will automatically track application load time as a user flow. You can specify additional user flows by adding code to your application.
 
 Beginning a user flow starts a user flow. Ending, failing, or cancelling a user flow stops a user flow. Otherwise, the user flow will be marked as crashed or timed out. If a crash occurs, all in progress user flows are marked crashed and will be reported with the crash.
 
-All user flows will appear on Workspace ONE Intelligence portal except for cancelled user flows.
+All user flows will appear on Omnissa Intelligence portal except for cancelled user flows.
 
-User flows with the same name are aggregated together in the portal by Workspace ONE Intelligence. Only one user flow for a given name can be in progress at a given time. If you begin a second user flow with the same name while another is in progress, the first user flow will be cancelled and the new one will take its place.
+User flows with the same name are aggregated together in the portal by Omnissa Intelligence. Only one user flow for a given name can be in progress at a given time. If you begin a second user flow with the same name while another is in progress, the first user flow will be cancelled and the new one will take its place.
 
 **Declaration**
 
@@ -430,13 +430,13 @@ See also:
 
 Inititializes and begins a user flow with a specified timeout. If the user flow is not otherwise completed before this time elapses, the user flow will be marked as timed out.
 
-User flows allow developers to track key interactions or user flows in their app such as login, account registration, and in app purchase. The Workspace ONE Intelligence SDK will automatically track application load time as a user flow. You can specify additional user flows by adding code to your application.
+User flows allow developers to track key interactions or user flows in their app such as login, account registration, and in app purchase. The Omnissa Intelligence SDK will automatically track application load time as a user flow. You can specify additional user flows by adding code to your application.
 
 Beginning a user flow starts a user flow. Ending, failing, or cancelling a user flow stops a user flow. Otherwise, the user flow will be marked as crashed or timed out. If a crash occurs, all in progress user flows are marked crashed and will be reported with the crash.
 
-All user flows will appear on Workspace ONE Intelligence portal except for cancelled user flows.
+All user flows will appear on Omnissa Intelligence portal except for cancelled user flows.
 
-User flows with the same name are aggregated together in the portal by Workspace ONE Intelligence. Only one user flow for a given name can be in progress at a given time. If you begin a second user flow with the same name while another is in progress, the first user flow will be cancelled and the new one will take its place.
+User flows with the same name are aggregated together in the portal by Omnissa Intelligence. Only one user flow for a given name can be in progress at a given time. If you begin a second user flow with the same name while another is in progress, the first user flow will be cancelled and the new one will take its place.
 
 **Declaration**
 
@@ -557,7 +557,7 @@ See also:
 
 ## Opt Out Status
 
-Workspace ONE Intelligence SDK provides an opt-out setting that disables all reporting to Workspace ONE Intelligence. This allows developers to implement code that asks end users whether they want to opt out of Workspace ONE Intelligence. For an introduction, see Opt Out of Workspace ONE Intelligence.
+Omnissa Intelligence SDK provides an opt-out setting that disables all reporting to Omnissa Intelligence. This allows developers to implement code that asks end users whether they want to opt out of Omnissa Intelligence. For an introduction, see Opt Out of Omnissa Intelligence.
 
 ### getOptOutStatus
 
@@ -575,11 +575,11 @@ Swift
 class func getOptOutStatus -> Bool
 ```
 
-Return YES if the user has opted out of reporting Workspace ONE Intelligence data.
+Return YES if the user has opted out of reporting Omnissa Intelligence data.
 
 ### setOptOutStatus:
 
-If you wish to offer your users the ability to opt out of Workspace ONE Intelligence data reporting, you can set the OptOutStatus to YES. If you do so, there will be no information/requests sent from that user’s app and any pending crash reports will be purged.
+If you wish to offer your users the ability to opt out of Omnissa Intelligence data reporting, you can set the OptOutStatus to YES. If you do so, there will be no information/requests sent from that user’s app and any pending crash reports will be purged.
 
 Typically, a developer would connect this API call to a checkbox in a settings menu.
 
@@ -599,9 +599,9 @@ class func setOptOutStatus(status: Bool)
 
 |   |   |
 | --- | --- |
-| status | set to YES to disable Workspace ONE Intelligence |
+| status | set to YES to disable Omnissa Intelligence |
 
-## Setting Log Verbosity Of Workspace ONE Intelligence SDK
+## Setting Log Verbosity Of Omnissa Intelligence SDK
 
 ### loggingLevel
 
@@ -617,11 +617,11 @@ Swift
 class func loggingLevel() -> WS1IntelligenceLoggingLevel
 ```
 
-The current logging level of the verbosity of Workspace ONE Intelligence SDK log messages.
+The current logging level of the verbosity of Omnissa Intelligence SDK log messages.
 
 ### setLoggingLevel:
 
-Set the logging level to tune the verbosity log messages from Workspace ONE Intelligence SDK. The default value is WS1IntelligenceLoggingLevelWarning.
+Set the logging level to tune the verbosity log messages from Omnissa Intelligence SDK. The default value is WS1IntelligenceLoggingLevelWarning.
 
 See WS1IntelligenceLoggingLevel to see various logging levels.
 
@@ -641,17 +641,17 @@ class func setLoggingLevel(loggingLevel: WS1IntelligenceLoggingLevel)
 
 |   |   |
 | --- | --- |
-| loggingLevel | The log verbosity of Workspace ONE Intelligence SDK |
+| loggingLevel | The log verbosity of Omnissa Intelligence SDK |
 
-### Workspace ONE Intelligence SDK Device UUID
+### Omnissa Intelligence SDK Device UUID
 
 ### getUserUUID
 
-Get the unique identifier for this device generated by Workspace ONE Intelligence SDK. This is NOT the device’s UDID.
+Get the unique identifier for this device generated by Omnissa Intelligence SDK. This is NOT the device’s UDID.
 
-If called before enabling the SDK, this will return an empty string. All Workspace ONE Intelligence enabled apps on a device will share the UUID created by the first installed Workspace ONE Intelligence enabled app.
+If called before enabling the SDK, this will return an empty string. All Omnissa Intelligence enabled apps on a device will share the UUID created by the first installed Omnissa Intelligence enabled app.
 
-If all Workspace ONE Intelligence enabled applications are removed from a device, a new UUID will be generated when the next one is installed.
+If all Omnissa Intelligence enabled applications are removed from a device, a new UUID will be generated when the next one is installed.
 
 **Declaration**
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Workspace ONE Intelligence SDK for Android Release Notes
+title: Omnissa Intelligence SDK for Android Release Notes
 hide:
   #- navigation
   - toc
@@ -10,9 +10,9 @@ Updated on 8/9/2024
 
 What's in the Release Notes
 
-Workspace ONE Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
 
-## Workspace ONE Intelligence SDK 24.8.0 for Android - September 16, 2024
+## Omnissa Intelligence SDK 24.8.0 for Android - September 16, 2024
 
 ### Minimum Requirements
 
@@ -82,7 +82,7 @@ public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @N
 - Instrumented `URLConnection` Classes network request elapsed time inaccurate.
 
 
-## Workspace ONE Intelligence SDK 24.6.1 for Android - August 9, 2024
+## Omnissa Intelligence SDK 24.6.1 for Android - August 9, 2024
 
 ### Minimum Requirements
 
@@ -139,7 +139,7 @@ IntelligenceSDK using the following structure:
 none
 
 
-## Workspace ONE Intelligence SDK 24.6.0 for Android - July 2024
+## Omnissa Intelligence SDK 24.6.0 for Android - July 2024
 
 ### Minimum Requirements
 
@@ -215,7 +215,7 @@ none
 
 none
 
-## Workspace ONE Intelligence SDK 24.3.1 for Android - March 2024
+## Omnissa Intelligence SDK 24.3.1 for Android - March 2024
 
 ### Minimum Requirements
 
@@ -239,7 +239,7 @@ none
   - `onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)`
   - `onReceivedError(WebView, WebResourceRequest, WebResourceError)`
 
-## Workspace ONE Intelligence SDK 24.3.0 for Android - March 2024
+## Omnissa Intelligence SDK 24.3.0 for Android - March 2024
 
 ### Minimum Requirements
 

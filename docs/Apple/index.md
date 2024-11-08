@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Workspace ONE Intelligence SDK for iOS
+title: Omnissa Intelligence SDK for iOS
 hide:
   #- navigation
   - toc
@@ -8,7 +8,7 @@ hide:
 
 ## Introduction
 
-This guide assumes you have an Workspace ONE Intelligence account set up with a valid app ID.
+This guide assumes you have an Omnissa Intelligence account set up with a valid app ID.
 
 ## Release Notes
 
@@ -24,7 +24,7 @@ Release Notes can be viewed [here](release-notes.md).
 
 - [Installation and Setup](install-ios.md)
 - [Setup Automatic dSYM Uploads](install-ios.md#setup-automatic-dsym-uploads)
-- [How to Customize App Version Reported to Workspace ONE Intelligence](ios-custom-version.md)
+- [How to Customize App Version Reported to Omnissa Intelligence](ios-custom-version.md)
 - [SDK Data Sheet](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileIntelligenceSDK.html)
 
 ## SDK References
@@ -39,7 +39,7 @@ Release Notes can be viewed [here](release-notes.md).
 
 ### Out-of-the-box Features
 
-Some features are available as soon as you integrate Workspace ONE Intelligence SDK into your app.
+Some features are available as soon as you integrate Omnissa Intelligence SDK into your app.
 
 - [Logging Crashes](ios-crash.md)
 - [Network Insights](ios-apm.md)
@@ -58,8 +58,8 @@ Some features are available as soon as you integrate Workspace ONE Intelligence 
 
 - [Last Crash Notification](ws1constants.md#last-crash-notification)
 - [Opt Out Status](ws1intelligence.md#opt-out-status)
-- [Setting Log Verbosity Of Workspace ONE Intelligence SDK](ws1intelligence.md#setting-log-verbosity-of-workspace-one-intelligence-sdk)
+- [Setting Log Verbosity Of Omnissa Intelligence SDK](ws1intelligence.md#setting-log-verbosity-of-workspace-one-intelligence-sdk)
 - [Send Data On Wifi Only](ws1config.md#send-data-on-wifi-only)
-- [Workspace ONE Intelligence SDK Device UUID](ws1intelligence.md#workspace-one-intelligence-sdk-device-uuid)
+- [Omnissa Intelligence SDK Device UUID](ws1intelligence.md#workspace-one-intelligence-sdk-device-uuid)
 - [Sending UEM Attributes To Intelligence SDK](ios-integrate-ws1sdk.md)
 - [Location In Intelligence SDK DEX Feature](ios-dex-location.md)

@@ -8,7 +8,7 @@ hide:
 
 Import com.crittercism.app package to use this class.
 
-This object is used to specify various configuration options to Workspace ONE Intelligence SDK. Once this object is set up, you can pass it to `Crittercism.initialize()`. After Workspace ONE Intelligence SDK is initialized, changes to this object will have no effect.
+This object is used to specify various configuration options to Omnissa Intelligence SDK. Once this object is set up, you can pass it to `Crittercism.initialize()`. After Omnissa Intelligence SDK is initialized, changes to this object will have no effect.
 
 ## Creating a Config
 
@@ -65,7 +65,7 @@ Returns a new instance of CrittercismConfig with the same values as configToCopy
 
 ### getURLDenylistPatterns ()
 
-Retrieve a list of denylisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the returned list will not be sent to Workspace ONE Intelligence. Patterns are case sensitive and may be any length.
+Retrieve a list of denylisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the returned list will not be sent to Omnissa Intelligence. Patterns are case sensitive and may be any length.
 
 **Declaration**
 
@@ -73,13 +73,13 @@ Retrieve a list of denylisted URLs. Network Insights data that pertains to URLs 
 public List<String> getURLDenylistPatterns ()
 ```
 
-Returns a copy of denylisted URLs for which Network Insights data will not be reported to Workspace ONE Intelligence.
+Returns a copy of denylisted URLs for which Network Insights data will not be reported to Omnissa Intelligence.
 
 ### setURLDenylistPatterns (patterns)
 
-Set a list of denylisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the supplied list will not be sent to Workspace ONE Intelligence. Patterns are case sensitive and may be any length.
+Set a list of denylisted URLs. Network Insights data that pertains to URLs that match any of the patterns in the supplied list will not be sent to Omnissa Intelligence. Patterns are case sensitive and may be any length.
 
-For example, you may provide URLs that may contain sensitive information. Note that by default all query parameters are removed before being sent to Workspace ONE Intelligence.
+For example, you may provide URLs that may contain sensitive information. Note that by default all query parameters are removed before being sent to Omnissa Intelligence.
 
 **Declaration**
 
@@ -95,7 +95,7 @@ public void setURLDenylistPatterns (List<String> patterns)
 
 ### getPreserveQueryStringPatterns ()
 
-Returns a copy of the list of URL string patterns for which the query strings will be preserved when Network Insights data is sent to Workspace ONE Intelligence. URLs that are not in this list will have their query strings removed before Network Insights data is sent to Workspace ONE Intelligence.
+Returns a copy of the list of URL string patterns for which the query strings will be preserved when Network Insights data is sent to Omnissa Intelligence. URLs that are not in this list will have their query strings removed before Network Insights data is sent to Omnissa Intelligence.
 
 **Declaration**
 
@@ -107,9 +107,9 @@ Returns a copy of the list of URL string patterns for which the query strings wi
 
 ### setPreserveQueryStringPatterns (patterns)
 
-Set a list of URL patterns for which the query strings will be preserved when Network Insights data is sent to Workspace ONE Intelligence. URLs that are not in this list will have their query strings removed before Network Insights data is sent to Workspace ONE Intelligence. If a URL in this list is also denylisted, then the denylist takes priority and network data will not be sent to Workspace ONE Intelligence for that URL.
+Set a list of URL patterns for which the query strings will be preserved when Network Insights data is sent to Omnissa Intelligence. URLs that are not in this list will have their query strings removed before Network Insights data is sent to Omnissa Intelligence. If a URL in this list is also denylisted, then the denylist takes priority and network data will not be sent to Omnissa Intelligence for that URL.
 
-Patterns are case sensitive and may be any length. A zero length string will result in all query strings being included in Network Insights data sent to Workspace ONE Intelligence.
+Patterns are case sensitive and may be any length. A zero length string will result in all query strings being included in Network Insights data sent to Omnissa Intelligence.
 
 **Declaration**
 
@@ -127,7 +127,7 @@ public void setPreserveQueryStringPatterns (List<String> patterns)
 
 ### getCustomVersionName ()
 
-Retrieves the custom version name that will be reported to Workspace ONE Intelligence.
+Retrieves the custom version name that will be reported to Omnissa Intelligence.
 
 **Declaration**
 
@@ -135,13 +135,13 @@ Retrieves the custom version name that will be reported to Workspace ONE Intelli
 public final String getCustomVersionName ()
 ```
 
-Returns the custom version name that will be reported to Workspace ONE Intelligence, or null if Workspace ONE Intelligence SDK uses the android:versionName from the AndroidManifest.xml. .
+Returns the custom version name that will be reported to Omnissa Intelligence, or null if Omnissa Intelligence SDK uses the android:versionName from the AndroidManifest.xml. .
 
 ### setCustomVersionName (customVersionName)
 
-Set a custom app version that will be reported to Workspace ONE Intelligence.
+Set a custom app version that will be reported to Omnissa Intelligence.
 
-By default, Workspace ONE Intelligence SDK uses the android:versionName from the AndroidManifest.xml when reporting data to Workspace ONE Intelligence. Depending on how teams version their apps, it may be desirable to set a custom version string.
+By default, Omnissa Intelligence SDK uses the android:versionName from the AndroidManifest.xml when reporting data to Omnissa Intelligence. Depending on how teams version their apps, it may be desirable to set a custom version string.
 
 **Declaration**
 
@@ -153,11 +153,11 @@ public final void setCustomVersionName (String customVersionName)
 
 |   |   |
 | --- | --- |
-| customVersionName | The version name that will be reported to Workspace ONE Intelligence. |
+| customVersionName | The version name that will be reported to Omnissa Intelligence. |
 
 ### isVersionCodeToBeIncludedInVersionString ()
 
-Returns a boolean to indicate whether Workspace ONE Intelligence SDK concatenates the app version code to the app version that will be reported to Workspace ONE Intelligence. The app’s version code is defined in android:versionCode in the AndroidManifest.xml.
+Returns a boolean to indicate whether Omnissa Intelligence SDK concatenates the app version code to the app version that will be reported to Omnissa Intelligence. The app’s version code is defined in android:versionCode in the AndroidManifest.xml.
 
 **Declaration**
 
@@ -169,7 +169,7 @@ Returns True if the app’s version code is concatenated to the version name.
 
 ### setVersionCodeToBeIncludedInVersionString (shouldIncludeVersionCode)
 
-Tells Workspace ONE Intelligence SDK whether or not to concatenate the app version code to the app version that will be reported to Workspace ONE Intelligence. The app’s version code is defined in android:versionCode in the AndroidManifest.xml.
+Tells Omnissa Intelligence SDK whether or not to concatenate the app version code to the app version that will be reported to Omnissa Intelligence. The app’s version code is defined in android:versionCode in the AndroidManifest.xml.
 
 **Declaration**
 
@@ -187,9 +187,9 @@ public final void setVersionCodeToBeIncludedInVersionString (boolean shouldInclu
 
 ### delaySendingAppLoad ()
 
-Determines if Workspace ONE Intelligence SDK delays automatic app load events until the developer calls sendAppLoadData.
+Determines if Omnissa Intelligence SDK delays automatic app load events until the developer calls sendAppLoadData.
 
-By default, the return value is False and Workspace ONE Intelligence SDK automatically reports an app load event when Workspace ONE Intelligence SDK is initialized.
+By default, the return value is False and Omnissa Intelligence SDK automatically reports an app load event when Omnissa Intelligence SDK is initialized.
 
 The delay app load feature is most often used to delay counting an app load until after a user has passed a login screen.
 
@@ -199,11 +199,11 @@ The delay app load feature is most often used to delay counting an app load unti
 public final boolean delaySendingAppLoad ()
 ```
 
-Returns True if Workspace ONE Intelligence SDK should automatically send app load request. Returns False if the app will send app load request manually by calling sendAppLoadData.
+Returns True if Omnissa Intelligence SDK should automatically send app load request. Returns False if the app will send app load request manually by calling sendAppLoadData.
 
 ### setDelaySendingAppLoad (delaySendingAppLoad)
 
-Configure delayed app load events. By default, Workspace ONE Intelligence SDK immediately reports an app load when Workspace ONE Intelligence SDK is initialized. Set delaySendingAppLoad to True if the Workspace ONE Intelligence SDK should delay sending app load events until the app developer calls sendAppLoadData. Otherwise, set it to False to keep default behavior and send app loads automatically.
+Configure delayed app load events. By default, Omnissa Intelligence SDK immediately reports an app load when Omnissa Intelligence SDK is initialized. Set delaySendingAppLoad to True if the Omnissa Intelligence SDK should delay sending app load events until the app developer calls sendAppLoadData. Otherwise, set it to False to keep default behavior and send app loads automatically.
 
 The delay app load feature is most often used to delay counting an app load until after a user has passed a login screen.
 
@@ -217,52 +217,52 @@ public final void setDelaySendingAppLoad (boolean delaySendingAppLoad)
 
 |   |   |
 | --- | --- |
-| delaySendingAppLoad | A boolean to indicate whether Workspace ONE Intelligence SDK should delay automatic app loads. |
+| delaySendingAppLoad | A boolean to indicate whether Omnissa Intelligence SDK should delay automatic app loads. |
 
 ## Send Data On Wifi Only
 
 ### allowsCellularAccess ()
 
-Returns a boolean to determine if Workspace ONE Intelligence SDK is allowed to send data while on a cellular network.
+Returns a boolean to determine if Omnissa Intelligence SDK is allowed to send data while on a cellular network.
 
 Default value is True.
 
 public final boolean allowsCellularAccess ()
-Returns True if Workspace ONE Intelligence SDK is allowed to send data while on a cellular network. Returns False if Workspace ONE Intelligence SDK is only sending data on Wifi network.
+Returns True if Omnissa Intelligence SDK is allowed to send data while on a cellular network. Returns False if Omnissa Intelligence SDK is only sending data on Wifi network.
 
 ### setAllowsCellularAccess (allowsCellularAccess)
 
-Set whether Workspace ONE Intelligence SDK sends data on cellular networks. The default value is True, which means that Workspace ONE Intelligence SDK sends data on both wifi and cellular networks. You can set it to False if Workspace ONE Intelligence SDK should only send data on wifi network.
+Set whether Omnissa Intelligence SDK sends data on cellular networks. The default value is True, which means that Omnissa Intelligence SDK sends data on both wifi and cellular networks. You can set it to False if Omnissa Intelligence SDK should only send data on wifi network.
 
 This feature requires adding the ACCESS_NETWORK_STATE permission to your AndroidManifest.xml. Please see Permissions Required.
 
 public final void setAllowsCellularAccess (boolean allowsCellularAccess)
 allowsCellularAccess
 
-Set to True to allow Workspace ONE Intelligence SDK to send data on a cellular network. Set to False to allow sending data on wifi only.
+Set to True to allow Omnissa Intelligence SDK to send data on a cellular network. Set to False to allow sending data on wifi only.
 
 Introduced in Android SDK 5.7.0
 
 ## Include System Log Data (Logcat)
 
 !!!Note
-    Workspace ONE Intelligence platform does not support collection of system log data (logcat). The following no-op methods are left from old Apteligent platform and have no effect on the behavior of SDK versions 6.0.0 and above.
+    Omnissa Intelligence platform does not support collection of system log data (logcat). The following no-op methods are left from old Apteligent platform and have no effect on the behavior of SDK versions 6.0.0 and above.
 
 ### isLogcatReportingEnabled ()
 
-Returns a boolean to determine if system log data (logcat) is included in crashes reported by Workspace ONE Intelligence SDK to the old platform.
+Returns a boolean to determine if system log data (logcat) is included in crashes reported by Omnissa Intelligence SDK to the old platform.
 
 public final boolean isLogcatReportingEnabled ()
-Returns True if system log data is included in crashes reported by Workspace ONE Intelligence SDK to the old platform.
+Returns True if system log data is included in crashes reported by Omnissa Intelligence SDK to the old platform.
 
 ### setLogcatReportingEnabled (shouldCollectLogcat)
 
-Set whether system log data (logcat) should be included with crashes reported by Workspace ONE Intelligence SDK to the old Apteligent platform. Note that Workspace ONE Intelligence platform does not support logcat collection. Including system log data (logcat) can be helpful for debugging crashes and handled exceptions, but it comes at the cost of slightly increasing disk and network usage, which is why this feature must be manually enabled. Workspace ONE Intelligence SDK collects and sends the last 100 lines of logcat data to the old Apteligent platform.
+Set whether system log data (logcat) should be included with crashes reported by Omnissa Intelligence SDK to the old Apteligent platform. Note that Omnissa Intelligence platform does not support logcat collection. Including system log data (logcat) can be helpful for debugging crashes and handled exceptions, but it comes at the cost of slightly increasing disk and network usage, which is why this feature must be manually enabled. Omnissa Intelligence SDK collects and sends the last 100 lines of logcat data to the old Apteligent platform.
 
 public final void setLogcatReportingEnabled (boolean shouldCollectLogcat)
 shouldCollectLogcat
 
-Set to True to allow Workspace ONE Intelligence SDK to collect system log data. Set to False otherwise.
+Set to True to allow Omnissa Intelligence SDK to collect system log data. Set to False otherwise.
 
 ## Caching Mode Enabled
 

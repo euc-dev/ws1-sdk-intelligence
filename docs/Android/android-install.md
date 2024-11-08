@@ -140,7 +140,7 @@ Add the following permissions to your app’s `AndroidManifest.xml` file.
 
 - INTERNET
   
-  Required. Used to report data to Workspace ONE Intelligence.
+  Required. Used to report data to Omnissa Intelligence.
 - ACCESS_NETWORK_STATE
   
   Optional. Allows providing network connectivity information such as carrier and network type.
@@ -187,25 +187,25 @@ The IntelligenceSDK currently utilizes the following Android Permissions:
 
 For more information on Android Permissions, please refer to the following [Google Documentation](https://developer.android.com/guide/topics/permissions/overview/).
 
-## Initializing Workspace ONE Intelligence SDK
+## Initializing Omnissa Intelligence SDK
 
 The following initialization instructions are the same for both the standard (sdkonly) SDK and the NDK-enabled SDK.
 
-Obtain your app ID from Workspace ONE Intelligence console.
+Obtain your app ID from Omnissa Intelligence console.
 
-1. To initialize Workspace ONE Intelligence SDK add the following code at the beginning of the onCreate() of your main Activity:
+1. To initialize Omnissa Intelligence SDK add the following code at the beginning of the onCreate() of your main Activity:
 
 ```JAVA
 Crittercism.initialize(getApplicationContext(), "CRITTERCISM_APP_ID");
 ```
 
 !!!Note
-    Workspace ONE Intelligence SDK should be initialized once on the main thread as early as possible. Hence, if you subclass the Application singleton, you should initialize Workspace ONE Intelligence SDK in the onCreate() of that Application subclass using the same code, instead of the main activity. App loads will be sent from the first visible activity; they will not be sent from background services and BroadcastReceivers.
+    Omnissa Intelligence SDK should be initialized once on the main thread as early as possible. Hence, if you subclass the Application singleton, you should initialize Omnissa Intelligence SDK in the onCreate() of that Application subclass using the same code, instead of the main activity. App loads will be sent from the first visible activity; they will not be sent from background services and BroadcastReceivers.
 
 !!!Note
     Your main Activity is the one with android.intent.action.MAIN intent filter in your AndroidManifest.
 
-Or initialize Workspace ONE Intelligence SDK with a CrittercismConfig argument
+Or initialize Omnissa Intelligence SDK with a CrittercismConfig argument
 
 ```JAVA
 CrittercismConfig config = new CrittercismConfig();
@@ -219,11 +219,11 @@ Crittercism.initialize(context, "CRITTERCISM_APP_ID", config);
 import com.crittercism.app.Crittercism;
 ```
 
-Your Android app is now integrated with Workspace ONE Intelligence and you can go ahead and build it. Additional features require adding more code to your project.
+Your Android app is now integrated with Omnissa Intelligence and you can go ahead and build it. Additional features require adding more code to your project.
 
 ## Configuring Proguard Symbolication
 
-Symbolication is the process of translating stack traces into a human-readable form by mapping hexadecimal addresses to function names using symbol file(s). Workspace ONE Intelligence automatically symbolicates crashes once you have uploaded your app’s symbol file(s).
+Symbolication is the process of translating stack traces into a human-readable form by mapping hexadecimal addresses to function names using symbol file(s). Omnissa Intelligence automatically symbolicates crashes once you have uploaded your app’s symbol file(s).
 
 !!!Note
     Follow the instructions in this section only if your app obfuscates with [Android Proguard](http://developer.android.com/tools/help/proguard.html). Otherwise, skip this section.
@@ -260,4 +260,4 @@ Each mapping.txt file you upload is associated with a version of your app. We de
     
     If you set a customized app version name in the CrittercismConfig instance, you should use that string and not the manifest string in app-version-name. Also, if you choose to include the app version code in the app version, that should also be included in app-version-name.
 
-At this point, you have enabled Workspace ONE Intelligence SDK to receive Application Performance Information from your application
+At this point, you have enabled Omnissa Intelligence SDK to receive Application Performance Information from your application
