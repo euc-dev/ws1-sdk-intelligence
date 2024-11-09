@@ -166,9 +166,9 @@ nav:
     - ./Apple/index.md
     - Installing Workspace ONE Intelligence SDK for iOS: ./Apple/install-ios.md
     - Network Insights: ./Apple/ios-apm.md
+    - Enabling Telemetry Features in IntelligenceSDK for iOS: ./Apple/ios-enable-telemetry-features-in-intelsdk.md
     - Sending UEM Attributes To Intelligence SDK: ./Apple/ios-integrate-ws1sdk.md
     - Customizing the App Version Reported to Workspace ONE Intelligence Platform: ./Apple/ios-custom-version.md
-    - Tune Workspace ONE Intelligence SDK for iOS Logging: ./Apple/ios-tune-logging.md
     - Workspace ONE Intelligence SDK Constants: ./Apple/ws1constants.md
     - SDK Modules:
       - Logging Crashes: ./Apple/ios-crash.md
@@ -176,4 +176,5 @@ nav:
       - CRFilter: ./Apple/crfilter.md
       - WS1Filter: ./Apple/ws1filter.md
       - WS1Intelligence: ./Apple/ws1intelligence.md
+      - Telemetry Privacy Configuration: ./Apple/ios-privacy-config.md
     - Release Notes: ./Apple/release-notes.md

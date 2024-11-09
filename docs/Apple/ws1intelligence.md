@@ -3,10 +3,8 @@ layout: page
 title: WS1Intelligence
 hide:
   #- navigation
-  - toc
+  #- toc
 ---
-
-[TOC] 
 
 ## Initialization
 
@@ -810,6 +808,7 @@ class func setPrivacyConfiguration(privacyConfig: [String : Any]?, for: WS1Telem
 | for           | The Telemetry type to be configured for privacy, eg. DEX, ZeroTrust. |
 
 See also:
+
 - [Telemetry Privacy Configuration](ios-privacy-config.md)
 - [Enabling Telemetry Features in IntelligenceSDK for iOS](ios-enable-telemetry-features-in-intelsdk.md)
 
