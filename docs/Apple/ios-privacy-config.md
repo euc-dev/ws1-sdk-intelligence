@@ -1,12 +1,11 @@
 ---
 layout: page
-title: Telemetry Privacy Configuration
+title: Telemetry Privacy Configuration for iOS
 hide:
   #- navigation
   - toc
 ---
 
-# Telemetry Privacy Configuration for iOS
 
 The Privacy Configuration, or Config for short, is a JSON payload which can be used to control the reporting of Telemetry Feature Data.
 This payload can either be generated manually or pulled from the WS1 SDK's Custom Settings if integrated in the application.
