@@ -1,30 +1,30 @@
 ---
 layout: page
-title: Installing Workspace ONE Intelligence SDK for iOS
+title: Installing Omnissa Intelligence SDK for iOS
 hide:
   #- navigation
   - toc
 ---
 
 !!!Note
-    Cocoapods is no longer supported as a means of installing Workspace ONE Intelligence SDK. Please use Swift Package Manager as described below.
+    Cocoapods is no longer supported as a means of installing Omnissa Intelligence SDK. Please use Swift Package Manager as described below.
     The Crittercism framework is no longer supported. Use the WS1IntelligenceSDK framework.
 
-Add the Workspace ONE Intelligence SDK Swift Package Manager (SPM) package from this URL:
+Add the Omnissa Intelligence SDK Swift Package Manager (SPM) package from this URL:
     https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios.git
 
-![Image of Xcode's Swift Package Manager screen while adding 'Workspace ONE Intelligence SDK for iOS'](./add_ws1intelligencesdk_spm.png)
+![Image of Xcode's Swift Package Manager screen while adding 'Omnissa Intelligence SDK for iOS'](./add_ws1intelligencesdk_spm.png)
 
 ## Basic Setup
 
-Obtain your app ID from Workspace ONE Intelligence platform.
+Obtain your app ID from Omnissa Intelligence platform.
 
-### 1. Import the Workspace ONE Intelligence SDK header.
+### 1. Import the Omnissa Intelligence SDK header.
 
 !!!Note
     SDK imports must now be from the “WS1IntelligenceSDK” module rather than the “WS1Intelligence” module.
 
-For Objective-C apps, import the Workspace ONE Intelligence SDK header in your application delegate’s implementation file. 
+For Objective-C apps, import the Omnissa Intelligence SDK header in your application delegate’s implementation file. 
 
 ```objective-c
 #import <WS1IntelligenceSDK/WS1Intelligence.h>
@@ -36,7 +36,7 @@ For Swift applications, place this import in your bridging-header.h file.
 import WS1IntelligenceSDK
 ```
 
-### 2. Enable Workspace ONE Intelligence SDK.
+### 2. Enable Omnissa Intelligence SDK.
 
 Call `enableWithAppID` in your AppDelegate’s `application:didFinishLaunchingWithOptions:` method.
 
@@ -56,7 +56,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-Register your app at the Workspace ONE Intelligence portal to get an App ID to be used in place of "YOUR APP ID GOES HERE".
+Register your app at the Omnissa Intelligence portal to get an App ID to be used in place of "YOUR APP ID GOES HERE".
 
 ### Setup Automatic dSYM Uploads.
 
@@ -89,7 +89,7 @@ You will need to add the included xcfilelist file in the ‘Input File Lists’ 
 $(SRCROOT)/<PATH_TO_SCRIPT>/dsym_upload.xcfilelist
 ```
 
-When you build your Xcode application, the dSYM files for your application (and any dependent modules to which you added the Run Script) will be uploaded to Workspace ONE Intelligence and become available for crash symbolication.
+When you build your Xcode application, the dSYM files for your application (and any dependent modules to which you added the Run Script) will be uploaded to Omnissa Intelligence and become available for crash symbolication.
 
 ## Generate dSYM Files in Build
 
@@ -97,9 +97,9 @@ DWARF dSYM file generation can be toggled in the build options for the target. I
 
 ![](xcode-enable-dsym.png)
 
-## Generate Credentials File from Workspace ONE Intelligence Platform
+## Generate Credentials File from Omnissa Intelligence Platform
 
-- Log into the Workspace ONE Intelligence Platform and click the "Service Accounts" menu.
+- Log into the Omnissa Intelligence Platform and click the "Service Accounts" menu.
 
 ![](ws1-service-accounts-button.png)
 
@@ -139,7 +139,7 @@ The script will cause a build failure by default. This behavior is possible to d
 REQUIRE_UPLOAD_SUCCESS=${REQUIRE_UPLOAD_SUCCESS:=0}
 ```
 
-Your app is now integrated with Workspace ONE Intelligence! Additional features require adding more code to your project.
+Your app is now integrated with Omnissa Intelligence! Additional features require adding more code to your project.
 
 ## Interoperability with other SDKs
 
@@ -147,7 +147,7 @@ Recommended initialization orders:
 
 ### Crashlytics:
 
-Workspace ONE Intelligence SDK should be initialized before Crashlytics
+Omnissa Intelligence SDK should be initialized before Crashlytics
 
 Objective-C
 
@@ -167,7 +167,7 @@ WS1Intelligence.enable(withAppID: "YOUR APP ID GOES HERE")
 
 ### AppDynamics:
 
-AppDynamics should be initialized before Workspace ONE Intelligence SDK
+AppDynamics should be initialized before Omnissa Intelligence SDK
 
 ```C
 Objective-C
@@ -187,7 +187,7 @@ WS1Intelligence.enable(withAppID: "YOUR APP ID GOES HERE")
 
 ### New Relic:
 
-Workspace ONE Intelligence SDK should be initialized before New Relic
+Omnissa Intelligence SDK should be initialized before New Relic
 
 Objective-C
 

@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Workspace ONE Intelligence SDK
+title: Omnissa Intelligence SDK
 hide:
   #- navigation
   - toc
 ---
+![Omnissa Intelligence SDK](../../../assets/logos/Intelligence-v-lm.png){ align=right }
 
-Workspace ONE Intelligence SDK enables developers to capture real-time event data from key user flows in your app: screen load time, network events, crash reports, and more. Track key metrics, improve your app release-over-release, and focus on issues that matter to your users.
+Omnissa Intelligence SDK enables developers to capture real-time event data from key user flows in your app: screen load time, network events, crash reports, and more. Track key metrics, improve your app release-over-release, and focus on issues that matter to your users.
 
 ## Downloads
 
@@ -20,12 +21,12 @@ The SDK is provided as either a [Android Package](https://github.com/orgs/euc-re
 
 ::cards:: cols=2
 
-- title: Workspace ONE Intelligence SDK for Android 
+- title: Omnissa Intelligence SDK for Android 
   #content: 
   url: ./Android/index.md
   image: ../../assets/logos/android_logo_circle.png
 
-- title: Workspace ONE Intelligence SDK for iOS
+- title: Omnissa Intelligence SDK for iOS
   #content: 
   url: ./Apple/index.md
   image: ../../assets/logos/apple_logo_circle.png

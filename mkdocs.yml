@@ -148,7 +148,7 @@ markdown_extensions:
 nav:
   - index.md
   - SDK Core Capabilities: ../../dev-centre/ws1/core-capabilities/
-  - Workspace ONE Intelligence SDK for Android: 
+  - Omnissa Intelligence SDK for Android: 
     - ./Android/index.md
     - Installing the Android SDK: ./Android/android-install.md
     - Network Insights: ./Android/android-apm.md
@@ -162,14 +162,14 @@ nav:
       - NDK Crash: ./Android/ndk-crash.md
       - Telemetry Privacy Configuration: ./Android/privacy-config.md
     - Release Notes: ./Android/release-notes.md
-  - Workspace ONE Intelligence SDK for iOS: 
+  - Omnissa Intelligence SDK for iOS: 
     - ./Apple/index.md
-    - Installing Workspace ONE Intelligence SDK for iOS: ./Apple/install-ios.md
+    - Installing Omnissa Intelligence SDK for iOS: ./Apple/install-ios.md
     - Network Insights: ./Apple/ios-apm.md
     - Enabling Telemetry Features in IntelligenceSDK for iOS: ./Apple/ios-enable-telemetry-features-in-intelsdk.md
     - Sending UEM Attributes To Intelligence SDK: ./Apple/ios-integrate-ws1sdk.md
-    - Customizing the App Version Reported to Workspace ONE Intelligence Platform: ./Apple/ios-custom-version.md
-    - Workspace ONE Intelligence SDK Constants: ./Apple/ws1constants.md
+    - Customizing the App Version Reported to Omnissa Intelligence Platform: ./Apple/ios-custom-version.md
+    - Omnissa Intelligence SDK Constants: ./Apple/ws1constants.md
     - SDK Modules:
       - Logging Crashes: ./Apple/ios-crash.md
       - CrashData: ./Apple/ios-crash.md

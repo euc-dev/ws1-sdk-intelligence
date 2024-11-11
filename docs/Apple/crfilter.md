@@ -6,9 +6,9 @@ hide:
   - toc
 ---
 
-By default, Workspace ONE Intelligence SDK reports Network Insights data for all URLs that are accessed by your app and strips each URL of any query parameters. For example, http://foo.com?name=critter becomes http://foo.com. This is done to ensure personal information is not transmitted to Workspace ONE Intelligence.
+By default, Omnissa Intelligence SDK reports Network Insights data for all URLs that are accessed by your app and strips each URL of any query parameters. For example, http://foo.com?name=critter becomes http://foo.com. This is done to ensure personal information is not transmitted to Omnissa Intelligence.
 
-It is also possible to customise filter denylists that will completely discard matching URLs. Network Insights data that pertains to any URL that matches the deny URL will not be reported to Workspace ONE Intelligence.
+It is also possible to customise filter denylists that will completely discard matching URLs. Network Insights data that pertains to any URL that matches the deny URL will not be reported to Omnissa Intelligence.
 
 Use the [CRFilter filterWithString:] to modify the default filtering behavior:
 
@@ -39,7 +39,7 @@ Crittercism.add(filter: CRFilter)
 
 !!!Note
     - Filters match URLs via case sensitive substring matching
-    - Older versions of the agent did not scrub query parameters by default, and so a `queryOnlyFilter` existed. To avoid compile time errors for existing Workspace ONE Intelligence users, this filter type can still be created, but it will be ignored by the library. This filter type is deprecated, and will be removed in a future version of the agent.
+    - Older versions of the agent did not scrub query parameters by default, and so a `queryOnlyFilter` existed. To avoid compile time errors for existing Omnissa Intelligence users, this filter type can still be created, but it will be ignored by the library. This filter type is deprecated, and will be removed in a future version of the agent.
 
 ## Creating a Filter
 

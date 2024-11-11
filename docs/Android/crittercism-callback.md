@@ -16,7 +16,7 @@ See [Detecting a Crash Occurred](crittercism.md#detecting-a-crash-occurred) for 
 
 ### onDataReceived (t)
 
-This method is called when Workspace ONE Intelligence SDK detects that there was a crash in the previous session.
+This method is called when Omnissa Intelligence SDK detects that there was a crash in the previous session.
 
 This method will receive a CrashData. See [CrashData](crash-data.md) for details
 

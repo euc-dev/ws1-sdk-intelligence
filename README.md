@@ -1,6 +1,6 @@
 # ws1-sdk-intelligence
 
-This repo contains the Workspace ONE Intelligence SDK documentation references.
+This repo contains the Omnissa Intelligence SDK documentation references.
 
 This repo is structured to feed into the developer.omnissa.com Developer Portal via the [](https://github.com/euc-dev/euc-dev.github.io) repo using MkDocs published by GitHub Pages. All documentation should be created in MarkDown format with the capabilities of MkDocs and the Material theme in mind.Only pages within the `/docs` folder should be modified within this repo.
 

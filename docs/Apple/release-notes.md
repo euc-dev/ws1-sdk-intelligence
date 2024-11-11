@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Workspace ONE Intelligence SDK for iOS Release Notes
+title: Omnissa Intelligence SDK for iOS Release Notes
 hide:
   #- navigation
   - toc
@@ -10,11 +10,11 @@ Updated October 28, 2024
 
 ## What's in the Release Notes
 
-These release notes describe the new features and enhancements in each release of Workspace ONE IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Workspace ONE IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Workspace ONE Intelligence backend. 
+These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
 
 
 
-## Workspace ONE IntelligenceSDK for iOS 24.8.0 Release - October 2024
+## Omnissa IntelligenceSDK for iOS 24.8.0 Release - October 2024
 
 ### Minimum Requirements
 
@@ -105,7 +105,7 @@ Users are now able to export data collected from the Telemetry Features they hav
 none
 
 
-## Workspace ONE IntelligenceSDK for iOS 24.6.0 Release - August 2024
+## Omnissa IntelligenceSDK for iOS 24.6.0 Release - August 2024
 
 ### Minimum Requirements
 
@@ -181,7 +181,7 @@ none
 
 ____
 
-## Workspace ONE IntelligenceSDK for iOS 24.3.0 Release - April 2024
+## Omnissa IntelligenceSDK for iOS 24.3.0 Release - April 2024
 
 ### Minimum Requirements
 
@@ -204,7 +204,7 @@ none
 
 ____
 
-## Workspace ONE IntelligenceSDK for iOS 24.1.0 Release - March 2024
+## Omnissa IntelligenceSDK for iOS 24.1.0 Release - March 2024
 
 ### Minimum Requirements
 
