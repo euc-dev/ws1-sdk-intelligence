@@ -8,12 +8,13 @@ hide:
 
 Updated October 28, 2024
 
-# Telemetry Features
+
+## Telemetry Features
 
 
 The two supported telemetry features that can be enabled from within IntelligenceSDK are - DEX and ZeroTrust. These features are disabled by default.
 
-# Enabling DEX
+## Enabling DEX
 
 Enabling DEX is a two step process - 
 
