@@ -8,7 +8,6 @@ hide:
 
 Updated October 28, 2024
 
-# Enabling Telemetry Features in IntelligenceSDK for iOS
 
 ## Telemetry Features
 
