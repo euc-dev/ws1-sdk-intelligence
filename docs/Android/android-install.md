@@ -191,7 +191,7 @@ For more information on Android Permissions, please refer to the following [Goog
 
 The following initialization instructions are the same for both the standard (sdkonly) SDK and the NDK-enabled SDK.
 
-Obtain your app ID from Omnissa Intelligence console.
+Obtain your app ID from Omnissa Intelligence console. Please check [Omnissa Intelligence SDK Data for Apps](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelIntelligenceSDKApps.html) for more information.
 
 1. To initialize Omnissa Intelligence SDK add the following code at the beginning of the onCreate() of your main Activity:
 
