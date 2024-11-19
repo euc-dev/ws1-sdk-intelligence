@@ -172,7 +172,6 @@ nav:
     - Omnissa Intelligence SDK Constants: ./Apple/ws1constants.md
     - SDK Modules:
       - Logging Crashes: ./Apple/ios-crash.md
-      - CrashData: ./Apple/ios-crash.md
       - CRFilter: ./Apple/crfilter.md
       - WS1Filter: ./Apple/ws1filter.md
       - WS1Intelligence: ./Apple/ws1intelligence.md
