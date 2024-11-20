@@ -17,7 +17,7 @@ Add the Omnissa Intelligence SDK Swift Package Manager (SPM) package from this U
 
 ## Basic Setup
 
-Obtain your app ID from Omnissa Intelligence platform.
+Obtain your app ID from Omnissa Intelligence platform. Please check [Omnissa Intelligence SDK Data for Apps](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelIntelligenceSDKApps.html) for more information. 
 
 ### 1. Import the Omnissa Intelligence SDK header.
 
