@@ -37,12 +37,4 @@ The SDK is provided as either a [Android Package](https://github.com/orgs/euc-re
 | Name | Size |
 | --- | --- |
 | Reference Guides |   |
-| [Android Intelligence SDK Network Insights Clients User Guide](guides/Android-Intelligence-SDK-Network-20240213.pdf) | 8.5 KB |
-| Release Notes |   |
-| [WS1 Intelligence SDK for Android 24.1.0 Release Notes](guides/WS1-Intelligence-SDK-for-Android-24.1.0-Release-Notes.pdf) | 12.4 KB |
-| [WS1 Intelligence SDK for Android 24.3.0 Release Notes](guides/WS1-Intelligence-SDK-for-Android-24.3.0-Release-Notes.pdf) | 3.8 KB |
-| [WS1 Intelligence SDK for Android 24.6.0 Release Notes](guides/WS1-Intelligence-SDK-for-Android-24.6.0-Release-Notes.pdf) | 242.9 KB |
-| [WS1 Intelligence SDK for Android 24.6.1 Release Notes](guides/WS1-Intelligence-SDK-for-Android-24.6.1-Release-Notes.pdf) | 148.0 KB |
-| [WS1 Intelligence SDK for iOS 24.1.0 Release Notes](guides/WS1-Intelligence-SDK-for-iOS-24.1.0-Release-Notes.pdf) | 9.4 KB |
-| [WS1 Intelligence SDK for iOS 24.3.0 Release Notes](guides/WS1-Intelligence-SDK-for-iOS-24.3.0-Release-Notes.pdf) | 3.0 KB |
-| [WS1 Intelligence SDK for iOS 24.6.0 Release Notes](guides/WS1-Intelligence-SDK-for-iOS-24.6.0-Release-Notes.pdf) | 116.0 KB |
+| [Android Intelligence SDK Network Insights Clients User Guide](guides/Android-Intelligence-SDK-Network-Insights.pdf) | 8.5 KB |

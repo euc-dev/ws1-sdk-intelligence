@@ -45,7 +45,7 @@ Import `com.crittercism.app` package to use the Omnissa Intelligence SDK.
 Some features are available as soon as you integrate Omnissa Intelligence SDK into your app.
 
 - [Network Insights](android-apm.md)
-- [Android Intelligence SDK Network Insights Clients User Guide](https://developer.omnissa.com/ws1-intel-dev-centre/hosting/android/android_net_insights_user_guide.html)
+- [Android Intelligence SDK Network Insights Clients User Guide](https://developer.omnissa.com/ws1-intelligence-sdk/guides/Android-Intelligence-SDK-Network-Insights.pdf)
 
 ### Main Features
 

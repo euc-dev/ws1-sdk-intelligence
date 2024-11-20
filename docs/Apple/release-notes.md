@@ -65,16 +65,15 @@ These release notes describe the new features and enhancements in each release o
 + (void)setPrivacyConfiguration:(nullable NSDictionary<NSString *, id> *)privacyConfig forType:(WS1TelemetryType)type;
 ```
 
-    - NOTES for this API -
+- NOTES for this API -
+	- This API should be called only after IntelligenceSDK initialization. 
+	- Ideally IntelligenceSDK should be initialized early on in the app lifecycle process. If IntelSDK is initialized later, then it is the app’s responsibility to ensure privacy config is injected post initialization. 
+	- Apps would have to read the value for the key - "DEXData", convert it into a dictionary and pass that dictionary as the parameter to the above API. The second parameter for the above API in this case is WS1TelemetryTypeDEX since this privacy config is related to the DEX feature.
+	- For more information on this API, please visit 
+		- [Telemetry Privacy Configuration](ios-privacy-config.md)
+		- [setPrivacyConfiguration()](ws1intelligence.md#setprivacyconfigurationprivacyconfig-telemetryfeature)
+		- [Enabling Telemetry Features in IntelligenceSDK for iOS](ios-enable-telemetry-features-in-intelsdk.md)
 
-        - This API should be called only after IntelligenceSDK initialization. 
-
-        - Ideally IntelligenceSDK should be initialized early on in the app lifecycle process. If IntelSDK is initialized later, then it is the app’s responsibility to ensure privacy config is injected post initialization. 
-
-        - Apps would have to read the value for the key - "DEXData", convert it into a dictionary and pass that dictionary as the parameter to the above API. The second parameter for the above API in this case is WS1TelemetryTypeDEX since this privacy config is related to the DEX feature.
-        
-        - For more information on this API, please visit *TODO-FILL-URL*
-        
 - New API introduced to export data collected through our Telemetry Features!
 Users are now able to export data collected from the Telemetry Features they have Opted-Into. Use the following API to get Feature, Event, and Export formatted specific data in an Asynchronous fashion! 
 
@@ -95,6 +94,8 @@ Users are now able to export data collected from the Telemetry Features they hav
                       withCategory:(WS1TelemetryExportDataCategoryType)dataCategoryType
                      andCompletion:(void (^)(NSString* data))completionHandler;
 ```
+
+For more information, see: [Exporting Telemetry Data](ws1intelligence.md#exporting-telemetry-data)
 
 ### Resolved Issues
 
