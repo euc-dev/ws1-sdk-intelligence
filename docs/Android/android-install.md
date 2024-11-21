@@ -39,7 +39,7 @@ def ws1IntelSdkVersion = "24.3.1"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
-    implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+    implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
 }
 ```
 
@@ -79,7 +79,7 @@ IntelligenceSDK using the following structure:
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
-       implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+       implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
    }
 ```
 
@@ -120,7 +120,7 @@ def ws1SdkVersion = "24.01"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
-    implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+    implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
     // WS1 Dependency
     implementation("com.airwatch.android:AWFramework:$ws1SdkVersion"){
         // Need following excludes as they are duplicated in Workspace ONE SDK
