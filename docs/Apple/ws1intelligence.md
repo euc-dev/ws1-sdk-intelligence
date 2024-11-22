@@ -653,6 +653,11 @@ class func setOptInStatusFor(type: WS1TelemetryType, andStatus: Bool)
 | type   | WS1TelemetryType enum entry, `Application` or `DEX` |
 | status | set to YES to enable Omnissa Intelligence SDK |
 
+!!!Note 
+
+	When you set OptIn for DEX to true, the SDK will set the UIDevice property `isBatteryMonitoringEnabled` to true to allow reporting battery metrics. The app should not set `isBatteryMonitoringEnabled` to false after this point.
+	If the app disables 'BatteryData' with the [setPrivacyConfiguration](ws1intelligence.md/#setprivacyconfigurationprivacyconfig-telemetryfeature) API, the SDK will set `isBatteryMonitoringEnabled` to false.
+	
 
 
 
