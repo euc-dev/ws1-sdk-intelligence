@@ -655,10 +655,7 @@ class func setOptInStatusFor(type: WS1TelemetryType, andStatus: Bool)
 
 !!!Note 
 
-	When you set OptIn for DEX to true, the SDK will set the UIDevice property `isBatteryMonitoringEnabled` to true to allow reporting battery metrics. The app should not set `isBatteryMonitoringEnabled` to false after this point.
-	If the app disables 'BatteryData' with the [setPrivacyConfiguration](ws1intelligence.md/#setprivacyconfigurationprivacyconfig-telemetryfeature) API, the SDK will set `isBatteryMonitoringEnabled` to false.
-	
-
+	When you set OptIn for DEX to true, the SDK will set the UIDevice property `isBatteryMonitoringEnabled` to true to allow reporting battery metrics. The app should not set `isBatteryMonitoringEnabled` to false after this point.	
 
 
 ### getOptOutStatus (deprecated)
