@@ -102,7 +102,15 @@ repositories {
             password = "$GITHUB_PERSONAL_ACCESS_TOKEN"
         }
     }
-    maven { url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/' }
+    maven {
+        name = "Android-WorkspaceONE-SDK"
+        url = "https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/"
+        // Here you will enter your Github Credentials
+        credentials {
+            username = "${GITHUB_USERNAME}"
+            password = "$GITHUB_PERSONAL_ACCESS_TOKEN"
+        }
+    }
     mavenCentral()
     google()
 }
