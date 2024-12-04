@@ -125,7 +125,7 @@ IntelligenceSDK using the following structure:
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
-       implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+       implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
    }
 ```
 
