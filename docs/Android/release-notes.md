@@ -6,11 +6,38 @@ hide:
   - toc
 ---
 
-Updated on 8/9/2024
+Updated on 12/18/2024
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 24.11.0 for Android - December 18, 2024
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.2.2 or later
+
+### New Features
+
+- Minimum SDK version has been upgraded from 21 to 24 (Android 7.0 Nougat).
+- Branding changes for migration to Omnissa.
+- New DEX Telemetry event added: Critical Cell Strength
+    - Name: "critical_cell_signal"
+    - This event is triggered when the device has detected the Cellular Signal Strength level has reached a 1 or lower on a scale from 0-4.
+    - NOTE - this is triggered only if DEX is enabled.
+
+### Resolved Issues
+
+none
+
+### Known Issues
+
+none
+
 
 ## Omnissa Intelligence SDK 24.8.0 for Android - September 16, 2024
 
