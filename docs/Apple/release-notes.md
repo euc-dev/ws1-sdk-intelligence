@@ -12,7 +12,7 @@ Updated December 18, 2024
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
 
-## Omnissa IntelligenceSDK for iOS 24.8.0 Release - December 2024
+## Omnissa IntelligenceSDK for iOS 24.11.0 Release - December 2024
 
 ### Minimum Requirements
 
