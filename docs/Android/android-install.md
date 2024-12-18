@@ -35,11 +35,11 @@ android {
     }
 }
 
-def ws1IntelSdkVersion = "24.3.1"
+def ws1IntelSdkVersion = "24.11.0"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
-    implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+    implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
 }
 ```
 
@@ -75,11 +75,11 @@ IntelligenceSDK using the following structure:
        }
    }
    
-   def ws1IntelSdkVersion = "24.6.1"
+   def ws1IntelSdkVersion = "24.11.0"
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
-       implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+       implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
    }
 ```
 
@@ -102,7 +102,15 @@ repositories {
             password = "$GITHUB_PERSONAL_ACCESS_TOKEN"
         }
     }
-    maven { url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/' }
+    maven {
+        name = "Android-WorkspaceONE-SDK"
+        url = "https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/"
+        // Here you will enter your Github Credentials
+        credentials {
+            username = "${GITHUB_USERNAME}"
+            password = "$GITHUB_PERSONAL_ACCESS_TOKEN"
+        }
+    }
     mavenCentral()
     google()
 }
@@ -115,12 +123,12 @@ android {
     }
 }
 
-def ws1IntelSdkVersion = "24.3.1"
+def ws1IntelSdkVersion = "24.11.0"
 def ws1SdkVersion = "24.01"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
-    implementation "com.vmware.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
+    implementation "com.ws1:ws1intelligencesdk:$ws1IntelSdkVersion"
     // WS1 Dependency
     implementation("com.airwatch.android:AWFramework:$ws1SdkVersion"){
         // Need following excludes as they are duplicated in Workspace ONE SDK
