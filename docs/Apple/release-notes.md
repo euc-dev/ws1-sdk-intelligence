@@ -6,12 +6,33 @@ hide:
   - toc
 ---
 
-Updated October 28, 2024
+Updated December 18, 2024
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
 
+## Omnissa IntelligenceSDK for iOS 24.8.0 Release - December 2024
+
+### Minimum Requirements
+
+- iOS 15.0 device or iPadOS 15.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+- Branding updates for migration to Omnissa.
+- Protobuf dependency has been updated to the latest available stable release at the time of releasing IntelSDK - 28.3
+- If DEX is enabled via the custom SDK settings, then a new event with the name “network_change” is sent to the Intelligence backend outside of the existing events. This event is triggered when there is a switch in SSID, cellular type, ethernet, or a disconnection. Disconnections are not reported if a new connection is made in less than 5 seconds.
+
+### Resolved Issues
+
+none
+
+### Known Issues
+
+none
 
 
 ## Omnissa IntelligenceSDK for iOS 24.8.0 Release - October 2024
