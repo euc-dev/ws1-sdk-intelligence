@@ -15,7 +15,8 @@ Omnissa provides each Software Development Kit (the “Software”) to you subje
 
 For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
 
-The SDK is provided as either a [Android Package](https://github.com/orgs/euc-releases/packages?repo_name=ws1-intelligencesdk-sdk-android), [Android Release](https://github.com/euc-releases/ws1-intelligencesdk-sdk-android/releases), [iOS Package](https://github.com/orgs/euc-releases/packages?repo_name=ws1-intelligencesdk-sdk-ios), [iOS Release](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases). Please download the software from the appropriate location.
+The SDK can be downloaded as either an [Android Package](https://github.com/orgs/euc-releases/packages?repo_name=ws1-intelligencesdk-sdk-android) or as an [iOS Release](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases). Please download the software from the appropriate location.
+
 
 ## Developer Guides
 

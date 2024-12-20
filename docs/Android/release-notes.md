@@ -36,7 +36,8 @@ none
 
 ### Known Issues
 
-none
+- Instrumented URLConnection Classes network request elapsed time inaccurate. 
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
 
 
 ## Omnissa Intelligence SDK 24.8.0 for Android - September 16, 2024
