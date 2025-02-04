@@ -16,7 +16,7 @@ Release Notes can be viewed [here](release-notes.md).
 
 ## Application Requirements
 
-- iOS 15.0 and above.
+- iOS 16.0 and above.
 - SystemConfiguration Framework
 - CoreData Framework
 

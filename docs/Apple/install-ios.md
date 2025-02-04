@@ -69,11 +69,11 @@ Register your app at the Omnissa Intelligence portal to get an App ID to be used
 !!!Warning
     Please note that cURL (a dependency for the script) has a known issue which may cause a failure inside the script while uploading large dSYM files. The version of cURL that ships with the latest OSX builds has been confirmed to exhibit this issue (7.64.1). If you experience problems during the upload phase of the script, try to upgrade to a newer version. Version 7.69.1 has been confirmed to resolve the issue.
 
-- Download [WS1IntelligenceSDKDSYMUpload.zip](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases/download/24.3.0/WS1IntelligenceSDKDSYMUpload.zip) and expand the zip file.
+- Download WS1IntelligenceSDKDSYMUpload.zip [from the release you are using](https://github.com/euc-releases/ws1-intelligencesdk-sdk-ios/releases) and expand the zip file.
 - Place the 2 files in an appropriate place in your project.
 - In your Xcode application target’s “Build Phases” tab, add a new Run Script phase.
 
-![](.xcode-run-script.png)
+![](xcode-run-script.png)
 
 - Copy and paste the script code below into the Run Script phase, then update the path components to the directory you chose.
 

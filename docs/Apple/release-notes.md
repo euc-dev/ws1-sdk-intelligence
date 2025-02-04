@@ -6,11 +6,33 @@ hide:
   - toc
 ---
 
-Updated December 18, 2024
+Updated February 4, 2025
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
+
+
+## Omnissa IntelligenceSDK for iOS 25.1.0 Release - February 2025
+
+### Minimum Requirements
+
+- iOS 16.0 device or iPadOS 16.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+none 
+
+### Resolved Issues
+
+- A bug that was causing recursive loading of “about:blank“ pages in WKWebView under specific conditions was fixed.
+
+### Known Issues
+
+none
+
 
 ## Omnissa IntelligenceSDK for iOS 24.11.0 Release - December 2024
 
