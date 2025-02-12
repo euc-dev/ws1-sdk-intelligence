@@ -29,12 +29,10 @@ repositories {
 android {
    packagingOptions {
         pickFirst '**/libc++_shared.so'
-        pickFirst '**/libcrypto.1.0.2.so'
-        pickFirst '**/libssl.1.0.2.so'
     }
 }
 
-def ws1IntelSdkVersion = "24.11.0"
+def ws1IntelSdkVersion = "25.1.0"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -69,12 +67,10 @@ IntelligenceSDK using the following structure:
    android {
       packagingOptions {
            pickFirst '**/libc++_shared.so'
-           pickFirst '**/libcrypto.1.0.2.so'
-           pickFirst '**/libssl.1.0.2.so'
        }
    }
    
-   def ws1IntelSdkVersion = "24.11.0"
+   def ws1IntelSdkVersion = "25.1.0"
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
@@ -107,12 +103,10 @@ repositories {
 android {
    packagingOptions {
         pickFirst '**/libc++_shared.so'
-        pickFirst '**/libcrypto.1.0.2.so'
-        pickFirst '**/libssl.1.0.2.so'
     }
 }
 
-def ws1IntelSdkVersion = "24.11.0"
+def ws1IntelSdkVersion = "25.1.0"
 def ws1SdkVersion = "24.11"
 
 dependencies {
@@ -160,6 +154,9 @@ The IntelligenceSDK currently utilizes the following Android Permissions:
 - READ_PHONE_STATE
 - USE_BIOMETRIC
 - WRITE_EXTERNAL_STORAGE
+- PACKAGE_USAGE_STATS (required only for App Usage Metrics)
+- QUERY_ALL_PACKAGES (required only for App Usage Metrics)
+- RECEIVE_BOOT_COMPLETED (required only for App Usage Metrics Battery Recording)
 
 | Attribute | Permissions (Specific SDKs) |
 | --- | --- |
