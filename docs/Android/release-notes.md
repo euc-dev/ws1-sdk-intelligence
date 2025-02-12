@@ -6,11 +6,31 @@ hide:
   - toc
 ---
 
-Updated on 12/18/2024
+Updated on 2/10/2025
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 25.1.0 for Android - February 10, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.2.2 or later
+
+### New Features
+
+- New DEX Telemetry entity added: App Usage Metrics. For more info, visit page: [Enabling App Usage Metrics](android-usage-metrics.md)
+
+### Known Issues
+
+- Instrumented URLConnection Classes network request elapsed time inaccurate. 
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+- Older Android devices below SDK 26 with low memory may see DEX events cease after hours of continuous usage.
+
 
 ## Omnissa Intelligence SDK 24.11.0 for Android - December 18, 2024
 
