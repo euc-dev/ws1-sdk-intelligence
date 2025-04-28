@@ -39,3 +39,4 @@ The SDK can be downloaded as either an [Android Package](https://github.com/orgs
 | --- | --- |
 | Reference Guides |   |
 | [Android Intelligence SDK Network Insights Clients User Guide](guides/Android-Intelligence-SDK-Network-Insights.pdf) | 8.5 KB |
+| [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](guides/custom-settings-integration.md) | |
