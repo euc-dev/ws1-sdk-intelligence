@@ -24,12 +24,12 @@ App Usage Attributes:
 - **longest_app_session** - Longest session duration the app was in the foreground.
 - **shortest_app_session** - Shortest session duration the app was in the foreground.
 - **battery_drain** - Average battery drain per hour of the app.
-- **data_usage** - Total network data (transmitted and received) usage of the app.
+- **data_usage** - Total network data (cellular and wifi) usage of the app.
 
 # How to enable App Usage Metrics
 
 ## DEX Telemetry Opt In
-Since this is a DEX Telemetry Feaute entity, the DEX Telemetry Feature must be enabled. Please see section [DEX Telemetry Opt-in](crittercism.md#dex-telemetry-opt-in).
+Since this is a DEX Telemetry Feature entity, the DEX Telemetry Feature must be enabled. Please see section [DEX Telemetry Opt-in](crittercism.md#dex-telemetry-opt-in).
 
 ## Privacy Configuration Flag
 If configuring Telemetry Feature Data through the [Privacy Config](privacy-config.md) API, the following Privacy flag for App Usage Metrics has been added. 
