@@ -14,7 +14,9 @@ App Usage Metrics are an entity that can be tracked through our DEX Telemetry Fe
 The App Usage Metrics entity captures daily usage and performance metrics for applications running on the device. Each day, the top 30 applications are retrieved based on foreground usage time. Historical data is fetched for the prior days (does not include the current day) up to the last fetch time. The data is only fetched for a maximum of 7 days in the case the host app has not been opened for more than 7 days.
 
 # Attributes
+
 App Usage Attributes:
+
 - **app_name** - Name of the app.
 - **app_version** - Version of the app.
 - **app_usage_date_time** - Starting timestamp at which the app usage was computed of the app.
