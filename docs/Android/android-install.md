@@ -29,10 +29,11 @@ repositories {
 android {
    packagingOptions {
         pickFirst '**/libc++_shared.so'
+        exclude 'META-INF/**'
     }
 }
 
-def ws1IntelSdkVersion = "25.1.0"
+def ws1IntelSdkVersion = "25.4.0"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -66,11 +67,16 @@ IntelligenceSDK using the following structure:
    
    android {
       packagingOptions {
-           pickFirst '**/libc++_shared.so'
+           pickFirst 'lib/**/libsettings.so'
+           pickFirst 'lib/**/libc++_shared.so'
+           pickFirst 'lib/**/libcrypto.1.0.2.so'
+           pickFirst 'lib/**/libssl.1.0.2.so'
+           pickFirst 'lib/**/libxsw_crypto.so'
+           exclude 'META-INF/**'
        }
    }
    
-   def ws1IntelSdkVersion = "25.1.0"
+   def ws1IntelSdkVersion = "25.4.0"
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
@@ -102,11 +108,16 @@ repositories {
 
 android {
    packagingOptions {
-        pickFirst '**/libc++_shared.so'
+           pickFirst 'lib/**/libsettings.so'
+           pickFirst 'lib/**/libc++_shared.so'
+           pickFirst 'lib/**/libcrypto.1.0.2.so'
+           pickFirst 'lib/**/libssl.1.0.2.so'
+           pickFirst 'lib/**/libxsw_crypto.so'
+           exclude 'META-INF/**'
     }
 }
 
-def ws1IntelSdkVersion = "25.1.0"
+def ws1IntelSdkVersion = "25.4.0"
 def ws1SdkVersion = "24.11"
 
 dependencies {
