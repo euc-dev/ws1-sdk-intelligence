@@ -118,7 +118,9 @@ android {
 }
 
 def ws1IntelSdkVersion = "25.4.0"
-def ws1SdkVersion = "24.11"
+
+// NOTE: We do not support WS1 SDK versions lower than 24.11.
+def ws1SdkVersion = "25.02"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -132,7 +134,8 @@ dependencies {
 ```
 
 !!!Note
-    Additional steps may be necessary to integrate the Workspace ONE SDK itself than what is shown above, please refer to Workspace ONE SDK specific integration documentation for that product.
+    Additional steps may be necessary to integrate the Workspace ONE SDK itself than what is shown above, please refer to Workspace ONE SDK specific integration documentation for that product. 
+    Futhermore, we do not support versions of the Workspace ONE SDK lower than 24.11.
 
 ## Permissions Required
 
