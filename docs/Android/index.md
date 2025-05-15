@@ -53,7 +53,7 @@ Some features are available as soon as you integrate Omnissa Intelligence SDK in
 - [Logging Handled Exceptions](crittercism.md#logging-handled-exceptions)
 - [Logging User Flows](crittercism.md#logging-user-flows)
 - [Logging Network Request](crittercism.md#logging-network-request)
-- [Instrumenting OkHttpClient (Beta)](crittercism.md#instrumenting-okhttpclient-beta)
+- [Instrumenting OkHttpClient](crittercism.md#instrumenting-okhttpclient)
 - [Instrumenting WebView](crittercism.md#instrumenting-webview)
 - [Enabling DEX](crittercism.md#dex-telemetry-opt-in)
 

@@ -264,6 +264,47 @@ shouldCollectLogcat
 
 Set to True to allow Omnissa Intelligence SDK to collect system log data. Set to False otherwise.
 
+## Tenant Region Enabled
+
+### setTenantRegionAllowed (isTenantRegionAllowed)
+Set whether the client may send data to the Tenant Region, which may differ from developer's region, when a token is available. To enable the Tenant Region reporting, set to `true`.
+
+Default value is `false`.
+
+`public final void setTenantRegionAllowed(final boolean isTenantRegionAllowed)`
+
+
+Tenant Region example in Java:
+```JAVA
+CrittercismConfig config = new CrittercismConfig();
+config.setTenantRegionAllowed(true);
+```
+
+Tenant Region example in Kotlin:
+```Kotlin
+val config = CrittercismConfig()  
+config.isTenantRegionAllowed = true
+```
+
+### isTenantRegionAllowed ()
+Get whether Tenant Region reporting is allowed or not.
+
+`public final boolean isTenantRegionAllowed()`
+
+Tenant Region example in Java:
+```JAVA
+CrittercismConfig config = new CrittercismConfig();
+config.setTenantRegionAllowed(true);
+boolean tenantRegionAllowed = config.isTenantRegionAllowed();
+```
+
+Tenant Region example in Kotlin:
+```Kotlin
+val config = CrittercismConfig()  
+config.isTenantRegionAllowed = true
+val tenantRegionAllowed = config.isTenantRegionAllowed
+```
+
 ## Caching Mode Enabled
 
 ### setCachingModeEnabled ()
