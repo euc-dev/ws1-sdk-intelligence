@@ -6,11 +6,51 @@ hide:
   - toc
 ---
 
-Updated on 2/10/2025
+Updated on 5/12/2025
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 25.4.0 for Android - May 12, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.2.2 or later
+
+### New Features
+
+- New DEX Telemetry event added: Critical Cell Strength
+    - Name: "critical_battery_level"
+    - This event is triggered when the device reaches the following battery thresholds while the SDK is running.
+      - Reports once when the device reaches a battery level between 16-20%.
+      - Reports once when the device reaches a battery level between 11-15%.
+      - Reports on every battery level between 0-10%.
+    - When the device is charging these events will not be sent even if the device is in the specified range.
+    - Device charging will reset the ability to send for all given sections, for example: If we have already sent an event for values between 16-20%, charging followed by discharging will allow another event to be sent for this battery level range.
+- New DEX Telemetry attribute added: Is SD Card Portable
+    - Name: "is_sdcard_portable"
+    - SD card volumes that are marked as a public type are considered to be in the portable state.
+- New DEX Telemetry attribute added: Percent Asleep
+    - Name: "percent_asleep"
+    - Represents the duration percentage that the device has been asleep since it was booted (on a scale from 0 to 100).
+- New DEX Telemetry attribute added: Percent Awake
+    - Name: "percent_awake"
+    - Represents the duration percentage that the device has been awake since it was booted (on a scale from 0 to 100).
+- App Usage Metrics reporting will now be checked every 10 minutes and will be triggered if no report has been submitted for the current day (once per day). This change will ensure that previous app metrics is reported earlier during the next day. For more details, see [App Usage Metrics](android-usage-metrics.md)
+- Individual entity events are now limited to a maximum of 3 events per second. Additionally, the total amount of event data that can be transmitted is now capped at 5MB per day.
+
+!!!Note
+    Attributes and events are only triggered when DEX is enabled.
+
+### Known Issues
+
+- Instrumented URLConnection Classes network request elapsed time inaccurate. 
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+- Older Android devices below SDK 26 with low memory may see DEX events cease after hours of continuous usage.
 
 ## Omnissa Intelligence SDK 25.1.0 for Android - February 10, 2025
 
