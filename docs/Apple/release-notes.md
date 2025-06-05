@@ -17,9 +17,12 @@ These release notes describe the new features and enhancements in each release o
 
 ### Minimum Requirements
 
-- iOS 16.0 device or iPadOS 16.0 device
-- tvOS devices and app extensions are no longer supported
-- visionOS for Vision Pro devices is not supported
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.1 or newer is required for interactions. This includes WS1SDK's `fips.xcframework`.
+- not supported:
+   - tvOS devices
+   - app extensions
+   - visionOS for Vision Pro devices
 
 ### New Features
 
