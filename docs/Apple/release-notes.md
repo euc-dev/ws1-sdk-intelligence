@@ -18,7 +18,7 @@ These release notes describe the new features and enhancements in each release o
 ### Minimum Requirements
 
 - Devices running iOS 16.0 or iPadOS 16.0 or newer.
-- WS1SDK version 25.04.1 or newer is required for interactions. This includes WS1SDK's `fips.xcframework`.
+- WS1SDK version 25.04.0 or newer is required for the two to interact. Note that WS1SDK requires the `fips.xcframework` that is included in its release.
 - not supported:
    - tvOS devices
    - app extensions
