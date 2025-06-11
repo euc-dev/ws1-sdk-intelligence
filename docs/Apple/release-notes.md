@@ -61,7 +61,28 @@ These release notes describe the new features and enhancements in each release o
 none
 
 
-## Omnissa IntelligenceSDK for iOS 25.1.2 Release - February 2025
+## Omnissa IntelligenceSDK for iOS 25.1.3 Release - June 2025
+
+### Minimum Requirements
+
+- iOS 16.0 device or iPadOS 16.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+none 
+
+### Resolved Issues
+
+- Fixes an issue where apps could crash on launch in certain networking situations when it takes more than 20 seconds of wall-clock time to launch.
+
+### Known Issues
+
+none
+
+
+## Omnissa IntelligenceSDK for iOS 25.1.2 Release - June 2025
 
 ### Minimum Requirements
 
