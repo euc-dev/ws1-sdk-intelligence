@@ -13,6 +13,30 @@ Updated June 5, 2025
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
 
 
+## Omnissa IntelligenceSDK for iOS 25.4.1 Release - June 2025
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.0 or newer is required for the two to interact. Note that WS1SDK requires the `fips.xcframework` that is included in its release.
+- not supported:
+   - tvOS devices
+   - app extensions
+   - visionOS for Vision Pro devices
+
+### New Features
+
+- No new features
+
+### Resolved Issues
+
+- Fixes an issue where apps could crash on launch in certain networking situations when it takes more than 20 seconds of wall-clock time to launch.
+
+### Known Issues
+
+none
+
+
 ## Omnissa IntelligenceSDK for iOS 25.4.0 Release - June 2025
 
 ### Minimum Requirements
