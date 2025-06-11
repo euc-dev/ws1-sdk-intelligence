@@ -97,7 +97,7 @@ none
 ### Resolved Issues
 
 - The IntelSDK now attempts to connect to the `workspaceone.com` domain URLs instead of the previous `vmwservices.com` domain URLs. If the `workspaceone.com` domain URLs are accessible, IntelSDK will construct all its URLs using `workspaceone.com`.
-   - Requirements for allowlisting the necessary URLs can be found here:  [Requirements](https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview)
+   - Requirements for allowlisting the necessary URLs can be found here:  [Requirements](https://docs.omnissa.com/bundle/Intelligence/page/IntelRequirements.html)
 - The DSYM upload feature will no longer be supported. For more information, refer to the knowledge base:
 [End of Availability & Support for the App Crash Symbolication](https://kb.omnissa.com/s/article/6000838)
    - Please remove any build phases that were executing scripts to upload DSYMs.
