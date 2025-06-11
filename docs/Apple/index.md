@@ -23,7 +23,6 @@ Release Notes can be viewed [here](release-notes.md).
 ## Guides
 
 - [Installation and Setup](install-ios.md)
-- [Setup Automatic dSYM Uploads](install-ios.md#setup-automatic-dsym-uploads)
 - [How to Customize App Version Reported to Omnissa Intelligence](ios-custom-version.md)
 - [SDK Data Sheet](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileIntelligenceSDK.html)
 

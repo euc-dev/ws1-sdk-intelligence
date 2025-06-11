@@ -6,11 +6,151 @@ hide:
   - toc
 ---
 
-Updated February 4, 2025
+Updated June 5, 2025
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
+
+
+## Omnissa IntelligenceSDK for iOS 25.4.1 Release - June 2025
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.0 or newer is required for the two to interact. Note that WS1SDK requires the `fips.xcframework` that is included in its release.
+- not supported:
+   - tvOS devices
+   - app extensions
+   - visionOS for Vision Pro devices
+
+### New Features
+
+- No new features
+
+### Resolved Issues
+
+- Fixes an issue where apps could crash on launch in certain networking situations when it takes more than 20 seconds of wall-clock time to launch.
+
+### Known Issues
+
+none
+
+
+## Omnissa IntelligenceSDK for iOS 25.4.0 Release - June 2025
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.0 or newer is required for the two to interact. Note that WS1SDK requires the `fips.xcframework` that is included in its release.
+- not supported:
+   - tvOS devices
+   - app extensions
+   - visionOS for Vision Pro devices
+
+### New Features
+
+- New DEX Telemetry event for iOS: **Critical Battery Level**
+   - This event is triggered when the device reaches the following battery thresholds while the SDK is running:
+      - Reports once when the device reaches a battery level between 16-20%
+      - Reports once when the device reaches a battery level between 11-15%
+      - Reports on every battery level between 0-10%
+
+   When your iOS device is charging, these events will not be sent, even if the device is in the specified range.
+   Device charging will reset the ability to send for all given sections. For example: If we have already sent an event for values between 16-20%, charging followed by discharging will allow another event to be sent for this battery level range.
+
+- New DEX Telemetry attribute for iOS: **Percent Asleep**
+   - Name: percent_asleep
+   - Represents the duration percentage that the device has been asleep since it was booted (on a scale from 0 to 100).
+   
+- New DEX Telemetry attribute for iOS: **Percent Awake**
+   - Name: percent_awake
+   - Represents the duration percentage that the device has been awake since it was booted (on a scale from 0 to 100).
+
+### Resolved Issues
+
+- Creation of the automatic `WS1IntelligenceSDK-Enable-Completed` breadcrumb has been changed to an asynchronous operation to prevent a minor delay in completing the enable process.
+- The IntelSDK now attempts to connect to the `workspaceone.com` domain URLs instead of the previous `vmwservices.com` domain URLs. If the `workspaceone.com` domain URLs are accessible, IntelSDK will construct all its URLs using `workspaceone.com`.
+   - Requirements for allowlisting the necessary URLs can be found here:  [Requirements](https://docs.omnissa.com/bundle/Intelligence/page/IntelRequirements.html)
+   - For more information on the domain migration, see: [Knowledge Base](https://kb.omnissa.com/s/article/6000882)
+
+- The dSYM upload feature will no longer be supported by the servers after `Jun 30, 2025`
+   - Please remove any build phases that were executing the script which uploaded dSYMs. After Jun 30, 2025, the upload attempt will fail with an error. 
+      - Errors will be prefixed with: `Symbol File upload failed with result`
+   - Additionally, delete the corresponding service account JSON file.
+   - For more information, see our KB article: [End of Availability & Support for the App Crash Symbolication](https://kb.omnissa.com/s/article/6000838)
+
+### Known Issues
+
+none
+
+
+## Omnissa IntelligenceSDK for iOS 25.1.3 Release - June 2025
+
+### Minimum Requirements
+
+- iOS 16.0 device or iPadOS 16.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+none 
+
+### Resolved Issues
+
+- Fixes an issue where apps could crash on launch in certain networking situations when it takes more than 20 seconds of wall-clock time to launch.
+
+### Known Issues
+
+none
+
+
+## Omnissa IntelligenceSDK for iOS 25.1.2 Release - June 2025
+
+### Minimum Requirements
+
+- iOS 16.0 device or iPadOS 16.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+none 
+
+### Resolved Issues
+
+- Fixes a potential deadlock.
+
+### Known Issues
+
+none
+
+
+## Omnissa IntelligenceSDK for iOS 25.1.1 Release - May 28, 2025
+
+### Minimum Requirements
+
+- iOS 16.0 device or iPadOS 16.0 device
+- tvOS devices and app extensions are no longer supported
+- visionOS for Vision Pro devices is not supported
+
+### New Features
+
+none 
+
+### Resolved Issues
+
+- The IntelSDK now attempts to connect to the `workspaceone.com` domain URLs instead of the previous `vmwservices.com` domain URLs. If the `workspaceone.com` domain URLs are accessible, IntelSDK will construct all its URLs using `workspaceone.com`.
+   - Requirements for allowlisting the necessary URLs can be found here:  [Requirements](https://docs.omnissa.com/bundle/Intelligence/page/IntelRequirements.html)
+- The DSYM upload feature will no longer be supported. For more information, refer to the knowledge base:
+[End of Availability & Support for the App Crash Symbolication](https://kb.omnissa.com/s/article/6000838)
+   - Please remove any build phases that were executing scripts to upload DSYMs.
+   - Additionally, delete the corresponding service account JSON file.
+
+### Known Issues
+
+none
 
 
 ## Omnissa IntelligenceSDK for iOS 25.1.0 Release - February 2025
