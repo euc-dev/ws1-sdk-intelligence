@@ -47,7 +47,7 @@ These release notes describe the new features and enhancements in each release o
 
 - Creation of the automatic `WS1IntelligenceSDK-Enable-Completed` breadcrumb has been changed to an asynchronous operation to prevent a minor delay in completing the enable process.
 - The IntelSDK now attempts to connect to the `workspaceone.com` domain URLs instead of the previous `vmwservices.com` domain URLs. If the `workspaceone.com` domain URLs are accessible, IntelSDK will construct all its URLs using `workspaceone.com`.
-   - Requirements for allowlisting the necessary URLs can be found here:  [Requirements](https://developer.apple.com/documentation/webkit/wknavigationdelegate/3223382-webview)
+   - Requirements for allowlisting the necessary URLs can be found here:  [Requirements](https://docs.omnissa.com/bundle/Intelligence/page/IntelRequirements.html)
    - For more information on the domain migration, see: [Knowledge Base](https://kb.omnissa.com/s/article/6000882)
 
 - The dSYM upload feature will no longer be supported by the servers after `Jun 30, 2025`
