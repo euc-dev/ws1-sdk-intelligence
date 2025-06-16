@@ -34,7 +34,7 @@ These release notes describe the new features and enhancements in each release o
 
 ### Known Issues
 
-none
+- The Swift Package Manager (SPM) files for WS1IntelligenceSDK 25.4.0 and 25.4.1 have a conflict with the SPM files for Omnissa’s WS1SDK (aka AirWatchSDK) version 25.04.0 and 25.04.1 when both are used in the same app.
 
 
 ## Omnissa IntelligenceSDK for iOS 25.4.0 Release - June 2025
@@ -82,7 +82,7 @@ none
 
 ### Known Issues
 
-none
+- The Swift Package Manager (SPM) files for WS1IntelligenceSDK 25.4.0 and 25.4.1 have a conflict with the SPM files for Omnissa’s WS1SDK (aka AirWatchSDK) version 25.04.0 and 25.04.1 when both are used in the same app.
 
 
 ## Omnissa IntelligenceSDK for iOS 25.1.3 Release - June 2025
