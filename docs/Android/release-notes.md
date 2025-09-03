@@ -6,11 +6,48 @@ hide:
   - toc
 ---
 
-Updated on 5/12/2025
+Updated on 9/2/2025
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 25.7.0 for Android - September 2, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- Added Tenant support for Intelligence Handled Exceptions events. 
+  - Previously, Handled Exceptions where only sent to the App Owner and Development endpoints, now they can be routed to the authenticated Tenant Region without being an App Owner.
+- Fixed issue around rapid Breadcrumb creation potentially causing main thread hangs: 
+  - Breadcrumb creation now asynchronous to the main thread.
+- New DEX event would be sent when the daily limit of 5MB (data send) is reached.
+- Add the following Battery Attribute to the Telemetry DEX Feature data:
+  - “battery_average_current”: represents the average current of the battery in milli-Amps (mA). 
+  - “battery_capacity”: represents the maximum battery current capacity in milliAmp-Hours (mAh). 
+  - “battery_remaining_charge”: represents the remaining battery current capacity in milliAmp-Hours (mAh).
+- Upgrade Kotlin version to 2.1.0 from 1.8.21.
+- Upgrade Android Gradle Plugin to 8.6.0 from 8.5.0.
+
+### Known Issues
+
+- Instrumented URLConnection Classes network request elapsed time inaccurate.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+
+### Resolved Issues
+- Update Battery Level recording WorkManager logic as Android 11 devices where seeing duplicate jobs on reboot. 
+  - Deprecated old Battery Level recording Worker, migrate to new version 2. 
+  - Version 2 features a lightweight CoroutineWorker that is scheduled to run every 2 minutes with WorkManager scheduling discretion. 
+  - Update Consumer Proguard to keep Deprecated Battery Level Worker. 
+  - Battery Worker will now replace its own instance when creating the next iteration of Battery Recording work, instead of using Android APIs to chain which can cause duplicate jobs on reboot. 
+  - Battery Workers will now prune old records as well as save Battery Level on run.
+- Older Android devices below SDK 26 with low memory may see DEX events cease after hours of continuous usage.
 
 ## Omnissa Intelligence SDK 25.4.0 for Android - May 12, 2025
 
@@ -346,7 +383,7 @@ Crittercism.leaveUserflowSpecificBreadcrumb(final String userflowName, final Str
 ```
 
 !!!Note
-    Breadcrumbs not specified under an active userflow will operate on the traditional breadcrumb logic. Tenant Region Reporting will be calculated based on the Crittercism configuration options.
+    Breadcrumbs not specified under an active Userflow will operate on the traditional breadcrumb logic. Tenant Region Reporting will be calculated based on the Crittercism configuration options.
 
 ### Resolved Issues
 
