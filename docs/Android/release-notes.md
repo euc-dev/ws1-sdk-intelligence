@@ -24,7 +24,7 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 ### New Features
 
 - Added Tenant support for Intelligence Handled Exceptions events. 
-  - Previously, Handled Exceptions where only sent to the App Owner and Development endpoints, now they can be routed to the authenticated Tenant Region without being an App Owner.
+  - Previously, Handled Exceptions were only sent to the App Owner and Development endpoints. Now, they can be routed to the authenticated Tenant Region without being an App Owner.
 - Fixed issue around rapid Breadcrumb creation potentially causing main thread hangs: 
   - Breadcrumb creation now asynchronous to the main thread.
 - New DEX event would be sent when the daily limit of 5MB (data send) is reached.
@@ -41,7 +41,7 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 - Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
 
 ### Resolved Issues
-- Update Battery Level recording WorkManager logic as Android 11 devices where seeing duplicate jobs on reboot. 
+- Update Battery Level recording WorkManager logic as Android 11 devices were seeing duplicate jobs on reboot. 
   - Deprecated old Battery Level recording Worker, migrate to new version 2. 
   - Version 2 features a lightweight CoroutineWorker that is scheduled to run every 2 minutes with WorkManager scheduling discretion. 
   - Update Consumer Proguard to keep Deprecated Battery Level Worker. 
