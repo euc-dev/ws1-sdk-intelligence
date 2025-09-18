@@ -59,7 +59,7 @@ let WS1NotificationDidCrashOnLastLoad: String
 
 ### Last Crash UserInfo Keys
 
-The [WS1NotificationDidCrashOnLastLoad](#ws1notificationdidcrashonlastload) userInfo contains the crash name, reason, and date.
+The [WS1NotificationDidCrashOnLastLoad](#ws1notificationdidcrashonlastload) notification's userInfo member contains the crash name, reason, and date.
 
 **Constants**
 

@@ -6,11 +6,45 @@ hide:
   - toc
 ---
 
-Updated June 5, 2025
+Updated September, 2025
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
+
+
+## Omnissa IntelligenceSDK for iOS 25.7.0 Release - Sept 2025
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.1 or newer is required for the two to interact. 
+- not supported:
+
+    - tvOS devices
+    - app extensions
+    - visionOS for Vision Pro devices
+
+### New Features
+
+- A new DEX event named max_data_reached is sent when the daily limit of 5MB (total data sent) is reached.
+- WS1IntelligenceSDK now uses the `Workspaceone.com` URLs listed in the 
+[Requirements](https://docs.omnissa.com/bundle/Intelligence/page/IntelRequirements.html) article. Be sure to trust the URLs listed there for your environment.
+
+### Resolved Issues
+
+- Fixed missing crash information for iOS 26.
+
+Some crashes were not recorded in the Intelligence system when crash logs were created that were larger than the 256 KB maximum size allowed in PLCrashReporter version 1.11.2. The observed instances were all from the iOS 26 simulator. None were observed from devices.
+
+PLCrashReporter was updated to version 1.12.0 which allows crash logs up to 1 MB by default. 
+
+In the cases where the crash logs were too big, they were dropped and no crash information was uploaded. 
+
+### Known Issues
+
+- None
+
 
 
 ## Omnissa IntelligenceSDK for iOS 25.4.1 Release - June 2025
