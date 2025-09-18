@@ -16,10 +16,10 @@ Release Notes can be viewed [here](release-notes.md).
 
 ## Requirements
 
-- Android 5.0 or later
-- API Level 21 or later
+- Android 7.0 or later
+- API Level 24 or later
 - Workspace ONE UEM Console 2109 or later
-- Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
 - Workspace ONE Intelligent Hub for Android version 21.9 or later.
 
 ## Guide
