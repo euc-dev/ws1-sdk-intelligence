@@ -35,11 +35,11 @@ These release notes describe the new features and enhancements in each release o
 
 - Fixed missing crash information for iOS 26.
 
-Some crashes were not recorded in the Intelligence system when crash logs were created that were larger than the 256 KB maximum size allowed in PLCrashReporter version 1.11.2. The observed instances were all from the iOS 26 simulator. None were observed from devices.
+   Some crashes were not recorded in the Intelligence system when crash logs were created that were larger than the 256 KB maximum size allowed in PLCrashReporter version 1.11.2. The observed instances were all from the iOS 26 simulator. None were observed from devices.
 
-PLCrashReporter was updated to version 1.12.0 which allows crash logs up to 1 MB by default. 
+   PLCrashReporter was updated to version 1.12.0 which allows crash logs up to 1 MB by default. 
 
-In the cases where the crash logs were too big, they were dropped and no crash information was uploaded. 
+   In the cases where the crash logs were too big, they were dropped and no crash information was uploaded. 
 
 ### Known Issues
 
