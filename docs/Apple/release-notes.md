@@ -27,7 +27,7 @@ These release notes describe the new features and enhancements in each release o
 
 ### New Features
 
-- A new DEX event named max_data_reached is sent when the daily limit of 5MB (total data sent) is reached.
+- A new DEX event named `max_data_reached` is sent when the daily limit of 5MB (total data sent) is reached.
 - WS1IntelligenceSDK now uses the `Workspaceone.com` URLs listed in the 
 [Requirements](https://docs.omnissa.com/bundle/Intelligence/page/IntelRequirements.html) article. Be sure to trust the URLs listed there for your environment.
 
