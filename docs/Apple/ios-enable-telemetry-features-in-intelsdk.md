@@ -18,7 +18,7 @@ The two supported telemetry features that can be enabled from within Intelligenc
 
 Enabling DEX is a two step process - 
 
-1. UEM admin must add an additional k-v pair named CaptureDEXData to the custom SDK settings payload.
+1. UEM admin must add an additional k-v pair named `CaptureDEXData` to the custom SDK settings payload.
 1. Productivity apps must read the value of setting, and call API’s on the IntelligenceSDK to enable / disable the DEX feature. 
 
 ## Custom SDK Settings
@@ -121,8 +121,8 @@ BOOL areAllAdvancedTelemetryFeaturesOptedIn = [WS1Intelligence getOptInStatusFor
 
 Important Notes when using the above API’s
 
-- **Always enable IntelSDK first i.e. start IntelSDK first before interacting with the API’s. Interacting with the API’s without enabling DEX will not have an impact on feature enablement.**
+- **Always enable IntelSDK first i.e. enable IntelSDK before interacting with the API’s. Interacting with the API’s without enabling DEX will not have an impact on feature enablement.**
 - **Advanced Telemetry Features (DEX / ZeroTrust) is disabled by default. So if the custom settings do not exist or if it is disabled, please opt out of DEX using the above API.**
-- When user opts-out of analytics from the privacy screen, its is application’s responsibility to opt-out of enabled advanced telemetry features as well.
+- When user opts-out of analytics from the privacy screen, it is the application’s responsibility to opt-out of enabled advanced telemetry features as well.
     - Individual features cannot be opted out at this moment. Disabling one Advanced Telemetry feature (DEX / ZeroTrust) would turn off all other opted-in features. This is only applicable if more than one advanced telemetry feature is enabled by the application. 
  
