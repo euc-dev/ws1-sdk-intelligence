@@ -6,11 +6,29 @@ hide:
   - toc
 ---
 
-Updated on 9/2/2025
+Updated on 10/12/2025
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 25.10.0 for Android - November 12, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- Added support for Android 16KB page sizes.
+
+### Known Issues
+
+- Instrumented URLConnection Classes network request elapsed time inaccurate.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
 
 ## Omnissa Intelligence SDK 25.7.0 for Android - September 2, 2025
 
