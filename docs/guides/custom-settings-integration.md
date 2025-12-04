@@ -89,6 +89,21 @@ When configuring the Workspace ONE SDK through Custom Settings, specific key/val
 }
 ```
 
+### `IntelSDKAllowedApps`
+**Type:** Object (JSON)
+
+**Description:** A JSON array listing Application IDs allowed to transmit DEX data.
+
+**Example:**
+```JSON
+{
+  "IntelSDKAllowedApps": [
+    "CRITTERCISM_APP1_ID",
+    "CRITTERCISM_APP2_ID"
+  ]
+}
+```
+
 ## Integrating Custom Settings into Intelligence SDK using Workspace One SDK APIs
 Once custom settings are configured in Workspace ONE UEM, your application can pull these settings at runtime.
 
@@ -123,4 +138,4 @@ private fun fetchSettings() {
 }
 ```
 
-> For more details about the structure of the privacy configuration and its purpose, see [Android Telemetry Privacy Configuration](../Android/privacy-config.md) and [iOS Telemetry Privacy Configuration](../Apple/ios-privacy-config.md).
+> For more details on setting the WS1 SDK Custom Settings, see [setSDKControlConfig](../Android/crittercism.md#setsdkcontrolconfigconfig) 
