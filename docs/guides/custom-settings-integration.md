@@ -98,8 +98,8 @@ When configuring the Workspace ONE SDK through Custom Settings, specific key/val
 ```JSON
 {
   "IntelSDKAllowedApps": [
-    "CRITTERCISM_APP1_ID",
-    "CRITTERCISM_APP2_ID"
+    "2b5a662e8c4d45fe9f8af99af509655b00555300",
+    "84e3527ecb354764925d48345530c47f00555300"
   ]
 }
 ```

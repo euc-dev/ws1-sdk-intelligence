@@ -691,7 +691,7 @@ See also:
 - [Telemetry Privacy Configuration](privacy-config.md)
 
 ## setSDKControlConfig(config)
-This API can be used to set the WS1 SDK Custom Settings. Intelligence SDK parses for `IntelSDKAllowedApps` (JSON Array of apps allowed to transmit DEX data to the UEM console) and `DEXData` (JSON containing the privacy configuration) from within the control config.
+This API can be used to set the control config (Custom UEM SDK Settings). Intelligence SDK parses for `IntelSDKAllowedApps` (JSON Array of apps allowed to transmit DEX data to the UEM console) and `DEXData` (JSON containing the privacy configuration) from within the control config.
 
 Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
 
@@ -704,7 +704,7 @@ public static void setSDKControlConfig(String config)
 
 |               |   |
 |---------------| --- |
-|    config     | Json String of the control config provided from the WS1 UEM SDK. |
+|    config     | Json String of the control config (Custom UEM SDK Settings)  provided from the WS1 UEM SDK. |
 
 **Control Configuration Attributes**
 

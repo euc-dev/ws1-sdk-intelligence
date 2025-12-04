@@ -23,24 +23,23 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 
 ### New Features
 
-- New public API - `setSDKControlConfig(String config)` has been introduced which helps inject UEM Custom Settings to operate on the KVPs in the settings.
-  - Apps pass the control config JSON string from UEM to the new setSDKControlConfig API.
-  - Apps / SDK's are expected to fetch the control config JSON string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
-  - This API parses for `IntelSDKAllowedApps` (JSON Array of apps allowed to transmit DEX data to the UEM console) and `DEXData` (JSON containing the privacy configuration) from within the control config.
+- New KVP introduced to the Custom UEM SDK Settings: `IntelSDKAllowedApps`.
+  - A JSON array listing Application IDs allowed to transmit DEX data.
+  - If missing or empty: All apps can transmit DEX data (default behavior).
+  - If present: Only the listed apps can transmit DEX data.
+  - For more details, see [Intelligence SDK Allowed Apps](allowed-apps.md).
+
+- New public API: `setSDKControlConfig`.
+  - Apps pass the control config JSON string (Custom UEM SDK Settings) from UEM to the new `setSDKControlConfig` API.
+  - Apps / SDK's are expected to fetch the control config JSON (Custom UEM SDK Settings) string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
+  - The SDK parses the `IntelSDKAllowedApps` key and the `DEXData` key (Privacy Configuration) from the control config string.
   - Deprecated the `setPrivacyConfiguration` API in favor of the new `setSDKControlConfig` API.
 
 ```JAVA
 public static void setSDKControlConfig(String config)
 ```
 !!!Note
-    Apps / SDK's should no longer call the deprecated `setPrivacyConfiguration` API as this API is mutually exclusive to `setSDKControlConfig`. 
-    For more details on control configuration see [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
-
-- New KVP introduced to the WS1 SDK Custom Settings: `IntelSDKAllowedApps`
-  - A JSON array listing Application IDs allowed to transmit DEX data.
-    - If missing or empty: All apps can transmit DEX data (default behavior).
-    - If present: Only the listed apps can transmit DEX data.
-  - For more details, see [Intelligence SDK Allowed Apps](allowed-apps.md)
+    Apps / SDK's should no longer call the deprecated `setPrivacyConfiguration` API as this API is mutually exclusive to `setSDKControlConfig`. For more details on the control configuration API, see [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
 
 - New DEX Telemetry event added: Device Reboot
   - Name: "device_reboot"
@@ -69,8 +68,8 @@ public static void setSDKControlConfig(String config)
   
 ### Known Issues
 
-- Instrumented URLConnection Classes network request elapsed time inaccurate.
-- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
 
 ## Omnissa Intelligence SDK 25.10.0 for Android - November 12, 2025
 
@@ -87,8 +86,8 @@ public static void setSDKControlConfig(String config)
 
 ### Known Issues
 
-- Instrumented URLConnection Classes network request elapsed time inaccurate.
-- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
 
 ## Omnissa Intelligence SDK 25.7.0 for Android - September 2, 2025
 

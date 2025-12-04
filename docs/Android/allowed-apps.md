@@ -56,8 +56,8 @@ The following is a table of the Attributes that are currently parsed within the 
   // Only the listed Android apps (App 1 and App 2) will be allowed to transmit DEX data.
 
   "IntelSDKAllowedApps": [
-    "CRITTERCISM_APP1_ID",  // App 1 ID
-    "CRITTERCISM_APP2_ID"  // App 2 ID
+    "2b5a662e8c4d45fe9f8af99af509655b00555300",  // App 1 ID
+    "84e3527ecb354764925d48345530c47f00555300"  // App 2 ID
   ]
 ```
 
