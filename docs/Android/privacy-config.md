@@ -12,12 +12,10 @@ The Privacy Configuration, or Config for short, is a JSON payload which can be u
 This payload can either be generated manually or pulled from the WS1 SDK's Custom Settings if integrated in the application.
 
 ## How to Use
-To inject this configuration, use the API `setSDKControlConfig` offered through the `Crittercism` singleton.
-
-For more on this API, visit: [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig)
+To inject this control configuration, use the API `setSDKControlConfig` offered through the `Crittercism` singleton. The control configuration is the UEM SDK Custom Settings and can be fetched from the UEM SDK. For more details on how to fetch the Custom Settings, see [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](../guides/custom-settings-integration.md). 
 
 
-```Java
+```JAVA
 /**
 * Sets the WS1 UEM SDK Control Config.
 * IntelligenceSDK will parse for the following properties:
@@ -31,6 +29,8 @@ For more on this API, visit: [setSDKControlConfig](crittercism.md#setsdkcontrolc
 */
 public static void setSDKControlConfig(String config)
 ```
+
+For more on this API, see: [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
 
 ### Privacy Configuration Attributes
 The following is a table of the Attributes allowed within the Privacy Configuration JSON format.

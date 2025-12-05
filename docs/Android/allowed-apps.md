@@ -8,7 +8,7 @@ hide:
 
 ## Intelligence SDK Allowed Apps
 
-The WS1 SDK Custom Settings KVP `IntelSDKAllowedApps` (Allowed Apps lists) is a JSON Array which can be used to control which apps can report DEX Data.
+The control configuration (UEM SDK Custom Settings) KVP `IntelSDKAllowedApps` (Allowed Apps lists) is a JSON Array which can be used to control which apps can report DEX Data.
 - If the current app’s ID matches one of the IDs in the `IntelSDKAllowedApps` array, DEX data collection and transmission will be enabled for that app (assuming DEX is opted in). 
 - If the current app’s ID is not in the list, DEX data collection and transmission will be blocked for that app, even if DEX is otherwise enabled. 
 - If the `IntelSDKAllowedApps` key is missing or the array is empty, all apps will be allowed to transmit DEX data (default behavior).
@@ -19,12 +19,10 @@ The WS1 SDK Custom Settings KVP `IntelSDKAllowedApps` (Allowed Apps lists) is a 
 Obtain your app ID from Omnissa Intelligence console. Please check [Omnissa Intelligence SDK Data for Apps](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelIntelligenceSDKApps.html) for more information.
 
 ## How to Use
-To inject this configuration, use the API `setSDKControlConfig` offered through the `Crittercism` singleton.
-
-For more on this API, visit: [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig)
+To inject this control configuration, use the API `setSDKControlConfig` offered through the `Crittercism` singleton. The control configuration is the UEM SDK Custom Settings and can be fetched from the UEM SDK. For more details on how to fetch the Custom Settings, see [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](../guides/custom-settings-integration.md). 
 
 
-```Java
+```JAVA
 /**
 * Sets the WS1 UEM SDK Control Config.
 * IntelligenceSDK will parse for the following properties:
@@ -38,6 +36,8 @@ For more on this API, visit: [setSDKControlConfig](crittercism.md#setsdkcontrolc
 */
 public static void setSDKControlConfig(String config)
 ```
+
+For more on this API, see: [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
 
 
 ### Control Configuration Attributes
@@ -60,17 +60,3 @@ The following is a table of the Attributes that are currently parsed within the 
     "84e3527ecb354764925d48345530c47f00555300"  // App 2 ID
   ]
 ```
-
-
-### All Attributes and Events Reported By IntelligenceSDK
-To Find all Attributes and Events reported by the Intelligence SDK, please refer to the following links based on platform and data type:
-
-#### Android
-- [Battery](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileDeviceWide.html#battery_-_android)
-- [Device](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileDeviceWide.html#device_-_android)
-- [Network](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileDeviceWide.html#network_-_android)
-
-#### iOS
-- [Battery](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileDeviceWide.html#battery_-_ios)
-- [Device](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileDeviceWide.html#device_-_ios)
-- [Network](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileDeviceWide.html#network_-_ios)
