@@ -11,50 +11,26 @@ hide:
 The Privacy Configuration, or Config for short, is a JSON payload which can be used to control the reporting of Telemetry Feature Data.
 This payload can either be generated manually or pulled from the WS1 SDK's Custom Settings if integrated in the application.
 
-### How to Use
+## How to Use
+To inject this control configuration, use the API `setSDKControlConfig` offered through the `Crittercism` singleton. The control configuration is the UEM SDK Custom Settings and can be fetched from the UEM SDK. For more details on how to fetch the Custom Settings, see [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](../guides/custom-settings-integration.md). 
 
-To inject this configuration, use the API `setPrivacyConfiguration` offered through the `Crittercism` singleton.
-The JSON Configuration block will need to be transformed into the appropriate data type for the platform API.
-
-For more on this API, visit: [setPrivacyConfiguration](crittercism.md/#setprivacyconfigurationprivacyconfig-telemetryfeature)
 
 ```JAVA
 /**
- * Asynchronously set the privacy configuration for a specific TelemetrySDK Feature.
- * IntelligenceSDK is agnostic to the configuration delivery mechanism as long as the payload conforms to
- * the required format.
- * Example of a privacy configuration:
- * 	"DEXData": {
- * 		"Version": 1.0,
- * 		"BatteryData": {
- * 			"DisableAll": false,
- * 			"AttributesToDisable": ["plugged_type", "battery_charging_rate"],
- * 			"EventsToDisable": []
- * 		},
- * 		"DeviceData": {
- * 			"DisableAll": false,
- * 			"AttributesToDisable": ["location_latitude", "location_longitude"],
- * 			"EventsToDisable": []
- * 		},
- * 		"NetworkData": {
- * 			"DisableAll": false,
- * 			"AttributesToDisable": ["jitter", "latency"],
- * 			"EventsToDisable": []
- * 		},
- * 		"AppUsageData": {
- * 			"DisableAll": false
- * 		}
- * 	}
- *
- * @param privacyConfig Map containing the necessary key value pairs for parsing the privacy config. If the privacy
- *                      config is fetched via WS1 UEM SDK, then it is in the JSON format. Apps / SDK's are expected
- *                      to fetch the value for key "DEXData" and convert it into a map. If the property "DEXData"
- *                      and its value does not exist, apps are still required to call this API with a null value for
- *                      the privacyConfig parameter.
- * @param feature       The Feature classification of the data to be exported, eg. DEX, ZeroTrust.
- */
-public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @NonNull TelemetryFeature feature);
+* Sets the WS1 UEM SDK Control Config.
+* IntelligenceSDK will parse for the following properties:
+*  - IntelSDKAllowedApps: JSON Array of apps allowed to transmit DEX data to the UEM console. If not available,
+*    IntelligenceSDK will default to allowing all apps to transmit data.
+*  - DEXData: JSON containing the privacy configuration.
+*  Apps / SDK's are expected to fetch the control config JSON string and call this API. In the case the control
+*  config is not available, a null value should be passed for the config parameter.
+*
+* @param config Json String of the control config provided from the WS1 UEM SDK.
+*/
+public static void setSDKControlConfig(String config)
 ```
+
+For more on this API, see: [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
 
 ### Privacy Configuration Attributes
 The following is a table of the Attributes allowed within the Privacy Configuration JSON format.

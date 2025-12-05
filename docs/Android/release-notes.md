@@ -6,11 +6,70 @@ hide:
   - toc
 ---
 
-Updated on 10/12/2025
+Updated on 12/03/2025
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 25.11.0 for Android - December 3, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- New KVP introduced to the Custom UEM SDK Settings: `IntelSDKAllowedApps`.
+  - A JSON array listing Application IDs allowed to transmit DEX data.
+  - If missing or empty: All apps can transmit DEX data (default behavior).
+  - If present: Only the listed apps can transmit DEX data.
+  - For more details, see [Intelligence SDK Allowed Apps](allowed-apps.md).
+
+- New public API: `setSDKControlConfig`.
+  - Apps pass the control config JSON string (Custom UEM SDK Settings) from UEM to the new `setSDKControlConfig` API.
+  - Apps / SDK's are expected to fetch the control config JSON (Custom UEM SDK Settings) string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
+  - The SDK parses the `IntelSDKAllowedApps` key and the `DEXData` key (Privacy Configuration) from the control config string.
+  - Deprecated the `setPrivacyConfiguration` API in favor of the new `setSDKControlConfig` API.
+
+```JAVA
+public static void setSDKControlConfig(String config)
+```
+!!!Note
+    Apps / SDK's should no longer call the deprecated `setPrivacyConfiguration` API as this API is mutually exclusive to `setSDKControlConfig`. For more details on the control configuration API, see [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
+
+- New DEX Telemetry event added: Device Reboot
+  - Name: "device_reboot"
+  - This Device Entity event triggers on device boot. It caches events (up to three of the latest boots) and are posted once TelemetrySDK starts. The event time will indicate when the device booted.
+
+- New DEX Telemetry event added: SIM State Change Inserted
+  - Name: "SIM_state_change_inserted"
+  - This Network Entity event is triggered when the device has detected that a SIM card has been inserted into the device.
+
+- New DEX Telemetry event added: SIM State Change Removed
+  - Name: "SIM_state_change_removed"
+  - This Network Entity event is triggered when the device has detected that a SIM card has been removed from the device.
+
+- WiFi Efficiency Metrics added to DEX Network Entity data:
+  - RSSI
+  - Current Receive (Rx) Link Speed
+  - Current Transmit (Tx) Link Speed
+  - Max Receive (Rx) Link Speed
+    - Android 11+ supported
+  - Max Transmit (Tx) Link Speed
+    - Android 11+ supported
+  - Receive (Rx) Link Speed Efficiency Percentage
+    - Android 11+ supported
+  - Transmit (Tx) Link Speed Efficiency Percentage
+    - Android 11+ supported
+  
+### Known Issues
+
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
 
 ## Omnissa Intelligence SDK 25.10.0 for Android - November 12, 2025
 
@@ -27,8 +86,8 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 
 ### Known Issues
 
-- Instrumented URLConnection Classes network request elapsed time inaccurate.
-- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
 
 ## Omnissa Intelligence SDK 25.7.0 for Android - September 2, 2025
 
