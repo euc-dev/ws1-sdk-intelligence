@@ -667,7 +667,7 @@ public enum LoggingLevel {
 
 ## setPrivacyConfiguration(privacyConfig, telemetryFeature)
 
-!!!Note 
+!!!Warning 
 	setPrivacyConfiguration is deprecated. Use this API instead: [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig)
 
 This API can be used to control reporting of certain Telemetry Feature Data such as attributes, events, or entire data collections through a Privacy Configuration map.
@@ -720,5 +720,6 @@ The following is a table of the Attributes that are currently parsed within the 
 |                     |                                                                                         | AVAILABLE | Only the matching Application IDs within the array will be allowed to transmit DEX data to the UEM console. |   
 
 See also:
+
 - [Telemetry Privacy Configuration](privacy-config.md)
 - [Intelligence SDK Allowed Apps](allowed-apps.md)

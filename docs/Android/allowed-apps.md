@@ -9,6 +9,7 @@ hide:
 ## Intelligence SDK Allowed Apps
 
 The control configuration (UEM SDK Custom Settings) KVP `IntelSDKAllowedApps` (Allowed Apps lists) is a JSON Array which can be used to control which apps can report DEX Data.
+
 - If the current app’s ID matches one of the IDs in the `IntelSDKAllowedApps` array, DEX data collection and transmission will be enabled for that app (assuming DEX is opted in). 
 - If the current app’s ID is not in the list, DEX data collection and transmission will be blocked for that app, even if DEX is otherwise enabled. 
 - If the `IntelSDKAllowedApps` key is missing or the array is empty, all apps will be allowed to transmit DEX data (default behavior).
