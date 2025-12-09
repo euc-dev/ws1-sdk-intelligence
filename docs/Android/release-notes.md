@@ -24,47 +24,47 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 ### New Features
 
 - New KVP introduced to the Custom UEM SDK Settings: `IntelSDKAllowedApps`.
-  - A JSON array listing Application IDs allowed to transmit DEX data.
-  - If missing or empty: All apps can transmit DEX data (default behavior).
-  - If present: Only the listed apps can transmit DEX data.
-  - For more details, see [Intelligence SDK Allowed Apps](allowed-apps.md).
+    - A JSON array listing Application IDs allowed to transmit DEX data.
+    - If missing or empty: All apps can transmit DEX data (default behavior).
+    - If present: Only the listed apps can transmit DEX data.
+    - For more details, see [Intelligence SDK Allowed Apps](allowed-apps.md).
 
 - New public API: `setSDKControlConfig`.
-  - Apps pass the control config JSON string (Custom UEM SDK Settings) from UEM to the new `setSDKControlConfig` API.
-  - Apps / SDK's are expected to fetch the control config JSON (Custom UEM SDK Settings) string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
-  - The SDK parses the `IntelSDKAllowedApps` key and the `DEXData` key (Privacy Configuration) from the control config string.
-  - Deprecated the `setPrivacyConfiguration` API in favor of the new `setSDKControlConfig` API.
+    - Apps pass the control config JSON string (Custom UEM SDK Settings) from UEM to the new `setSDKControlConfig` API.
+    - Apps / SDK's are expected to fetch the control config JSON (Custom UEM SDK Settings) string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
+    - The SDK parses the `IntelSDKAllowedApps` key and the `DEXData` key (Privacy Configuration) from the control config string.
+    - Deprecated the `setPrivacyConfiguration` API in favor of the new `setSDKControlConfig` API.
 
 ```JAVA
 public static void setSDKControlConfig(String config)
 ```
-!!!Note
+!!!Important
     Apps / SDK's should no longer call the deprecated `setPrivacyConfiguration` API as this API is mutually exclusive to `setSDKControlConfig`. For more details on the control configuration API, see [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
 
 - New DEX Telemetry event added: Device Reboot
-  - Name: "device_reboot"
-  - This Device Entity event triggers on device boot. It caches events (up to three of the latest boots) and are posted once TelemetrySDK starts. The event time will indicate when the device booted.
+    - Name: "device_reboot"
+    - This Device Entity event triggers on device boot. It caches events (up to three of the latest boots) and are posted once TelemetrySDK starts. The event time will indicate when the device booted.
 
 - New DEX Telemetry event added: SIM State Change Inserted
-  - Name: "SIM_state_change_inserted"
-  - This Network Entity event is triggered when the device has detected that a SIM card has been inserted into the device.
+    - Name: "SIM_state_change_inserted"
+    - This Network Entity event is triggered when the device has detected that a SIM card has been inserted into the device.
 
 - New DEX Telemetry event added: SIM State Change Removed
-  - Name: "SIM_state_change_removed"
-  - This Network Entity event is triggered when the device has detected that a SIM card has been removed from the device.
+    - Name: "SIM_state_change_removed"
+    - This Network Entity event is triggered when the device has detected that a SIM card has been removed from the device.
 
 - WiFi Efficiency Metrics added to DEX Network Entity data:
-  - RSSI
-  - Current Receive (Rx) Link Speed
-  - Current Transmit (Tx) Link Speed
-  - Max Receive (Rx) Link Speed
-    - Android 11+ supported
-  - Max Transmit (Tx) Link Speed
-    - Android 11+ supported
-  - Receive (Rx) Link Speed Efficiency Percentage
-    - Android 11+ supported
-  - Transmit (Tx) Link Speed Efficiency Percentage
-    - Android 11+ supported
+    - RSSI
+    - Current Receive (Rx) Link Speed
+    - Current Transmit (Tx) Link Speed
+    - Max Receive (Rx) Link Speed
+        - Android 11+ supported
+    - Max Transmit (Tx) Link Speed
+        - Android 11+ supported
+    - Receive (Rx) Link Speed Efficiency Percentage
+        - Android 11+ supported
+    - Transmit (Tx) Link Speed Efficiency Percentage
+        - Android 11+ supported
   
 ### Known Issues
 
