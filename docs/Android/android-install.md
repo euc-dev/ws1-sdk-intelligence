@@ -29,10 +29,11 @@ repositories {
 android {
    packagingOptions {
         pickFirst '**/libc++_shared.so'
+        exclude 'META-INF/**'
     }
 }
 
-def ws1IntelSdkVersion = "25.1.0"
+def ws1IntelSdkVersion = "25.11.0"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -66,11 +67,16 @@ IntelligenceSDK using the following structure:
    
    android {
       packagingOptions {
-           pickFirst '**/libc++_shared.so'
+           pickFirst 'lib/**/libsettings.so'
+           pickFirst 'lib/**/libc++_shared.so'
+           pickFirst 'lib/**/libcrypto.1.0.2.so'
+           pickFirst 'lib/**/libssl.1.0.2.so'
+           pickFirst 'lib/**/libxsw_crypto.so'
+           exclude 'META-INF/**'
        }
    }
    
-   def ws1IntelSdkVersion = "25.1.0"
+   def ws1IntelSdkVersion = "25.11.0"
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
@@ -102,12 +108,19 @@ repositories {
 
 android {
    packagingOptions {
-        pickFirst '**/libc++_shared.so'
+           pickFirst 'lib/**/libsettings.so'
+           pickFirst 'lib/**/libc++_shared.so'
+           pickFirst 'lib/**/libcrypto.1.0.2.so'
+           pickFirst 'lib/**/libssl.1.0.2.so'
+           pickFirst 'lib/**/libxsw_crypto.so'
+           exclude 'META-INF/**'
     }
 }
 
-def ws1IntelSdkVersion = "25.1.0"
-def ws1SdkVersion = "24.11"
+def ws1IntelSdkVersion = "25.11.0"
+
+// NOTE: We do not support WS1 SDK versions lower than 25.02.4.
+def ws1SdkVersion = "25.02.4"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -121,7 +134,16 @@ dependencies {
 ```
 
 !!!Note
-    Additional steps may be necessary to integrate the Workspace ONE SDK itself than what is shown above, please refer to Workspace ONE SDK specific integration documentation for that product.
+    Additional steps may be necessary to integrate the Workspace ONE SDK itself than what is shown above, please refer to Workspace ONE SDK specific integration documentation for that product. 
+    Futhermore, we do not support versions of the Workspace ONE SDK lower than 24.11.
+
+### Enabling Workspace ONE Authenticated Tenant Region Reporting
+
+After setting up your project with the IntelligenceSDK and the Workspace ONE SDK, users can enable Authenticated Intelligence reporting to their Tenant Region through the [Crittercism Configuration Class](crittercism-config.md).
+
+The following Configuration APIs can be used to modify Tenant Region reporting:
+- [Tenant Region Enabled](crittercism-config.md#tenant-region-enabled)
+- [Caching Mode Enabled](crittercism-config.md#caching-mode-enabled)
 
 ## Permissions Required
 

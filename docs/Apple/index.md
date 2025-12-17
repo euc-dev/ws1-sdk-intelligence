@@ -16,14 +16,21 @@ Release Notes can be viewed [here](release-notes.md).
 
 ## Application Requirements
 
-- iOS 16.0 and above.
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.1 or newer is required for the two to interact. 
 - SystemConfiguration Framework
 - CoreData Framework
+
+- not supported:
+
+    - tvOS devices
+    - app extensions
+    - visionOS for Vision Pro devices
+
 
 ## Guides
 
 - [Installation and Setup](install-ios.md)
-- [Setup Automatic dSYM Uploads](install-ios.md#setup-automatic-dsym-uploads)
 - [How to Customize App Version Reported to Omnissa Intelligence](ios-custom-version.md)
 - [SDK Data Sheet](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelExpMngtDefMobileIntelligenceSDK.html)
 

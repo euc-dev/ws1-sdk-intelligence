@@ -6,11 +6,165 @@ hide:
   - toc
 ---
 
-Updated on 2/10/2025
+Updated on 12/03/2025
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 25.11.0 for Android - December 3, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- New KVP introduced to the Custom UEM SDK Settings: `IntelSDKAllowedApps`.
+    - A JSON array listing Application IDs allowed to transmit DEX data.
+    - If missing or empty: All apps can transmit DEX data (default behavior).
+    - If present: Only the listed apps can transmit DEX data.
+    - For more details, see [Intelligence SDK Allowed Apps](allowed-apps.md).
+
+- New public API: `setSDKControlConfig`.
+    - Apps pass the control config JSON string (Custom UEM SDK Settings) from UEM to the new `setSDKControlConfig` API.
+    - Apps / SDK's are expected to fetch the control config JSON (Custom UEM SDK Settings) string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
+    - The SDK parses the `IntelSDKAllowedApps` key and the `DEXData` key (Privacy Configuration) from the control config string.
+    - Deprecated the `setPrivacyConfiguration` API in favor of the new `setSDKControlConfig` API.
+
+```JAVA
+public static void setSDKControlConfig(String config)
+```
+!!!Important
+    Apps / SDK's should no longer call the deprecated `setPrivacyConfiguration` API as this API is mutually exclusive to `setSDKControlConfig`. For more details on the control configuration API, see [setSDKControlConfig](crittercism.md#setsdkcontrolconfigconfig).
+
+- New DEX Telemetry event added: Device Reboot
+    - Name: "device_reboot"
+    - This Device Entity event triggers on device boot. It caches events (up to three of the latest boots) and are posted once TelemetrySDK starts. The event time will indicate when the device booted.
+
+- New DEX Telemetry event added: SIM State Change Inserted
+    - Name: "SIM_state_change_inserted"
+    - This Network Entity event is triggered when the device has detected that a SIM card has been inserted into the device.
+
+- New DEX Telemetry event added: SIM State Change Removed
+    - Name: "SIM_state_change_removed"
+    - This Network Entity event is triggered when the device has detected that a SIM card has been removed from the device.
+
+- WiFi Efficiency Metrics added to DEX Network Entity data:
+    - RSSI
+    - Current Receive (Rx) Link Speed
+    - Current Transmit (Tx) Link Speed
+    - Max Receive (Rx) Link Speed
+        - Android 11+ supported
+    - Max Transmit (Tx) Link Speed
+        - Android 11+ supported
+    - Receive (Rx) Link Speed Efficiency Percentage
+        - Android 11+ supported
+    - Transmit (Tx) Link Speed Efficiency Percentage
+        - Android 11+ supported
+  
+### Known Issues
+
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
+
+## Omnissa Intelligence SDK 25.10.0 for Android - November 12, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- Added support for Android 16KB page sizes.
+
+### Known Issues
+
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
+
+## Omnissa Intelligence SDK 25.7.0 for Android - September 2, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- Added Tenant support for Intelligence Handled Exceptions events. 
+  - Previously, Handled Exceptions were only sent to the App Owner and Development endpoints. Now, they can be routed to the authenticated Tenant Region without being an App Owner.
+- Fixed issue around rapid Breadcrumb creation potentially causing main thread hangs: 
+  - Breadcrumb creation now asynchronous to the main thread.
+- New DEX event would be sent when the daily limit of 5MB (data send) is reached.
+- Add the following Battery Attribute to the Telemetry DEX Feature data:
+  - “battery_average_current”: represents the average current of the battery in milli-Amps (mA). 
+  - “battery_capacity”: represents the maximum battery current capacity in milliAmp-Hours (mAh). 
+  - “battery_remaining_charge”: represents the remaining battery current capacity in milliAmp-Hours (mAh).
+- Upgrade Kotlin version to 2.1.0 from 1.8.21.
+- Upgrade Android Gradle Plugin to 8.6.0 from 8.5.0.
+
+### Known Issues
+
+- Instrumented URLConnection Classes network request elapsed time inaccurate.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+
+### Resolved Issues
+- Update Battery Level recording WorkManager logic as Android 11 devices were seeing duplicate jobs on reboot. 
+  - Deprecated old Battery Level recording Worker, migrate to new version 2. 
+  - Version 2 features a lightweight CoroutineWorker that is scheduled to run every 2 minutes with WorkManager scheduling discretion. 
+  - Update Consumer Proguard to keep Deprecated Battery Level Worker. 
+  - Battery Worker will now replace its own instance when creating the next iteration of Battery Recording work, instead of using Android APIs to chain which can cause duplicate jobs on reboot. 
+  - Battery Workers will now prune old records as well as save Battery Level on run.
+- Older Android devices below SDK 26 with low memory may see DEX events cease after hours of continuous usage.
+
+## Omnissa Intelligence SDK 25.4.0 for Android - May 12, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2109 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.2.2 or later
+
+### New Features
+
+- New DEX Telemetry event added: Critical Cell Strength
+    - Name: "critical_battery_level"
+    - This event is triggered when the device reaches the following battery thresholds while the SDK is running.
+      - Reports once when the device reaches a battery level between 16-20%.
+      - Reports once when the device reaches a battery level between 11-15%.
+      - Reports on every battery level between 0-10%.
+    - When the device is charging these events will not be sent even if the device is in the specified range.
+    - Device charging will reset the ability to send for all given sections, for example: If we have already sent an event for values between 16-20%, charging followed by discharging will allow another event to be sent for this battery level range.
+- New DEX Telemetry attribute added: Is SD Card Portable
+    - Name: "is_sdcard_portable"
+    - SD card volumes that are marked as a public type are considered to be in the portable state.
+- New DEX Telemetry attribute added: Percent Asleep
+    - Name: "percent_asleep"
+    - Represents the duration percentage that the device has been asleep since it was booted (on a scale from 0 to 100).
+- New DEX Telemetry attribute added: Percent Awake
+    - Name: "percent_awake"
+    - Represents the duration percentage that the device has been awake since it was booted (on a scale from 0 to 100).
+- App Usage Metrics reporting will now be checked every 10 minutes and will be triggered if no report has been submitted for the current day (once per day). This change will ensure that previous app metrics is reported earlier during the next day. For more details, see [App Usage Metrics](android-usage-metrics.md)
+- Individual entity events are now limited to a maximum of 3 events per second. Additionally, the total amount of event data that can be transmitted is now capped at 5MB per day.
+
+!!!Note
+    Attributes and events are only triggered when DEX is enabled.
+
+### Known Issues
+
+- Instrumented URLConnection Classes network request elapsed time inaccurate. 
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
+- Older Android devices below SDK 26 with low memory may see DEX events cease after hours of continuous usage.
 
 ## Omnissa Intelligence SDK 25.1.0 for Android - February 10, 2025
 
@@ -306,7 +460,7 @@ Crittercism.leaveUserflowSpecificBreadcrumb(final String userflowName, final Str
 ```
 
 !!!Note
-    Breadcrumbs not specified under an active userflow will operate on the traditional breadcrumb logic. Tenant Region Reporting will be calculated based on the Crittercism configuration options.
+    Breadcrumbs not specified under an active Userflow will operate on the traditional breadcrumb logic. Tenant Region Reporting will be calculated based on the Crittercism configuration options.
 
 ### Resolved Issues
 

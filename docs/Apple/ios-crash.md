@@ -18,4 +18,4 @@ If a user’s device does not have Internet connectivity, Omnissa Intelligence S
 
 ## Further Readings
 
-- [Last Crash Notification](constants.md#last-crash-notification)
+- [Last Crash Notification](ws1constants.md#last-crash-notification)

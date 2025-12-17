@@ -161,6 +161,7 @@ nav:
       - NetworkInstrumentation: ./Android/network-instrumentation.md
       - NDK Crash: ./Android/ndk-crash.md
       - Telemetry Privacy Configuration: ./Android/privacy-config.md
+      - Intelligence SDK Allowed Apps: ./Android/allowed-apps.md
     - Release Notes: ./Android/release-notes.md
   - Omnissa Intelligence SDK for iOS: 
     - ./Apple/index.md
