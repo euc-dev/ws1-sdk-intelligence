@@ -6,11 +6,65 @@ hide:
   - toc
 ---
 
-Updated September, 2025
+Updated December, 2025
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
+
+
+
+## Omnissa IntelligenceSDK for iOS 25.11.0 Release - December 2025
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 25.04.1 or newer is required for the two to interact. 
+- not supported:
+
+    - tvOS devices
+    - app extensions
+    - visionOS for Vision Pro devices
+
+### New Features
+
+- New KVP introduced as part of the Custom UEM SDK Settings: `IntelSDKAllowedApps`
+
+	- A JSON array listing Application IDs of apps allowed to transmit DEX data.
+	- If missing or empty: All apps can transmit DEX data (default behavior).
+	- If present: Only the listed apps can transmit DEX data.
+	- For more details, see [setSDKControlConfig](allowed-apps-ios.md)
+
+- New public API: `setSDKControlConfig`
+
+	```Objective-C
+	+ (void)setSDKControlConfig:(nullable NSString *)config;
+	```
+	
+	- Apps pass the control config JSON string (Custom UEM SDK Settings) from UEM to the new `setSDKControlConfig` API. (There is no need to convert the JSON into a Dictionary as `setPrivacyConfiguration` required.)
+	- Apps / SDK's are expected to fetch the control config JSON (Custom UEM SDK Settings) string and call this API. In the case the control config is not available or not configured, a null value should be passed for the config parameter.
+	- The SDK parses the **IntelSDKAllowedApps** key and the **DEXData** key (Privacy Configuration) from the control config string.
+	- The `setPrivacyConfiguration` API is deprecated in favor of the new `setSDKControlConfig` API.
+		- **Note: Apps / SDK's should no longer call the deprecated setPrivacyConfiguration API as this API is mutually exclusive to setSDKControlConfig. For more details on the control configuration API, see:** [setSDKControlConfig](ws1intelligence.md#setsdkcontrolconfigconfig)
+
+- New DEX Telemetry event added: **Device Reboot**
+
+	- Event name: `device_reboot`
+	- When TelemetrySDK starts, the device boot time is checked. This Device Entity posts the event on detection. The event’s time will indicate when the device booted.
+	- Note: manually adjusting the iOS device clock forward by more than 2 minutes can cause false positives in device reboot detection. Clock changes that do not cause false positives:
+
+		- Traveling between time zones
+		- Daylight savings time changes
+		- Manually adjusting the clock backwards in time.
+
+### Resolved Issues
+
+- None
+
+### Known Issues
+
+- None
+
 
 
 ## Omnissa IntelligenceSDK for iOS 25.7.0 Release - Sept 2025

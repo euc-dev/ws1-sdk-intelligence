@@ -12,49 +12,19 @@ This payload can either be generated manually or pulled from the WS1 SDK's Custo
 
 ### How to Use
 
-To inject this configuration, use the API `setPrivacyConfiguration`. 
-
-A JSON Configuration block will need to be transformed into an NSDictionary before submitting it.
-
-For more on this API, visit: [setPrivacyConfiguration](ws1intelligence.md/#setprivacyconfigurationprivacyconfig-telemetryfeature)
+To inject this control configuration, use the API `setSDKControlConfig`. The control configuration is the UEM SDK Custom Settings and can be fetched from the UEM SDK. For more details on how to fetch the Custom Settings, see [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](../guides/custom-settings-integration.md). 
 
 ```objective-c
-/// Function to help set privacy configuration for a particular telemetry type.
-/// -> This configuration is ideally part of WS1 SDK's custom settings profile payload. However, IntelligenceSDK is agnostic to the configuration delivery mechanism as long
-///   as the payload conforms to the required format.
-/// -> A sample privacy config is like below -
-/// "DEXData": {
-///        "Version": 1.0,
-///        "BatteryData": {
-///            "DisableAll": true,
-///            "AttributesToDisable": ["plugged_type", "battery_charging_rate"],
-///            "EventsToDisable": []
-///        },
-///        "DeviceData": {
-///            "DisableAll": true,
-///            "AttributesToDisable": ["location_latitude", "location_longitude"],
-///            "EventsToDisable": []
-///        },
-///        "NetworkData": {
-///            "DisableAll": true,
-///            "AttributesToDisable": ["jitter", "latency"],
-///            "EventsToDisable": []
-///        }
-///    }
-///
-///
-/// NOTE -
-/// * This config is only supported for the DEX telemetry type currently. The privacy config could help  disable certain attributes / events from being reported.
-///
-/// - Parameters:
-///   - privacyConfig: - A dictionary containing the necessary key value pairs for parsing the privacy config. If the privacy config is
-///                     fetched via WS1 UEM SDK, then it is in the JSON format. Apps / SDK's are expected to fetch the value for key "DEXData"
-///                     and convert it into a dictionary.
-///                   - If the property "DEXData" and its value does not exist, apps are still required to call this API with nil value
-///                     for the privacyConfig parameter.
-///   - type: Feature for which the privacy configuration needs to be applied. Currently only DEX is supported. Other telemetry type's are ignored.
-+ (void)setPrivacyConfiguration:(nullable NSDictionary<NSString *, id> *)privacyConfig forType:(WS1TelemetryType)type;
+/// Function to parse the entire custom settings JSON string payload for all entries related to IntelligenceSDK.
+/// This function will process any the current and future SDK control configurations, so the host can simply pass the payload JSON string. (No need to process JSON into Dictionaries.)
+/// The processing includes the DEXData JSON, so the `setPrivacyConfiguration` function is deprecated. The host app should not mix the use of both functions.
+/// `setSDKControlConfig` will save the configuration data, so there is no need for the app to save the payload.
+///     If `nil` or an empty string is specified, IntelligenceSDK will do nothing to the previously saved configuration.
++ (void)setSDKControlConfig:(nullable NSString *)config;
 ```
+
+For more on this API, see: [setSDKControlConfig](ws1intelligence.md#setsdkcontrolconfigconfig).
+
 
 ### Privacy Configuration Attributes
 The following is a table of the Attributes allowed within the Privacy Configuration JSON format.
