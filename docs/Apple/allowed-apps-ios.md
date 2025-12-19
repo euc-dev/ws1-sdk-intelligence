@@ -20,7 +20,7 @@ The control configuration (UEM SDK Custom Settings) KVP `IntelSDKAllowedApps` (A
 Obtain your app ID from Omnissa Intelligence console. Please check [Omnissa Intelligence SDK Data for Apps](https://docs.omnissa.com/bundle/WS1Intelligence/page/IntelIntelligenceSDKApps.html) for more information.
 
 ## How to Use
-To inject this control configuration, use the API `setSDKControlConfig` offered through the `Crittercism` singleton. The control configuration is the UEM SDK Custom Settings and can be fetched from the UEM SDK. For more details on how to fetch the Custom Settings, see [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](../guides/custom-settings-integration.md). 
+To inject this control configuration, use the API `setSDKControlConfig`. The control configuration is the UEM SDK Custom Settings and can be fetched from the UEM SDK. For more details on how to fetch the Custom Settings, see [Workspace ONE UEM Custom Settings Integration for Intelligence SDK](../guides/custom-settings-integration.md). 
 
 
 ```Objective-C
