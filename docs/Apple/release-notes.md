@@ -33,7 +33,7 @@ These release notes describe the new features and enhancements in each release o
 	- A JSON array listing Application IDs of apps allowed to transmit DEX data.
 	- If missing or empty: All apps can transmit DEX data (default behavior).
 	- If present: Only the listed apps can transmit DEX data.
-	- For more details, see [setSDKControlConfig](ws1intelligence.md#setsdkcontrolconfigconfig)
+	- For more details, see [setSDKControlConfig](allowed-apps-ios.md)
 
 - New public API: `setSDKControlConfig`
 
