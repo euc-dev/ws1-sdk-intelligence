@@ -782,6 +782,9 @@ class func getUserUUID -> String
 
 ### setPrivacyConfiguration(privacyConfig, telemetryFeature)
 
+!!!Warning 
+	setPrivacyConfiguration is deprecated. Use this API instead: [setSDKControlConfig](ws1intelligence.md#setsdkcontrolconfigconfig)
+
 This API helps inject privacy configuration to control transmission of certain TelemetrySDK attributes.
 
 This API can be used to control reporting of certain Telemetry Feature Data such as attributes, events, or entire data collections through a Privacy Configuration map.
@@ -814,6 +817,40 @@ See also:
 - [Telemetry Privacy Configuration](ios-privacy-config.md)
 - [Enabling Telemetry Features in IntelligenceSDK for iOS](ios-enable-telemetry-features-in-intelsdk.md)
 
+
+## setSDKControlConfig(config)
+This API can be used to set the control config (Custom UEM SDK Settings). Intelligence SDK parses for `IntelSDKAllowedApps` (JSON Array of apps allowed to transmit DEX data to the UEM console) and `DEXData` (JSON containing the privacy configuration) from within the control config.
+
+Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
+
+**Declaration**
+```Objective-c
++ (void)setSDKControlConfig:(nullable NSString *)config;
+```
+
+**Parameters**
+
+|               |   |
+|---------------| --- |
+|    config     | Json String of the control config (Custom UEM SDK Settings)  provided from the WS1 UEM SDK. |
+
+**Control Configuration Attributes**
+
+The following is a table of the Attributes that are currently parsed within the control config.
+
+|         Flag        |                                       Description                                       |   Value   |                                                   Outcome                                                   |                                      Notes                                     |
+|:-------------------:|:---------------------------------------------------------------------------------------:|:---------:|:-----------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------:|
+|       DEXData       |                      JSON container for all DEX granular controls.                      |           |                                                                                                             | This value of this key (JSON object) is parsed only if CaptureDEXData is true. |
+|                     |                                                                                         |  MISSING  |                             All attributes within the DEX umbrella are reported.                            |                                                                                |
+|                     |                                                                                         | AVAILABLE |                       Attributes are selectively reported as per the configured flags.                      |                                                                                |
+| IntelSDKAllowedApps | JSON Array of Application IDs that are allowed to transmit DEX data to the UEM console. |           |                                                                                                             | This value of this key (JSON object) is parsed only if CaptureDEXData is true. |
+|                     |                                                                                         |  MISSING  |                             All apps will transmit DEX data to the UEM console.                             |                                                                                |
+|                     |                                                                                         | AVAILABLE | Only the matching Application IDs within the array will be allowed to transmit DEX data to the UEM console. |   
+
+See also:
+
+- [Telemetry Privacy Configuration](ios-privacy-config.md)
+- [Intelligence SDK Allowed Apps](allowed-apps-ios.md)
 
 ## Exporting Telemetry Data
 

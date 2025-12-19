@@ -138,4 +138,7 @@ private fun fetchSettings() {
 }
 ```
 
-> For more details on setting the WS1 SDK Custom Settings, see [setSDKControlConfig](../Android/crittercism.md#setsdkcontrolconfigconfig) 
+> For more details on setting the WS1 SDK Custom Settings, see:
+- Android: [setSDKControlConfig](../Android/crittercism.md#setsdkcontrolconfigconfig) 
+- iOS: [setSDKControlConfig](ws1intelligence.md#setsdkcontrolconfigconfig)
+	

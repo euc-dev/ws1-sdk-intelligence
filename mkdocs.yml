@@ -177,4 +177,5 @@ nav:
       - WS1Filter: ./Apple/ws1filter.md
       - WS1Intelligence: ./Apple/ws1intelligence.md
       - Telemetry Privacy Configuration: ./Apple/ios-privacy-config.md
+      - Intelligence SDK Allowed Apps: ./Apple/allowed-apps-ios.md
     - Release Notes: ./Apple/release-notes.md
