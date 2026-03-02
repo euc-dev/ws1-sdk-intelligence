@@ -1,16 +1,90 @@
 ---
+
 layout: page
 title: Omnissa Intelligence SDK for Android Release Notes
 hide:
   #- navigation
-  - toc
+
+- toc
+
 ---
 
-Updated on 12/03/2025
+Updated on 02/03/2026
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 26.2.0 for Android - March 2, 2026
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+- **New Required Method in WorkspaceONE UEM Configuration Interface**
+  - A new required method was added to the WorkspaceONE UEM configuration interface UemInfo, which is set through IntelligenceSDK singleton call `Crittercism.setUemInfo`.
+  - Method name: `getDeviceUUID()`
+    - This allows access to the WorkspaceONE UEM Global Device Unique Identifier (UUID) for the respective device.
+    - When operating in Unauthenticated Mode (when the IntelligenceSDK has not been authenticated through enrollment), this UUID will be used to associate Intelligence and Telemetry records to UEM devices.
+- **API to Report Health Status**
+  - A new API was added to get the health status of Telemetry Features.
+  - This API will be expanded in future releases to include broader diagnostics.
+  - API signature:
+
+```JAVA
+/**
+ * Asynchronously generate a status report on the health metrics of the Telemetry Features. Telemetry Features
+ * must be started before calling this API otherwise incomplete results will be reported.
+ * Health Metrics include information such as:
+ *  1. Telemetry Configuration
+ *  2. App permissions and their status (granted or denied)
+ *  3. Telemetry Features Initialization status
+ *  4. Telemetry Features Version
+ *  5. Data sent vs Max Data Limit for the current day
+ *  6. Telemetry Attributes Report - including attribute enablement status, entity enablement status,
+ *        event enablement status, config settings, features, and reporters
+ *
+ * @param dataHandler Interface called when data is ready to be exported.
+ */
+fun generateStatusReport(dataHandler: TelemetryExportHandler)
+```
+
+- The health report may include:
+  - Telemetry Features Version
+  - Initialization Stage
+  - Enabled Features List
+  - Current DEX State (connected, started, or dimmed)
+  - Telemetry enablement status
+  - Event enablement features, callers, settings, and reporters
+  - Whether the Intelligence interface is ready to be reported
+- Example:
+
+```JAVA
+Crittercism.generateStatusReport(object : TelemetryExportHandler {
+    override fun onDataExport(data: String?) {
+        // Handle the status report JSON data string as needed if non-null
+    }
+})
+```
+
+### Resolved Issues
+
+- **Fix for Tenant Handled Exception Reporting**
+  - Fixed an issue on some Android platform versions where Tenant Handled Exceptions were reported as Crash Events if they were present during an unhandled application crash.
+
+- **Removed Direct Boot Awareness**
+  - Updated the DEX Telemetry Feature to no longer be a Direct Boot Aware component. Telemetry that featured logic around Reboot events are now only recorded after the device has booted and the device has been unlocked (reboots that occur before the device is fully unlocked can not be captured).
+    - This allows apps that do not support Direct Boot Awareness to not accidentally trigger non-compliant logic before device unlock. 
+
+### Known Issues
+
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for "Foreground" and "Background" events may be reported inaccurately.
 
 ## Omnissa Intelligence SDK 25.11.0 for Android - December 3, 2025
 
@@ -65,7 +139,7 @@ public static void setSDKControlConfig(String config)
         - Android 11+ supported
     - Transmit (Tx) Link Speed Efficiency Percentage
         - Android 11+ supported
-  
+
 ### Known Issues
 
 - Instrumented URLConnection classes may report inaccurate network request elapsed times.
@@ -118,6 +192,7 @@ public static void setSDKControlConfig(String config)
 - Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
 
 ### Resolved Issues
+
 - Update Battery Level recording WorkManager logic as Android 11 devices were seeing duplicate jobs on reboot. 
   - Deprecated old Battery Level recording Worker, migrate to new version 2. 
   - Version 2 features a lightweight CoroutineWorker that is scheduled to run every 2 minutes with WorkManager scheduling discretion. 
@@ -138,22 +213,22 @@ public static void setSDKControlConfig(String config)
 ### New Features
 
 - New DEX Telemetry event added: Critical Cell Strength
-    - Name: "critical_battery_level"
-    - This event is triggered when the device reaches the following battery thresholds while the SDK is running.
-      - Reports once when the device reaches a battery level between 16-20%.
-      - Reports once when the device reaches a battery level between 11-15%.
-      - Reports on every battery level between 0-10%.
-    - When the device is charging these events will not be sent even if the device is in the specified range.
-    - Device charging will reset the ability to send for all given sections, for example: If we have already sent an event for values between 16-20%, charging followed by discharging will allow another event to be sent for this battery level range.
+  - Name: "critical_battery_level"
+  - This event is triggered when the device reaches the following battery thresholds while the SDK is running.
+    - Reports once when the device reaches a battery level between 16-20%.
+    - Reports once when the device reaches a battery level between 11-15%.
+    - Reports on every battery level between 0-10%.
+  - When the device is charging these events will not be sent even if the device is in the specified range.
+  - Device charging will reset the ability to send for all given sections, for example: If we have already sent an event for values between 16-20%, charging followed by discharging will allow another event to be sent for this battery level range.
 - New DEX Telemetry attribute added: Is SD Card Portable
-    - Name: "is_sdcard_portable"
-    - SD card volumes that are marked as a public type are considered to be in the portable state.
+  - Name: "is_sdcard_portable"
+  - SD card volumes that are marked as a public type are considered to be in the portable state.
 - New DEX Telemetry attribute added: Percent Asleep
-    - Name: "percent_asleep"
-    - Represents the duration percentage that the device has been asleep since it was booted (on a scale from 0 to 100).
+  - Name: "percent_asleep"
+  - Represents the duration percentage that the device has been asleep since it was booted (on a scale from 0 to 100).
 - New DEX Telemetry attribute added: Percent Awake
-    - Name: "percent_awake"
-    - Represents the duration percentage that the device has been awake since it was booted (on a scale from 0 to 100).
+  - Name: "percent_awake"
+  - Represents the duration percentage that the device has been awake since it was booted (on a scale from 0 to 100).
 - App Usage Metrics reporting will now be checked every 10 minutes and will be triggered if no report has been submitted for the current day (once per day). This change will ensure that previous app metrics is reported earlier during the next day. For more details, see [App Usage Metrics](android-usage-metrics.md)
 - Individual entity events are now limited to a maximum of 3 events per second. Additionally, the total amount of event data that can be transmitted is now capped at 5MB per day.
 
@@ -185,7 +260,6 @@ public static void setSDKControlConfig(String config)
 - Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
 - Older Android devices below SDK 26 with low memory may see DEX events cease after hours of continuous usage.
 
-
 ## Omnissa Intelligence SDK 24.11.0 for Android - December 18, 2024
 
 ### Minimum Requirements
@@ -200,9 +274,9 @@ public static void setSDKControlConfig(String config)
 - Minimum SDK version has been upgraded from 21 to 24 (Android 7.0 Nougat).
 - Branding changes for migration to Omnissa.
 - New DEX Telemetry event added: Critical Cell Strength
-    - Name: "critical_cell_signal"
-    - This event is triggered when the device has detected the Cellular Signal Strength level has reached a 1 or lower on a scale from 0-4.
-    - NOTE - this is triggered only if DEX is enabled.
+  - Name: "critical_cell_signal"
+  - This event is triggered when the device has detected the Cellular Signal Strength level has reached a 1 or lower on a scale from 0-4.
+  - NOTE - this is triggered only if DEX is enabled.
 
 ### Resolved Issues
 
@@ -212,7 +286,6 @@ none
 
 - Instrumented URLConnection Classes network request elapsed time inaccurate. 
 - Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be inaccurate.
-
 
 ## Omnissa Intelligence SDK 24.8.0 for Android - September 16, 2024
 
@@ -226,6 +299,7 @@ none
 ### New Features
 
 - CrittercismConfig Configuration APIs around blocking the reporting of specified URL patterns when sending Network Events have been updated:
+
 ```JAVA
 CrittercismConfig:
 public void setURLBlacklistPatterns(java.util.List) -> public void setURLDenylistPatterns(java.util.List);
@@ -234,6 +308,7 @@ public java.util.List getURLBlacklistPatterns() -> public java.util.List getURLD
 
 - Android NDK Crash Events have been re-worked. Native and NDK crashes originating from C/C++ code will now be reported to the Intelligence Console if enabled through the CrittercismConfig:
   - NOTE: Default enablement value for NDK Crash events: False
+
 ```JAVA
     CrittercismConfig:
     public void setNdkCrashEnabled(boolean);
@@ -241,6 +316,7 @@ public java.util.List getURLBlacklistPatterns() -> public java.util.List getURLD
 ```
 
 - New SDK API, `setPrivacyConfiguration`, has been introduced which helps inject privacy configuration to control transmission of certain TelemetrySDK attributes.
+
 ```JAVA
 /**
  * Asynchronously set the privacy configuration for a specific TelemetrySDK Feature.
@@ -281,8 +357,8 @@ public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @N
   - This event is triggered when there is a switch in network SSID, cellular type, ethernet, or a disconnection. Disconnections are reported if 5 seconds have surpassed and a reconnection of the same network type has not occurred.
 
 ### Known Issues
-- Instrumented `URLConnection` Classes network request elapsed time inaccurate.
 
+- Instrumented `URLConnection` Classes network request elapsed time inaccurate.
 
 ## Omnissa Intelligence SDK 24.6.1 for Android - August 9, 2024
 
@@ -298,7 +374,7 @@ public static void setPrivacyConfiguration(Map<String, Object> privacyConfig, @N
 - SDK Integration through Local Repository
 
 The IntelligenceSDK and it’s dependencies will now be hosted in a Maven folder structure 
-found in the Release section of our public Github Page: https://github.com/euc-releases/ws1-intelligencesdk-sdk-android
+found in the Release section of our public Github Page: [https://github.com/euc-releases/ws1-intelligencesdk-sdk-android](https://github.com/euc-releases/ws1-intelligencesdk-sdk-android)
 
 After downloading and unzipping the following repository folder, you can now reference and pull the
 IntelligenceSDK using the following structure:
@@ -334,12 +410,11 @@ IntelligenceSDK using the following structure:
 ### Resolved Issues
 
 - Protobuf Dependency upgraded from older `protobuf-java` implementation to `protobuf-javalite`.
-   - This allows for greater compatibility within projects that import other dependencies that rely on Protobuf, such as Google’s Firestore.
+  - This allows for greater compatibility within projects that import other dependencies that rely on Protobuf, such as Google’s Firestore.
 
 ### Known Issues
 
 none
-
 
 ## Omnissa Intelligence SDK 24.6.0 for Android - July 2024
 
@@ -471,3 +546,4 @@ Crittercism.leaveUserflowSpecificBreadcrumb(final String userflowName, final Str
 - Android Devices Below SDK version level 23 instrumenting WebViews will not be able to report HTTP errors in their Network Insights,  this is due to the following APIs not being supported previous to Android Marshmallow (23):
   - `onReceivedHttpError(WebView, WebResourceRequest, WebResourceResponse)`
   - `onReceivedError(WebView, WebResourceRequest, WebResourceError)`
+
