@@ -1,21 +1,34 @@
 ---
+
 layout: page
 title: Sending UEM Attributes To Intelligence SDK
 hide:
   #- navigation
-  - toc
+
+- toc
+
 ---
 
 A new Public API has been added to provide UEM attributes to the IntelligenceSDK’s DEX feature:
 
-- This API takes an information provider interface which allows users to create getter methods for each available data attribute: **UEM Device UDID**, **UEM Serial Number**, **UEM Username**.
+- This API takes an information provider interface which allows users to create getter methods for each available data attribute: **UEM Global Device UUID**, **UEM Device UDID**, **UEM Serial Number**, **UEM Username**.
+- When the IntelligenceSDK is operating in Standalone Unauthenticated Mode, without App integration of the WorkspaceONE UEM SDK, this UUID is used to associate Intelligence and Telemetry records to UEM devices.
+- When implementing `getDeviceUUID()`, use **`UemInfoKeys.UEM_KEY_DEVICE_UUID_DEFAULT`** as the default constant when the value is unavailable.
 
 Android UEMInfo Interface
+
 ```JAVA
 /**
 * Interface for providing UEM Information to our DEX
 */
 interface UemInfo {
+
+/**
+ * Returns the WorkspaceONE UEM Global Device Unique Identifier (UUID) for the device.
+ * Used to associate Intelligence and Telemetry records to UEM devices in Unauthenticated Mode.
+ * When the value is unavailable, use UemInfoKeys.UEM_KEY_DEVICE_UUID_DEFAULT as the default.
+ */
+fun getDeviceUUID(): String?
 
 /**
  * Returns the UEM Device UDID as a String
@@ -35,6 +48,7 @@ fun getUemUsername(): String?
 ```
 
 IntelligenceSDK UEMInfo Sample Implementation
+
 ```JAVA
 import android.content.Context
 import android.content.RestrictionsManager
@@ -44,6 +58,9 @@ import com.crittercism.uemprovider.UemInfoKeys
 internal class IntelSDKUemInfo(context: Context): UemInfo {
 
         private val restrictionsMgr = context.getSystemService(Context.RESTRICTIONS_SERVICE) as RestrictionsManager
+
+        override fun getDeviceUUID(): String = restrictionsMgr.applicationRestrictions.getString(UemInfoKeys.UEM_KEY_DEVICE_UUID,
+                        UemInfoKeys.UEM_KEY_DEVICE_UUID_DEFAULT)
 
         override fun getUemDeviceUDID(): String = restrictionsMgr.applicationRestrictions.getString(UemInfoKeys.UEM_KEY_DEVICE_UDID,
                         UemInfoKeys.UEM_KEY_UNAVAILABLE)
@@ -68,8 +85,7 @@ Crittercism.initialize(context, APTELIGENT_APP_ID, config)
 !!!Note
     To get UEM Information to DEX Feature, set UemInfo before enabling DEX through the Crittercism singleton. API to set UemInfo is Crittercism.setUemInfo(UemInfo info).
 
-- If the app does not already have access to device-udid, serial-number, username and if it is managed, then it can be fetched from UEM to be injected into IntelligenceSDK.
-
+- If the app does not already have access to device-uuid, device-udid, serial-number, username and if it is managed, then it can be fetched from UEM to be injected into IntelligenceSDK.
 - Within UEM, the required attributes can be set during app assignment within the ‘Application Configuration’ section as shown in the screenshot.
 
 ![](uem_application_configuration%20(1).png)

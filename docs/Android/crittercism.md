@@ -723,3 +723,43 @@ See also:
 
 - [Telemetry Privacy Configuration](privacy-config.md)
 - [Intelligence SDK Allowed Apps](allowed-apps.md)
+
+## generateStatusReport (dataHandler)
+
+Asynchronously generates a status report on the health metrics of the Telemetry Features. Use this API to obtain diagnostics such as telemetry configuration, app permissions status, initialization state, version, data usage against limits, and attribute/entity/event enablement details.
+
+Telemetry Features must be started before calling this API; otherwise incomplete results will be reported. This API will be expanded in future releases to include broader diagnostics.
+
+The health report may include:
+
+- Telemetry Features Version
+- Initialization Stage
+- Enabled Features List
+- Current DEX State (connected, started, or dimmed)
+- Telemetry enablement status
+- Event enablement features, callers, settings, and reporters
+- Whether the Intelligence interface is ready to be reported
+
+**Declaration**
+
+```kotlin
+fun generateStatusReport(dataHandler: TelemetryExportHandler)
+```
+
+**Parameters**
+
+|               |   |
+|---------------| --- |
+| dataHandler   | Interface called when the status report data is ready to be exported. |
+
+**Example**
+
+```kotlin
+Crittercism.generateStatusReport(object : TelemetryExportHandler {
+    override fun onDataExport(data: String?) {
+        // Handle the status report JSON data string as needed if non-null
+    }
+})
+```
+
+Introduced in Omnissa Intelligence SDK 26.2.0 for Android.
