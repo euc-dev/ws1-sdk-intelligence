@@ -823,6 +823,8 @@ This API can be used to set the control config (Custom UEM SDK Settings). Intell
 
 Ideally, this API will be used before enablement of Telemetry Features to ensure the all reports adhere to the specified Privacy Configuration.
 
+**Note:** Apps are still responsible for parsing and enforcing the `PolicyAllowCrashReporting` and `CaptureDEXData` keys from the Custom UEM SDK Settings payload to enable/disable Intelligence SDK or DEX workflows. The `IntelSDKAllowedApps` and `DEXData` keys will be parsed and enforced by Intelligence SDK when the app calls `setSDKControlConfig`. For more details on Custom UEM SDK Settings keys, see [Common SDK Configuration Keys for Intelligence SDK](../guides/custom-settings-integration.md#common-sdk-configuration-keys-for-intelligence-sdk).
+
 **Declaration**
 ```Objective-c
 + (void)setSDKControlConfig:(nullable NSString *)config;

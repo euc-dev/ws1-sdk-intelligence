@@ -37,12 +37,12 @@ When entering custom settings, you can use **JSON format**. Make sure your JSON 
 ```
 
 ## Common SDK Configuration Keys for Intelligence SDK
-When configuring the Workspace ONE SDK through Custom Settings, specific key/value pairs can be used to for Intelligence SDK:
+When configuring the Workspace ONE SDK through Custom Settings, specific key/value pairs can be used for Intelligence SDK:
 
 ### `PolicyAllowCrashReporting`
 **Type:** Boolean (`true` or `false`)
 
-**Description:** Used to enable / disable Intelligence SDK
+**Description:** Used to enable / disable Intelligence SDK.
 
 **Example:**
 ```JSON
@@ -54,7 +54,7 @@ When configuring the Workspace ONE SDK through Custom Settings, specific key/val
 ### `CaptureDEXData`
 **Type:** Boolean (`true` or `false`)
 
-**Description:** Used to enable / disable the DEX portion of IntelSDK. This flag is void if `PolicyAllowCrashReporting` is not true.
+**Description:** Used to enable / disable the DEX portion of Intelligence SDK. This flag is void if `PolicyAllowCrashReporting` is not true.
 
 **Example:**
 ```JSON
@@ -106,6 +106,8 @@ When configuring the Workspace ONE SDK through Custom Settings, specific key/val
 
 ## Integrating Custom Settings into Intelligence SDK using Workspace One SDK APIs
 Once custom settings are configured in Workspace ONE UEM, your application can pull these settings at runtime.
+
+Apps are still responsible for parsing and enforcing the `PolicyAllowCrashReporting` and `CaptureDEXData` keys from the Custom UEM SDK Settings payload to enable/disable Intelligence SDK or DEX workflows. The `IntelSDKAllowedApps` and `DEXData` keys will be parsed and enforced by Intelligence SDK when the app calls [setSDKControlConfig](../Android/crittercism.md#setsdkcontrolconfigconfig).
 
 In this example, the custom settings are retrieved from Workspace ONE UEM.
 
