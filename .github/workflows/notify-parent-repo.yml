@@ -13,14 +13,14 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          token: ${{ secrets.PARENT_REPO_TOKEN }}
+          token: ${{ secrets.PRIVATE_TOKEN }}
 
       - name: Checkout parent repository
         uses: actions/checkout@v6
         with:
           repository: ${{ vars.PARENT_ORG }}/${{ vars.PARENT_REPO }}
           path: ${{ vars.PARENT_REPO }}
-          token: ${{ secrets.PARENT_REPO_TOKEN }}
+          token: ${{ secrets.PRIVATE_TOKEN }}
           submodules: recursive
 
       - name: Commit changes to parent repo
