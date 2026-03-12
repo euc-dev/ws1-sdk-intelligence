@@ -37,12 +37,12 @@ When entering custom settings, you can use **JSON format**. Make sure your JSON 
 ```
 
 ## Common SDK Configuration Keys for Intelligence SDK
-When configuring the Workspace ONE SDK through Custom Settings, specific key/value pairs can be used to for Intelligence SDK:
+When configuring the Workspace ONE SDK through Custom Settings, specific key/value pairs can be used for Intelligence SDK:
 
 ### `PolicyAllowCrashReporting`
 **Type:** Boolean (`true` or `false`)
 
-**Description:** Used to enable / disable Intelligence SDK
+**Description:** Used to enable / disable Intelligence SDK.
 
 **Example:**
 ```JSON
@@ -54,7 +54,7 @@ When configuring the Workspace ONE SDK through Custom Settings, specific key/val
 ### `CaptureDEXData`
 **Type:** Boolean (`true` or `false`)
 
-**Description:** Used to enable / disable the DEX portion of IntelSDK. This flag is void if `PolicyAllowCrashReporting` is not true.
+**Description:** Used to enable / disable the DEX portion of Intelligence SDK. This flag is void if `PolicyAllowCrashReporting` is not true.
 
 **Example:**
 ```JSON
