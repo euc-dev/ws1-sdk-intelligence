@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.PRIVATE_TOKEN }}
 
       - name: Checkout parent repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           repository: ${{ vars.PARENT_ORG }}/${{ vars.PARENT_REPO }}
           token: ${{ secrets.PRIVATE_TOKEN }}
