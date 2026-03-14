@@ -9,12 +9,6 @@ jobs:
   update-parent:
     runs-on: ubuntu-latest
     steps:
-      - name: get secret name
-        run: echo "${{ secrets.PRIVATE_TOKEN }}"
-
-      - name: get secret value using secret name
-        run: echo "${{ vars.PARENT_ORG }} \ ${{ vars.PARENT_REPO }}"
-
       - name: Checkout current repository
         uses: actions/checkout@v6
         with:
