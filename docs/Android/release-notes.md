@@ -15,6 +15,44 @@ What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
 
+## Omnissa Intelligence SDK 26.2.1 for Android - March 24, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### Patch Fixes
+
+- Based on Release [**26.2.0**](#omnissa-intelligence-sdk-2620-for-android---march-2-2026).
+- Resolved an issue where Intelligence Network Events were incorrectly denylisted when their URLs contained the term `workspaceone`. 
+  
+### Known Issues
+
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
+
+## Omnissa Intelligence SDK 25.11.2 for Android - March 24, 2025
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402 or later
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### Patch Fixes
+
+- Based on Release [**25.11.0**](#omnissa-intelligence-sdk-25110-for-android---december-3-2025).
+- Resolved an issue where Intelligence Network Events were incorrectly denylisted when their URLs contained the term `workspaceone`. 
+  
+### Known Issues
+
+- Instrumented URLConnection classes may report inaccurate network request elapsed times.
+- Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
+
 ## Omnissa Intelligence SDK 26.2.0 for Android - March 2, 2026
 
 ### Minimum Requirements
