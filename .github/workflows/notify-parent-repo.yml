@@ -1,35 +1,32 @@
-name: Notify Parent Repo
+name: Notify parent repo of submodule updates
 
 on:
   push:
-    branches:
+    branches: 
       - main
-permissions:
-  contents: write
+  workflow_dispatch:
 
 jobs:
-  update-parent:
+  update:
+    if: github.repository == 'euc-dev/ws1-sdk-intelligence'
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout current repository
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with: 
+          repository: ${{ secrets.PARENT_ORG }}/${{ secrets.PARENT_REPO }}
           token: ${{ secrets.PRIVATE_TOKEN }}
+          submodules: true
 
-      - name: Checkout parent repository
-        uses: actions/checkout@v6
-        with:
-          repository: ${{ vars.PARENT_ORG }}/${{ vars.PARENT_REPO }}
-          token: ${{ secrets.PRIVATE_TOKEN }}
-          submodules: recursive
-
-      - name: Commit changes to parent repo
+      - name: Pull and recursively update submodules
         run: |
-          cp -r ./* ./${{ vars.PARENT_REPO }}/
-          cd ./${{ vars.PARENT_REPO }}
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+
+      - name: Commit submodule updates
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions - update submodules"
           git add --all
           git commit -m "Update submodules, triggered by ${GITHUB_REPOSITORY}" || echo "No changes to commit"
-          git push https://${{ secrets.PRIVATE_TOKEN }}@github.com/${{ vars.PARENT_ORG }}/${{ vars.PARENT_REPO }}.git main
+          git push
