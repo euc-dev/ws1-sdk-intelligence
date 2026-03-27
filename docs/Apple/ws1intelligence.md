@@ -90,7 +90,7 @@ class func enable(withAppID: appID,
 
 ## Logging Breadcrumbs
 
-A ***breadcrumb*** is a developer-defined text string (up to 140 characters) that allows developers to capture app run-time information. Example breadcrumbs may include variable values, progress through the code, user actions, or low memory warnings. For an introduction, see [Breadcrums Overview](../../dev-centre/ws1-intel/core-capabilities.md#Breadcrumbs-overview).
+A ***breadcrumb*** is a developer-defined text string (up to 140 characters) that allows developers to capture app run-time information. Example breadcrumbs may include variable values, progress through the code, user actions, or low memory warnings. For an introduction, see [Breadcrumbs Overview](../../dev-centre/ws1-intel/core-capabilities.md#Breadcrumbs-overview).
 
 ### leaveBreadcrumb:
 
@@ -885,3 +885,51 @@ Swift
 | dataFormatType    | Format of exported data. JSON is currently the only option. |
 | dataCategoryType  | Which category of Telemetry data to export. eg, attributeData, eventData, or allData | 
 | completionHandler | Handler to asynchronously receive the exported data |
+
+
+
+## generateStatusReport (dataHandler)
+
+Asynchronously generates a status report on the health metrics of the Telemetry Features. Use this API to obtain a JSON string reporting diagnostics such as telemetry configuration, app permissions status, initialization state, version, data usage against limits, and attribute/entity/event enablement details.
+
+The status report is returned to the dataHandler as a JSON string, or nil if the call fails.
+
+Telemetry Features must be started before calling this API, otherwise incomplete results will be reported. This API will be expanded in future releases to include broader diagnostics.
+
+The health report may include:
+
+- Telemetry Features Version
+- Initialization Stage
+- Enabled Features List
+- Current DEX State (connected, started, or dimmed)
+- Telemetry enablement status
+- Event enablement features, callers, settings, and reporters
+- Whether the Intelligence interface is ready to be reported
+
+**Declaration**
+
+```Objective-C
++ (void)generateStatusReport:(void (^)(NSString * _Nullable data))completionHandler;
+```
+
+```Swift
+@objc public func generateStatusReport(completion: @escaping (String?) -> Void) 
+```
+
+**Parameters**
+
+|               |   |
+|---------------| --- |
+| dataHandler   | Interface called when the status report data is ready to be exported. |
+
+**Example**
+
+```Swift
+WS1Intelligence.generateStatusReport { reportData in
+	statusReportData = reportData
+}
+```
+
+For an example status report, see [Status Report Sample](../sample-files/ReportStatus-sample.json).
+
+Introduced in Omnissa Intelligence SDK 26.2.0 for iOS.
