@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-Apps integrating the SDK should now also set an instance of type `WS1UEMDataDelegate`. (`WS1UEMDataDelegate` must be set before enabling WS1IntelligenceSDK). This is to publish the following UEM specific attributes serialNumber, deviceUDID, username to the Intel backend. Integration code is shown below -
+Apps integrating the SDK should set an instance of type `WS1UEMDataDelegate`. (`WS1UEMDataDelegate` must be set before enabling WS1IntelligenceSDK). This provides the following UEM specific attributes serialNumber, deviceUDID, username, and deviceUUID so they can be sent to the Intel backend with the created records. Integration code is shown below -
 
 ### WS1UEMDataDelegate
 
@@ -15,12 +15,14 @@ Apps integrating the SDK should now also set an instance of type `WS1UEMDataDele
     var serialNumber: String? { get }
     var deviceUDID: String? { get }
     var username: String? { get }
+    var deviceUUID: String? { get }
 }
 ```
 
 ### Sample Implementation
 
-```objective-c
+- Objective-C sample implementation for `WS1UEMDataDelegate` methods
+```Objective-C
 #import "WS1UEMAttributeKeys.h"
 #import "WS1Intelligence.h"
 
@@ -39,25 +41,45 @@ launchOptions {
 - (NSString *) deviceUDID {
     return [self getAppConfig:[WS1UEMAttributeKeys intelSDKDeviceUDID]];
 }
-
 - (NSString *) serialNumber {
     return [self getAppConfig:[WS1UEMAttributeKeys intelSDKSerialNumber]];
 }
-
 - (NSString *) username {
     return [self getAppConfig:[WS1UEMAttributeKeys intelSDKSerialNumber]];
 }
-
+- (NSString *) deviceUUID {
+    return [self getAppConfig:[WS1UEMAttributeKeys intelSDKDeviceUUID]];
+}
 - (NSString *) getAppConfig: (NSString*) key {
-    NSDictionary<NSString*, id> *dictionary = [[NSUserDefaults standardUserDefaults] objectForKey:
-[WS1UEMAttributeKeys managedAppConfigKey]];
+    NSDictionary<NSString*, id> *dictionary = [[NSUserDefaults standardUserDefaults] objectForKey: [WS1UEMAttributeKeys managedAppConfigKey]];
     return [dictionary valueForKey:key];
 }
-
-@end
+```
+- Swift sample implementation for `WS1UEMDataDelegate` functions
+```Swift
+	import WS1IntelligenceSDK
+	
+	@objc class IntelligenceSDKUtil: NSObject,WS1UEMDataDelegate {
+	
+    var serialNumber: String? {
+        return self.fetchManagedConfig(key: WS1UEMAttributeKeys.intelSDKSerialNumber())
+    }
+    var deviceUDID: String? {
+        return self.fetchManagedConfig(key: WS1UEMAttributeKeys.intelSDKDeviceUDID())
+    }
+    var username: String? {
+        return self.fetchManagedConfig(key: WS1UEMAttributeKeys.intelSDKUsername())
+    }
+    var deviceUUID: String? {
+        return self.fetchManagedConfig(key: WS1UEMAttributeKeys.intelSDKDeviceUUID())
+    }
+    private func fetchManagedConfig(key: String) -> String? {
+        return self.managedConfig?[key] as? String
+    }
 ```
 
-If the app does not already have access to device-udid, serial-number, username and if it is managed, then it can be fetched from UEM to be injected into IntelligenceSDK.
+
+If the app does not already have access to device-udid, serial-number, username or device-uuid, and if it is managed, then they can be fetched from UEM to be injected into IntelligenceSDK.
 
 Within UEM, the required attributes can be set during app assignment within the ‘Application Configuration’ section as shown in the screenshot.
 
