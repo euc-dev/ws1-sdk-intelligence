@@ -31,16 +31,18 @@ These release notes describe the new features and enhancements in each release o
 - The `WS1UEMDataDelegate` protocol has been extended with a new required member.  
 
   - The `deviceUUID` member allows access to the WorkspaceONE UEM Global Device Unique Identifier (UUID) for the respective device.
-
-  - When operating in Unauthenticated Mode (when the IntelligenceSDK has not been authenticated through enrollment), this UUID will be used to associate Intelligence and Telemetry records to UEM devices.
+  
+  - This UUID will be used to associate Intelligence and Telemetry records to UEM devices when
+    - IntelligenceSDK has never authenticated through enrollment.
+    - IntelligenceSDK was successfully enrolled, but became unauthenticated after failing to authenticate for too long. 
 
   - The UEM should deliver the device identifier GUID in KVP with key `intelsdk_device_uuid`.  The value should be a string. In the Omnissa UEM, you can set the following:
 
-![Image of Omnissa UEM adding key-value pairs for key intelsdk_device_uuid. The value is a variable that UEM fills.'](./uem-kvp-intelsdk_device_uuid.png)
+  ![Image of Omnissa UEM adding key-value pairs for key intelsdk_device_uuid. The value is a variable that UEM fills.'](./uem-kvp-intelsdk_device_uuid.png)
 
-- If an app needs to access the KVP delivered via MDM, the key constant `WS1UEMAttributeKeys.intelSDKDeviceUUID` is provided. Use it to access the special MDM dictionary returned from NSUserDefaults for `com.apple.configuration.managed`. 
+  - If an app needs to access the KVP delivered via MDM, the key constant `WS1UEMAttributeKeys.intelSDKDeviceUUID` is provided. Use it to access the special MDM dictionary returned from NSUserDefaults for `com.apple.configuration.managed`. 
 
-- For more information see [Sending UEM Attributes To Intelligence SDK](ios-integrate-ws1sdk.md#WS1UEMDataDelegate)
+  - For more information see [Sending UEM Attributes To Intelligence SDK](ios-integrate-ws1sdk.md#WS1UEMDataDelegate)
 
 
 - **API to Report Health Status**
