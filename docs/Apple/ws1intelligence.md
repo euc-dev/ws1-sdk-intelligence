@@ -888,7 +888,7 @@ Swift
 
 
 
-## generateStatusReport (dataHandler)
+## generateStatusReport
 
 Asynchronously generates a status report on the health metrics of the Telemetry Features. Use this API to obtain a JSON string reporting diagnostics such as telemetry configuration, app permissions status, initialization state, version, data usage against limits, and attribute/entity/event enablement details.
 
@@ -924,11 +924,23 @@ The health report may include:
 
 **Example**
 
+Objective-C
+
+```Objective-C
+[WS1Intelligence generateStatusReport:^(NSString * _Nullable reportData) {
+	// parse reportData, if non-nil
+}];
+```
+
+Swift
+
 ```Swift
 WS1Intelligence.generateStatusReport { reportData in
-	statusReportData = reportData
+	// parse reportData, if non-nil
 }
 ```
+
+Intelligence SDK does not provide any UI software for displaying this information. If apps wish to show this information to users, they will need to provide that.
 
 For an example status report, see [Status Report Sample](../sample-files/ReportStatus-sample.json).
 
