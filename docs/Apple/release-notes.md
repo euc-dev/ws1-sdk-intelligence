@@ -6,12 +6,58 @@ hide:
   - toc
 ---
 
-Updated December, 2025
+Updated March, 2026
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
 
+
+
+## Omnissa IntelligenceSDK for iOS 26.2.0 Release - March, 2026
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 26.02.0 or newer is required for the two to interact. 
+- not supported:
+
+    - tvOS devices
+    - app extensions
+    - visionOS for Vision Pro devices
+
+### New Features
+
+- The `WS1UEMDataDelegate` protocol has been extended with a new required member.  
+
+  - The `deviceUUID` member allows access to the WorkspaceONE UEM Global Device Unique Identifier (UUID) for the respective device.
+  
+  - This UUID will be used to associate Intelligence and Telemetry records to UEM devices when
+    - IntelligenceSDK has never authenticated through enrollment.
+    - IntelligenceSDK was successfully enrolled, but became unauthenticated after failing to authenticate for too long. 
+
+  - The UEM should deliver the device identifier GUID in KVP with key `intelsdk_device_uuid`.  The value should be a string. In the Omnissa UEM, you can set the following:
+
+  ![Image of Omnissa UEM adding key-value pairs for key intelsdk_device_uuid. The value is a variable that UEM fills.'](./uem-kvp-intelsdk_device_uuid.png)
+
+  - If an app needs to access the KVP delivered via MDM, the key constant `WS1UEMAttributeKeys.intelSDKDeviceUUID` is provided. Use it to access the special MDM dictionary returned from NSUserDefaults for `com.apple.configuration.managed`. 
+
+  - For more information see [Sending UEM Attributes To Intelligence SDK](ios-integrate-ws1sdk.md#WS1UEMDataDelegate)
+
+
+- **API to Report Health Status**
+  - A new API was added to get the health status of Telemetry Features. For details see [generateStatusReport](./ws1intelligence.md#generateStatusReport).
+
+
+
+### Resolved Issues
+
+- None
+
+### Known Issues
+
+- Network events related to Omnissa’s URL’s are not reported to the Intelligence backend. 
+- In rare scenarios, when CaptureDEXData is set to true by UEM, user could experience an app crash. 
 
 
 ## Omnissa IntelligenceSDK for iOS 25.11.0 Release - December 2025
