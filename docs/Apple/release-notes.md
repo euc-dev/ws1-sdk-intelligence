@@ -19,7 +19,7 @@ These release notes describe the new features and enhancements in each release o
 ### Minimum Requirements
 
 - Devices running iOS 16.0 or iPadOS 16.0 or newer.
-- WS1SDK version 26.02.0 or newer is required for the two to interact. 
+- WS1SDK version 26.03.0 or newer is required for the two to interact. 
 - not supported:
 
     - tvOS devices
