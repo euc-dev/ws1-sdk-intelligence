@@ -9,13 +9,13 @@ hide:
 
 ---
 
-Updated on 02/03/2026
+Updated on 04/09/2026
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
 
-## Omnissa Intelligence SDK 26.2.1 for Android - March 24, 2025
+## Omnissa Intelligence SDK 26.2.1 for Android - March 24, 2026
 
 ### Minimum Requirements
 
@@ -34,7 +34,7 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 - Instrumented URLConnection classes may report inaccurate network request elapsed times.
 - Application Lifecycle Breadcrumbs for “Foreground”, “Background” events may be reported inaccurately.
 
-## Omnissa Intelligence SDK 25.11.2 for Android - March 24, 2025
+## Omnissa Intelligence SDK 25.11.2 for Android - March 24, 2026
 
 ### Minimum Requirements
 
