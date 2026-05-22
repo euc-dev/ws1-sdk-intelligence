@@ -33,16 +33,15 @@ These release notes describe the new features and enhancements in each release o
 ### Resolved Issues
 
 - Fixed edge cases in background geofence-based monitoring.
-- Static analysis will no longer detect AFNetworking usage.
 - Fixed build issues related to Xcode 26.4.
 - Improved built-in network filtering so more URLs containing workspaceone are recorded.
-- Network filtering now excludes only URLs containing:
 
-    - `.data.workspaceone`
-    - `://data.workspaceone`
+    - Network filtering now excludes only URLs containing:
+
+        - `.data.workspaceone`
+        - `://data.workspaceone`
     
 - Fixed net stat URL recording by truncating URLs to 1024 characters, preventing CoreData exceptions from oversized URL strings.
-- Removed `ThirdPartySampleApp`. Use `IntelSDKSampleApp` in [IntelligenceSDK Integration Sample Repo](https://github.com/euc-releases/Intelligence-SDK-integration-samples).
 
 ### Known Issues
 
