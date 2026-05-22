@@ -6,12 +6,52 @@ hide:
   - toc
 ---
 
-Updated March, 2026
+Updated May, 2026
 
 ## What's in the Release Notes
 
 These release notes describe the new features and enhancements in each release of Omnissa IntelligenceSDK for iOS. (Sometimes called "IntelligenceSDK".) This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. Omnissa IntelligenceSDK for iOS is a set of tools allow iOS apps to send telemetry data to the Omnissa Intelligence backend. 
 
+
+
+## Omnissa IntelligenceSDK for iOS 26.5.0 Release - May, 2026
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 26.03.0 or newer is required for the two to interact. 
+- not supported:
+
+    - tvOS devices
+    - app extensions
+    - visionOS for Vision Pro devices
+
+### New Features
+
+- Updated dependencies:
+
+    - TelemetrySDK 0.35.0
+    - Protobuf 4.33.5
+    
+- `IntelSDKPostableProviders` can now be registered before enabling IntelSDK, simplifying provider setup.
+
+### Resolved Issues
+
+- Fixed edge cases in background geofence-based monitoring.
+- Removed AFNetworking references from testing code; static analysis should no longer detect AFNetworking usage.
+- Fixed build issues related to Xcode 26.4.
+- Improved built-in network filtering so more URLs containing workspaceone are recorded.
+- Network filtering now excludes only URLs containing:
+
+    - `.data.workspaceone`
+    - `://data.workspaceone`
+    
+- Fixed net stat URL recording by truncating URLs to 1024 characters, preventing CoreData exceptions from oversized URL strings.
+- Removed `ThirdPartySampleApp`. Use `IntelSDKSampleApp` in [IntelligenceSDK Integration Sample Repo](https://github.com/euc-releases/Intelligence-SDK-integration-samples).
+
+### Known Issues
+
+- None
 
 
 ## Omnissa IntelligenceSDK for iOS 26.2.1 Release - April, 2026
