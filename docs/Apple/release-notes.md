@@ -28,11 +28,6 @@ These release notes describe the new features and enhancements in each release o
 
 ### New Features
 
-- Updated dependencies:
-
-    - TelemetrySDK 0.35.0
-    - Protobuf 4.33.5
-    
 - `IntelSDKPostableProviders` can now be registered before enabling IntelSDK, simplifying provider setup.
 
 ### Resolved Issues
