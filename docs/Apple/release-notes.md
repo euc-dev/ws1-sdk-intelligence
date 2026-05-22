@@ -33,7 +33,7 @@ These release notes describe the new features and enhancements in each release o
 ### Resolved Issues
 
 - Fixed edge cases in background geofence-based monitoring.
-- Removed AFNetworking references from testing code; static analysis should no longer detect AFNetworking usage.
+- Static analysis will no longer detect AFNetworking usage.
 - Fixed build issues related to Xcode 26.4.
 - Improved built-in network filtering so more URLs containing workspaceone are recorded.
 - Network filtering now excludes only URLs containing:
