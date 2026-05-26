@@ -42,6 +42,7 @@ These release notes describe the new features and enhancements in each release o
         - `://data.workspaceone`
     
 - Fixed net stat URL recording by truncating URLs to 1024 characters, preventing CoreData exceptions from oversized URL strings.
+- Removed `ThirdPartySampleApp`. Use `IntelSDKSampleApp` in [IntelligenceSDK Integration Sample Repo](https://github.com/euc-releases/Intelligence-SDK-integration-samples).
 
 ### Known Issues
 

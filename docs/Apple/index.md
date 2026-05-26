@@ -43,6 +43,12 @@ Release Notes can be viewed [here](release-notes.md).
 - [WS1Filter](ws1filter.md)
 - [WS1Constants](ws1constants.md)
 
+## External Sample App
+
+For a reference implementation, use our external sample app:
+
+- [IntelligenceSDK Integration Samples Repo](https://github.com/euc-releases/Intelligence-SDK-integration-samples). For iOS, use the `IntelSDKSampleApp` project in that repository.
+
 ## Features
 
 ### Out-of-the-box Features
