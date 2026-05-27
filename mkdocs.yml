@@ -179,3 +179,5 @@ nav:
       - Telemetry Privacy Configuration: ./Apple/ios-privacy-config.md
       - Intelligence SDK Allowed Apps: ./Apple/allowed-apps-ios.md
     - Release Notes: ./Apple/release-notes.md
+  - Guides:
+    - Workspace ONE UEM Custom Settings Integration: ./guides/custom-settings-integration.md
