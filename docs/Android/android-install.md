@@ -33,7 +33,7 @@ android {
     }
 }
 
-def ws1IntelSdkVersion = "25.11.0"
+def ws1IntelSdkVersion = "26.5.0"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -66,17 +66,23 @@ IntelligenceSDK using the following structure:
    }
    
    android {
-      packagingOptions {
-           pickFirst 'lib/**/libsettings.so'
-           pickFirst 'lib/**/libc++_shared.so'
-           pickFirst 'lib/**/libcrypto.1.0.2.so'
-           pickFirst 'lib/**/libssl.1.0.2.so'
-           pickFirst 'lib/**/libxsw_crypto.so'
-           exclude 'META-INF/**'
-       }
+        packagingOptions {
+            jniLibs {
+                useLegacyPackaging true
+                excludes += ['META-INF/*']
+                pickFirsts += ['lib/**/libc++_shared.so',
+                               'lib/**/libsettings.so',
+                               'lib/**/libcrypto.so',
+                               'lib/**/libssl.so',
+                               'lib/**/libxsw_crypto.so']
+            }
+            resources {
+                excludes += ['META-INF/*']
+            }
+        }
    }
    
-   def ws1IntelSdkVersion = "25.11.0"
+   def ws1IntelSdkVersion = "26.5.0"
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
@@ -107,20 +113,26 @@ repositories {
 }
 
 android {
-   packagingOptions {
-           pickFirst 'lib/**/libsettings.so'
-           pickFirst 'lib/**/libc++_shared.so'
-           pickFirst 'lib/**/libcrypto.1.0.2.so'
-           pickFirst 'lib/**/libssl.1.0.2.so'
-           pickFirst 'lib/**/libxsw_crypto.so'
-           exclude 'META-INF/**'
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+            excludes += ['META-INF/*']
+            pickFirsts += ['lib/**/libc++_shared.so',
+                           'lib/**/libsettings.so',
+                           'lib/**/libcrypto.so',
+                           'lib/**/libssl.so',
+                           'lib/**/libxsw_crypto.so']
+        }
+        resources {
+            excludes += ['META-INF/*']
+        }
     }
 }
 
-def ws1IntelSdkVersion = "25.11.0"
+def ws1IntelSdkVersion = "26.5.0"
 
-// NOTE: We do not support WS1 SDK versions lower than 25.02.4.
-def ws1SdkVersion = "25.02.4"
+// NOTE: We do not support WS1 SDK versions lower than 25.07.4.
+def ws1SdkVersion = "25.07.4"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK

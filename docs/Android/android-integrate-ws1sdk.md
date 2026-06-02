@@ -8,7 +8,8 @@ hide:
 - toc
 
 ---
-
+!!!Warning "Deprecation Notice"
+    The `UemInfo` interface and API (`Crittercism.setUemInfo`) documented on this page will be deprecated and removed in a future release.
 A new Public API has been added to provide UEM attributes to the IntelligenceSDK’s DEX feature:
 
 - This API takes an information provider interface which allows users to create getter methods for each available data attribute: **UEM Global Device UUID**, **UEM Device UDID**, **UEM Serial Number**, **UEM Username**.
