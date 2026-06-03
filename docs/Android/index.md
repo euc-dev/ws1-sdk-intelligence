@@ -18,7 +18,7 @@ Release Notes can be viewed [here](release-notes.md).
 
 - Android 7.0 or later
 - API Level 24 or later
-- Workspace ONE UEM Console 2402 or later
+- Workspace ONE UEM Console 24.10 or later
 - Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
 
 ## Guide

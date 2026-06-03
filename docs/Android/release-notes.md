@@ -21,39 +21,49 @@ Omnissa Intelligence SDK for Android Release Notes describe the new features and
 
 - Android 7.0 or later
 - API Level 24 or later
-- Workspace ONE UEM Console 2402 or later
+- Workspace ONE UEM Console 24.10 or later
 - Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
 
 ### New Features
+
 **New DEX Telemetry Attributes**
-- All Entities - Location Information
-    - **Altitude**
-        - Name: `altitude_meters`
-        - Value: Double representing the Mean Sea Level altitude in meters of the reported location.
-        - Data Type: Double
-        - Permissions: `ACCESS_FINE_LOCATION` or `ACCESS_COARSE_LOCATION`
-    - **Altitude Accuracy**
-        - Name: `altitude_accuracy_meters`
-        - Value: Double representing the Mean Sea Level altitude accuracy in meters of the reported location altitude.
-        - Data Type: Double
-        - Permissions: `ACCESS_FINE_LOCATION` or `ACCESS_COARSE_LOCATION`
-    - **Location Radius Accuracy**
-        - Name: `location_accuracy_radius_meters`
-        - Value: Double representing the horizontal accuracy radius in meters of the reported location.
-        - Data Type: Double
-        - Permissions: `ACCESS_FINE_LOCATION` or `ACCESS_COARSE_LOCATION`
-- Battery Entity
-    - **Battery Cycle Count (Android 14 / API 34+)**
-        - Name: `battery_cycle_count`
-        - Value: Integer representing the total number of battery cycles the device has undergone.
-        - Data Type: Integer
-        - This Data point requires Android 34+. On devices below this, or if the device does not expose the battery cycle count, a default value is returned from the system.
-- Network Entity
-    - **Cellular Data Enabled**
-        - Name: `cellular_data_enabled`
-        - Value: Boolean flag representing if the cellular network is enabled.
-        - Data Type: Boolean
-        - Checks whether the device has an active cellular data connection on the primary SIM. Secondary SIMs are not considered when making this check. Additionally, the device cannot be in a data suspended state at the time of measuring this attribute. For example, in a 2G network, data activity may be suspended when a voice call arrives.
+
+**All Entities - Location Information**
+
+- **Altitude**
+    - Name: `altitude_meters`
+    - Value: Double representing the Mean Sea Level altitude in meters of the reported location.
+    - Data Type: Double
+    - Permissions: [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) or [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_COARSE_LOCATION)
+
+- **Altitude Accuracy**
+    - Name: `altitude_accuracy_meters`
+    - Value: Double representing the Mean Sea Level altitude accuracy in meters of the reported location altitude.
+    - Data Type: Double
+    - Permissions: [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) or [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_COARSE_LOCATION)
+
+- **Location Radius Accuracy**
+    - Name: `location_accuracy_radius_meters`
+    - Value: Double representing the horizontal accuracy radius in meters of the reported location.
+    - Data Type: Double
+    - Permissions: [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) or [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_COARSE_LOCATION)
+
+**Battery Entity**
+
+- **Battery Cycle Count (Android 14 / API 34+)**
+    - Name: `battery_cycle_count`
+    - Value: Integer representing the total number of battery cycles the device has undergone.
+    - Data Type: Integer
+    - This Data point requires Android 34+. On devices below this, or if the device does not expose the battery cycle count, a default value is returned from the system.
+
+**Network Entity**
+
+- **Cellular Data Enabled**
+    - Name: `cellular_data_enabled`
+    - Value: Boolean flag representing if the cellular network is enabled.
+    - Data Type: Boolean
+    - Checks whether the device has an active cellular data connection on the primary SIM. Secondary SIMs are not considered when making this check. Additionally, the device cannot be in a data suspended state at the time of measuring this attribute. For example, in a 2G network, data activity may be suspended when a voice call arrives.
+
 **Cryptography Library Updates**
   - Updated to consume OpenSSL 3.4.4 libraries.
 
