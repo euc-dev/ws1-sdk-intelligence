@@ -9,11 +9,27 @@ hide:
 
 ---
 
-Updated on 05/13/2026
+Updated on 07/06/2026
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 26.5.1 for Android - July 6, 2026
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402+
+- Workspace ONE SDK Version 26.06+
+- Android Studio with the Gradle Android Build System (Gradle) 8.6.0 or later
+
+### New Features
+
+#### Cryptography Library Updates
+
+- Updated to consume **OpenSSL 3.5.7 libraries.**
 
 ## Omnissa Intelligence SDK 26.5.0 for Android - May 13, 2026
 
