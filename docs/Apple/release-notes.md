@@ -14,6 +14,34 @@ These release notes describe the new features and enhancements in each release o
 
 
 
+
+## Omnissa IntelligenceSDK for iOS 26.5.1 Release - July 7, 2026
+
+### Minimum Requirements
+
+- Devices running iOS 16.0 or iPadOS 16.0 or newer.
+- WS1SDK version 26.06.0 or newer is required for interoperability. 
+- not supported:
+
+    - tvOS devices
+    - app extensions
+    - visionOS for Vision Pro devices
+
+### New Features
+
+- None
+
+### Resolved Issues
+
+- Fixed bug that could cause the DEX Battery Time Since Unplugged information to not change from previous event records.
+- WS1IntelligenceSDK now uses OpenSSL 3.5.7
+
+### Known Issues
+
+- None
+
+
+
 ## Omnissa IntelligenceSDK for iOS 26.5.0 Release - May, 2026
 
 ### Minimum Requirements
