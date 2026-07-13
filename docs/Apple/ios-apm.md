@@ -8,6 +8,11 @@ hide:
 
 Whenever an app makes a network call, Omnissa Intelligence SDK monitors and captures certain information automatically. You can optionally configure filtering and location details. For an introduction, see [Network Insights Overview](../../dev-centre/ws1-intel/core-capabilities.md#network-insights-overview).
 
+>!!!Note
+>	Async/Await URLSession APIs Are Not Supported
+>
+>	**Swift async/await URLSession APIs are not automatically captured by the SDK.** Log async/await requests manually via `logNetworkRequest`.
+
 Omnissa Intelligence SDK ***automatically*** monitors the performance of network requests formed via the following APIs:
 
 - all iOS versions
