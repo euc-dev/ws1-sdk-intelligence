@@ -17,8 +17,8 @@ Release Notes can be viewed [here](release-notes.md).
 ## Application Requirements
 
 - Devices running iOS 16.0 or iPadOS 16.0 or newer.
-- WS1SDK version 26.03.0 or newer is required for the two to interact. 
-	- Workspace ONE UEM Console 2402 or later
+- WS1SDK version 26.06.0 or newer is required for the two to interact. 
+	- Workspace ONE UEM Console 2406 or later
 - SystemConfiguration Framework
 - CoreData Framework
 
