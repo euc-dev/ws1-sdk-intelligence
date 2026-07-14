@@ -18,7 +18,7 @@ Release Notes can be viewed [here](release-notes.md).
 
 - Devices running iOS 16.0 or iPadOS 16.0 or newer.
 - WS1SDK version 26.06.0 or newer is required for the two to interact. 
-	- Workspace ONE UEM Console 2406 or later
+	- Requires Workspace ONE UEM Console 24.10 or later. [See WS1SDK Release Notes](https://developer.omnissa.com/ws1-uem-sdk-for-ios/release-notes/#minimum-requirements)
 - SystemConfiguration Framework
 - CoreData Framework
 
