@@ -33,7 +33,7 @@ android {
     }
 }
 
-def ws1IntelSdkVersion = "26.8.0"
+def ws1IntelSdkVersion = "26.8.2"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -82,7 +82,7 @@ IntelligenceSDK using the following structure:
         }
    }
    
-    def ws1IntelSdkVersion = "26.8.0"
+    def ws1IntelSdkVersion = "26.8.2"
    
    dependencies {
        // Declare a dependency on the Intelligence SDK
@@ -129,10 +129,10 @@ android {
     }
 }
 
-def ws1IntelSdkVersion = "26.8.0"
+def ws1IntelSdkVersion = "26.8.2"
 
-// NOTE: We do not support WS1 SDK versions lower than 26.06.
-def ws1SdkVersion = "26.06"
+// NOTE: We do not support WS1 SDK versions lower than 26.09.
+def ws1SdkVersion = "26.09"
 
 dependencies {
     // Declare a dependency on the Intelligence SDK
@@ -147,7 +147,7 @@ dependencies {
 
 !!!Note
     Additional steps may be necessary to integrate the Workspace ONE SDK itself than what is shown above, please refer to Workspace ONE SDK specific integration documentation for that product. 
-    Futhermore, we do not support versions of the Workspace ONE SDK lower than 25.07.4.
+    Futhermore, we do not support versions of the Workspace ONE SDK lower than 26.09.
 
 ### Enabling Workspace ONE Authenticated Tenant Region Reporting
 
