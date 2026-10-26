@@ -9,11 +9,31 @@ hide:
 
 ---
 
-Updated on 08/26/2026
+Updated on 10/23/2026
 
 What's in the Release Notes
 
 Omnissa Intelligence SDK for Android Release Notes describe the new features and enhancements in each release. This page contains a summary of the new capabilities, issues that have been resolved, and known issues that have been reported in each release. 
+
+## Omnissa Intelligence SDK 26.8.2 for Android - October 23, 2026
+
+### Minimum Requirements
+
+- Android 7.0 or later
+- API Level 24 or later
+- Workspace ONE UEM Console 2402+
+- Workspace ONE SDK Version 26.09+
+- Android Studio with the Gradle Android Build System (Gradle) 8.10.0 or later
+
+### Patch Features
+
+#### DEX Telemetry Feature Egress Improvements
+
+- Improved telemetry handling to reduce egress data size during sustained upload failure scenarios.
+
+#### Cryptography Library Updates
+
+- Updated to consume **OpenSSL 3.5.8 libraries.**
 
 ## Omnissa WS1 Intelligence SDK 26.8.0 for Android - August 26, 2026
 
