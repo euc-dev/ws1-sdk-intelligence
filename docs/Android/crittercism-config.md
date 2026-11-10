@@ -271,6 +271,16 @@ Set whether the client may send data to the Tenant Region, which may differ from
 
 Default value is `false`.
 
+!!!Warning "Requires Workspace ONE UEM SDK integration"
+    Do not set this value to `true` unless your app also integrates the [Workspace ONE UEM SDK](android-integrate-ws1sdk.md). Tenant Region reporting depends on the UEM SDK to obtain the authentication token. Without UEM SDK integration, your custom app's data would go to their tenants by default. Without the UEM SDK, this value does not enable Tenant Region reporting and can cause the following issues:
+    
+    - **Device identifiers are missing from your console.** Identifiers set from the UEM SDK, such as the UEM device GUID, do not appear in your console.
+    - **No token is ever obtained.** Without the UEM SDK, the Intelligence SDK cannot authenticate with the Tenant Region.
+    - **Delayed event reporting.** With [Caching Mode](#caching-mode-enabled) enabled (the default), events are held for up to 5 minutes while the SDK retries to authenticate.
+    - **Unnecessary overhead.** The SDK repeatedly attempts token retrieval and tenant initialization with no chance of success.
+
+    If your app does not use the UEM SDK, leave this value at the default (`false`).
+
 `public final void setTenantRegionAllowed(final boolean isTenantRegionAllowed)`
 
 
